@@ -1,0 +1,23 @@
+check_name,status
+printed YoY growth recomputes: Accenture,PASS
+printed YoY growth recomputes: Infosys,PASS
+printed YoY growth recomputes: Cognizant,PASS
+printed YoY growth recomputes: Tech Mahindra,PASS
+printed YoY growth recomputes: Capgemini,PASS
+printed YoY growth recomputes: Wipro,PASS
+printed YoY growth recomputes: TCS,PASS
+printed YoY growth recomputes: HCLTech,PASS
+AI range ordered and plausible: Accenture,PASS
+AI range ordered and plausible: TCS,PASS
+AI range ordered and plausible: Infosys,PASS
+AI range ordered and plausible: HCLTech,PASS
+AI range ordered and plausible: Cognizant,PASS
+AI range ordered and plausible: Capgemini,PASS
+AI range ordered and plausible: Wipro,PASS
+AI range ordered and plausible: Tech Mahindra,PASS
+AI series non-decreasing: HCLTech,PASS
+AI series non-decreasing: TCS,PASS
+TCS AI > 10% of revenue,PASS
+HCLTech annualised = 4 x quarter,PASS
+Project 1 join: 70 verified events across 8 firms,PASS
+every metric row is sourced,PASS

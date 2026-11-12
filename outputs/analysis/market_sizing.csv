@@ -1,0 +1,5 @@
+lens,measure,value_usd_bn,low_usd_bn,high_usd_bn,reading,source
+A. Analyst top-down,"Gartner: worldwide AI services spending, 2026",576.5,,,Broadest definition: includes 'indirect' AI services where AI is embedded in ordinary projects.,GARTNER_AI_SEP26
+B. Management view,Infosys management: AI services market,350.0,300.0,400.0,Stated as $300-400 bn; no year or definition given.,INFY_MKT
+C. Bottom-up (this project),"Eight firms' AI revenue run-rate, CY Q3 2026 x 4",15.8,13.2,18.9,"Disclosed (TCS, HCLTech), derived (Infosys, Accenture) and estimated (others) - 74% of the mid value rests on company figures.",02_ai_pool.sql
+C. Bottom-up (this project),Implied vendor-labelled AI services market,142.1,118.9,170.1,"Eight-firm pool / their 11.1% share of Gartner's $1,867 bn IT services market. Assumes the rest of the market has the same AI intensity.",derived

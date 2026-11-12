@@ -1,0 +1,5 @@
+company,period_label,period_end,revenue_usd_m,basis,source_id,note
+TCS,Q3 FY26 (Oct-Dec 2025),2025-12-31,7509,quarter,TCS_Q3FY26_PR,Revenue at $7509 million
+Infosys,Q3 FY26 (Oct-Dec 2025),2025-12-31,5099,quarter,INFY_Q3FY26_PR,Reported IFRS revenues at $5099 million
+Accenture,FY24 (Sep-23 to Aug-24),2024-08-31,64900,fiscal year,ACN_Q4FY25_CR,Derived: FY25 $69.7 bn minus reported $4.8 bn increase
+Accenture,FY25 (Sep-24 to Aug-25),2025-08-31,69700,fiscal year,ACN_Q4FY25_CR,Reported

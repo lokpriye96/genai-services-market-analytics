@@ -1,0 +1,17 @@
+company,period_label,quarter_end,calendar_quarter,is_latest,revenue_usd_m,revenue_basis,revenue_local_m,local_currency,yoy_growth_cc_pct,bookings_usd_m,bookings_basis,headcount,source_id,note
+Accenture,Q4 FY26 (Jun-Aug 2026),2026-08-31,CY Q3 2026,1,18680,reported,,,7.0,22170,new bookings (quarter),814000,ACN_Q4FY26_PULSE;ACN_Q4FY26_8K;ACN_FACTSHEET,Headcount approximately 814000 at fiscal year-end (fact sheet)
+Accenture,Q4 FY25 (Jun-Aug 2025),2025-08-31,CY Q3 2025,0,17600,reported,,,,21300,new bookings (quarter),779000,ACN_Q4FY25_CR;ACN_Q4FY25_CALL,Headcount 'more than 779000' (Q4 FY25 call)
+TCS,Q2 FY27 (Jul-Sep 2026),2026-09-30,CY Q3 2026,1,7642,reported,,,2.8,9600,TCV (quarter),598056,TCS_Q2FY27_QUARTR;TCS_Q2FY27_OUTLOOK,TCV excludes Porsche (MHP) and Best Buy deals
+TCS,Q2 FY26 (Jul-Sep 2025),2025-09-30,CY Q3 2025,0,7463,derived: 7642 / 1.024 (reported +2.4% YoY in USD),,,,10000,TCV (quarter),593314,TCS_Q2FY27_QUARTR;TCS_HC_FY26;TCS_Q2FY26_OUTLOOK,Revenue derived from reported USD growth
+Infosys,Q2 FY27 (Jul-Sep 2026),2026-09-30,CY Q3 2026,1,5145,reported,,,1.5,5200,large-deal TCV (quarter),332542,INFY_Q2FY27_SIA;HC_INDIA_Q2FY27,Large deals only (>$50 mn); includes a >$2 bn mega deal
+Infosys,Q2 FY26 (Jul-Sep 2025),2025-09-30,CY Q3 2025,0,5076,reported,,,,,,331991,INFY_Q2FY27_SIA;HC_INDIA_Q2FY27,
+HCLTech,Q2 FY27 (Jul-Sep 2026),2026-09-30,CY Q3 2026,1,3724,derived: 3644 x 1.022 (reported $3.7 bn; +2.2% YoY in USD),,,2.6,3260,new bookings (quarter),230339,HCL_Q2FY27_PR;HCL_Q2FY27_TICKER;HC_INDIA_Q2FY27,Release prints '$3.7 billion'; exact figure derived
+HCLTech,Q2 FY26 (Jul-Sep 2025),2025-09-30,CY Q3 2025,0,3644,reported,,,,2569,new bookings (quarter),226640,HCL_Q2FY26_OB;HCL_Q2FY26_HC;HCL_Q2FY26_TCV,
+Wipro,Q2 FY27 (Jul-Sep 2026),2026-09-30,CY Q3 2026,1,2611.5,reported (IT services segment),,,0.6,2595,total bookings (quarter),236328,WIT_Q2FY27_TMM;WIT_Q2FY27_JM;WIT_Q2FY27_8K;HC_INDIA_Q2FY27,IT services segment revenue
+Wipro,Q2 FY26 (Jul-Sep 2025),2025-09-30,CY Q3 2025,0,2603.7,derived: 2611.5 / 1.003 (reported +0.3% YoY),,,,,,235492,WIT_Q2FY27_TMM;HC_INDIA_Q2FY27,
+Cognizant,Q3 2026 (Jul-Sep 2026),2026-09-30,CY Q3 2026,1,5664,reported,,,4.8,7175,derived: trailing-12-month bookings 28700 / 4,359900,CTSH_Q3_FINVIZ;CTSH_Q3_8K;CTSH_HC,Bookings reported only as TTM ($28.7 bn); quarterly average used
+Cognizant,Q3 2025 (Jul-Sep 2025),2025-09-30,CY Q3 2025,0,5415,reported,,,,,,349800,CTSH_Q3_FINVIZ;CTSH_HC,Headcount derived: 359900 - 10100
+Capgemini,Q3 2026 (Jul-Sep 2026),2026-09-30,CY Q3 2026,1,6780,converted by Reuters at $1 = 0.8957 EUR,6073,EUR,11.7,6030,converted: EUR 5401 / 0.8957,417500,CAP_Q3_PR;CAP_Q3_REUTERS;CAP_Q3_HC,Growth includes WNS acquisition (2026 guidance: ~4.5-5 pts inorganic)
+Capgemini,Q3 2025 (Jul-Sep 2025),2025-09-30,CY Q3 2025,0,6021,converted at the same rate (constant-FX comparison),5393,EUR,,,,354700,CAP_Q3_SIA;CAP_Q3_HC,Headcount derived: 417500 - 62800
+Tech Mahindra,Q2 FY27 (Jul-Sep 2026),2026-09-30,CY Q3 2026,1,1693,reported,,,7.2,1023,TCV (quarter),152206,TECHM_Q2FY27;TECHM_Q2FY27_HC,
+Tech Mahindra,Q2 FY26 (Jul-Sep 2025),2025-09-30,CY Q3 2025,0,1589,reported,,,,816,TCV (quarter),152714,TECHM_Q2FY26;TECHM_Q2FY26_HC,

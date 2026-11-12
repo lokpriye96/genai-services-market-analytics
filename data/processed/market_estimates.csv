@@ -1,0 +1,12 @@
+estimate_id,publisher,metric,year,value_usd_m,low_usd_m,high_usd_m,definition,source_id,note
+GARTNER_AI_SVC_2025,Gartner,AI services spending,2025,434046.0,,,Worldwide AI services (consulting implementation and managed services incl. AI embedded in services),GARTNER_AI_SEP26,September 2026 forecast
+GARTNER_AI_SVC_2026,Gartner,AI services spending,2026,576481.0,,,Worldwide AI services,GARTNER_AI_SEP26,
+GARTNER_AI_SVC_2027,Gartner,AI services spending,2027,745655.0,,,Worldwide AI services,GARTNER_AI_SEP26,
+GARTNER_AI_SVC_2030,Gartner,AI services opportunity,2030,1200000.0,,,Transformation plus indirect AI projects,GARTNER_AI_2030,'$1.2 tn opportunity in AI services by 2030'
+GARTNER_AI_TOTAL_2026,Gartner,Total AI spending,2026,2670460.0,,,All AI spending incl. infrastructure and software,GARTNER_AI_SEP26,
+GARTNER_ITS_2025,Gartner,IT services spending,2025,1717590.0,,,Worldwide IT services,GARTNER_IT_FEB26,February 2026 forecast
+GARTNER_ITS_2026,Gartner,IT services spending,2026,1866856.0,,,Worldwide IT services,GARTNER_IT_FEB26,+8.7% vs 2025
+INFY_AI_SVC_MKT,Infosys management,AI services market,,350000.0,300000.0,400000.0,AI services addressable market (management view),INFY_MKT,Stated as $300-400 bn
+KOTAK_DEFLATION,Kotak Institutional Equities,Annual AI-led revenue deflation (Indian IT),2026-2029,,3.0,3.5,Percent per year of traditional services revenue,KOTAK_DEFL,Stored in low/high columns as % values
+HCL_DEFLATION,HCLTech (cited),Annual AI-led deflation,2026,,2.0,3.0,Percent per year,AIM_DEFL,
+ANALYST_CUM_DEFLATION,Industry analysts (cited),Cumulative AI-driven revenue compression over 3-5 years,2026-2031,,10.0,15.0,Percent cumulative of traditional services,AIM_DEFL,

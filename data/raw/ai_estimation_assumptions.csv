@@ -1,0 +1,9 @@
+company,method,low,mid,high,unit,rationale
+TCS,disclosed annualised AI revenue,3100,3100,3100,USD m,Company-reported annualised AI services revenue (Q2 FY27)
+Infosys,reported AI share x latest quarterly revenue x 4,10.5,10.5,10.5,% of revenue,Company-reported share (10.5% in Q2 FY27); dollar value derived
+HCLTech,disclosed annualised AI revenue,876,876,876,USD m,Company-reported annualised advanced AI revenue (Q2 FY27)
+Accenture,last disclosed quarterly AI revenue x 4 x uplift,4400,5500,6600,USD m,"Last figure found: ~$1.1 bn in Q1 FY26 (Nov-25). Low = no growth since; mid = +25%; high = +50%. Q1 FY26 AI bookings of $2.2 bn were 2x AI revenue, so revenue was still rising"
+Capgemini,GenAI/agentic share of bookings x conversion to revenue share,5.5,8.0,11.0,% of revenue,"AI was >11% of bookings in Q1 2026 (~5% in early 2025). Revenue mix lags bookings, so revenue share is assumed at 50-100% of the bookings share"
+Cognizant,peer benchmark (no AI revenue disclosed),3.0,5.0,8.0,% of revenue,"Benchmark = AI share at first disclosure by peers: TCS 5.8% (Dec-25), Infosys 5.5% (Dec-25), HCLTech ~3.4% (Sep-25)"
+Wipro,peer benchmark (no AI revenue disclosed),3.0,5.0,8.0,% of revenue,Same benchmark as Cognizant
+Tech Mahindra,peer benchmark (no AI revenue disclosed),3.0,5.0,8.0,% of revenue,Same benchmark as Cognizant

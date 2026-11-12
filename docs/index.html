@@ -1,0 +1,2849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GenAI Services Market Analytics & Competitive Dashboard</title>
+<meta name="description" content="How big is the GenAI services revenue pool in IT services, who is monetising it, and is AI adding to or eating into core revenue? Eight firms, public filings, graded evidence, 2030 scenarios.">
+<style>
+.viz-root{color-scheme:light;--page:#f9f9f7;--surface-1:#fcfcfb;--text-primary:#0b0b0b;--text-secondary:#52514e;--muted:#898781;--grid:#e1e0d9;--axis:#c3c2b7;--border:rgba(11,11,11,.10);--chip:#f0efec;
+--c1:#2a78d6;--c2:#eb6834;--c3:#1baf7a;--c4:#eda100;--c5:#e87ba4;--c6:#008300;--c7:#6250d6;--c8:#e34948;--neg:#e34948;--pos:#2a78d6}
+@media (prefers-color-scheme: dark){:root:where(:not([data-theme="light"])) .viz-root{color-scheme:dark;--page:#0d0d0d;--surface-1:#1a1a19;--text-primary:#f0efec;--text-secondary:#c3c2b7;--muted:#898781;--grid:#2c2c2a;--axis:#383835;--border:rgba(255,255,255,.10);--chip:#2c2c2a;
+--c1:#3987e5;--c2:#d95926;--c3:#199e70;--c4:#c98500;--c5:#d55181;--c6:#008300;--c7:#9085e9;--c8:#e66767;--neg:#e66767;--pos:#3987e5}}
+:root[data-theme="dark"] .viz-root{color-scheme:dark;--page:#0d0d0d;--surface-1:#1a1a19;--text-primary:#f0efec;--text-secondary:#c3c2b7;--muted:#898781;--grid:#2c2c2a;--axis:#383835;--border:rgba(255,255,255,.10);--chip:#2c2c2a;
+--c1:#3987e5;--c2:#d95926;--c3:#199e70;--c4:#c98500;--c5:#d55181;--c6:#008300;--c7:#9085e9;--c8:#e66767;--neg:#e66767;--pos:#3987e5}
+*{box-sizing:border-box}html,body{margin:0}body{font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+.viz-root{background:var(--page);color:var(--text-primary);min-height:100vh;padding:28px clamp(14px,3vw,40px) 60px;line-height:1.45;overflow-x:hidden}
+.wrap{max-width:1240px;margin:0 auto}
+header h1{font-size:clamp(22px,2.6vw,30px);margin:0 0 6px;letter-spacing:-.01em}
+.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--text-secondary);margin-bottom:8px}
+.question{font-size:16px;color:var(--text-secondary);max-width:920px;margin:0 0 4px}
+.meta{font-size:12px;color:var(--muted);margin-top:8px}.meta a{color:inherit}
+.theme-btn{float:right;border:1px solid var(--border);background:var(--surface-1);color:var(--text-primary);border-radius:8px;padding:6px 10px;font:inherit;font-size:13px;cursor:pointer}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin:22px 0 18px}
+.tile{background:var(--surface-1);border:1px solid var(--border);border-radius:12px;padding:14px 16px}
+.tile .lab{font-size:12px;color:var(--text-secondary)}.tile .val{font-size:27px;font-weight:650;margin:4px 0 2px;letter-spacing:-.01em}.tile .sub{font-size:12px;color:var(--muted)}
+.filters{display:flex;flex-wrap:wrap;gap:18px;align-items:center;background:var(--surface-1);border:1px solid var(--border);border-radius:12px;padding:10px 14px;margin-bottom:18px;position:sticky;top:0;z-index:5}
+.filters .grp{display:flex;gap:6px;align-items:center;flex-wrap:wrap}.filters .gl{font-size:12px;color:var(--text-secondary);margin-right:4px}
+.pill{border:1px solid var(--border);background:transparent;color:var(--text-primary);border-radius:999px;padding:5px 11px;font:inherit;font-size:13px;cursor:pointer}
+.pill[aria-pressed="true"]{background:var(--chip);font-weight:600}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
+.card{background:var(--surface-1);border:1px solid var(--border);border-radius:12px;padding:16px 16px 12px;grid-column:span 6;min-width:0}
+.card.wide{grid-column:span 12}@media (max-width:900px){.card{grid-column:span 12}}
+.card h2{font-size:15px;margin:0 0 2px}.card .takeaway{font-size:13px;color:var(--text-secondary);margin:0 0 10px}
+.card .foot{font-size:11px;color:var(--muted);margin-top:6px}.card .tools{float:right}
+.card > div[id^="t"]{overflow-x:auto}
+.linkbtn{background:none;border:none;color:var(--text-secondary);font:inherit;font-size:12px;cursor:pointer;text-decoration:underline;padding:0}
+svg{display:block;width:100%;height:auto;overflow:visible}
+svg text{fill:var(--text-secondary);font-size:11px;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+svg .lbl{fill:var(--text-primary);font-size:11.5px;font-weight:600}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:12px;color:var(--text-secondary);margin:2px 0 6px}
+.legend span{display:inline-flex;align-items:center;gap:6px}.legend i{display:inline-block;width:14px;height:3px;border-radius:2px}.legend i.box{height:10px;width:10px;border-radius:2px}
+table{border-collapse:collapse;width:100%;font-size:12.5px}th,td{text-align:left;padding:6px 8px;border-bottom:1px solid var(--grid);vertical-align:top}th{color:var(--text-secondary);font-weight:600}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+.tableview{display:none;max-height:320px;overflow:auto;margin-top:8px}.tableview.on{display:block}
+.chip{display:inline-block;border:1px solid var(--border);border-radius:999px;padding:1px 8px;font-size:11.5px;white-space:nowrap;background:var(--chip)}
+.tip{position:fixed;pointer-events:none;background:var(--surface-1);color:var(--text-primary);border:1px solid var(--border);border-radius:8px;padding:8px 10px;font-size:12px;box-shadow:0 4px 18px rgba(0,0,0,.12);z-index:50;display:none;min-width:150px;max-width:300px}
+.tip .t{color:var(--text-secondary);margin-bottom:4px}.tip .r{display:flex;align-items:center;gap:8px;justify-content:space-between}.tip .r i{display:inline-block;width:12px;height:3px;border-radius:2px;margin-right:6px}.tip .r b{font-variant-numeric:tabular-nums}
+details{background:var(--surface-1);border:1px solid var(--border);border-radius:12px;padding:12px 16px;margin-top:14px}details summary{cursor:pointer;font-weight:600;font-size:14px}
+.small{font-size:12.5px;color:var(--text-secondary)}.hit{fill:transparent}.mark:hover{opacity:.82}
+.ann line{stroke:var(--muted);stroke-dasharray:3 3}
+section.sec{margin:26px 0 10px}section.sec h3{font-size:13px;text-transform:uppercase;letter-spacing:.07em;color:var(--text-secondary);margin:0}
+.callout{border:1px solid var(--border);background:var(--chip);border-radius:10px;padding:10px 12px;font-size:13px;margin:8px 0}
+</style>
+</head>
+<body>
+<div class="viz-root"><div class="wrap">
+<header>
+  <button class="theme-btn" id="themeBtn" type="button" aria-label="Toggle dark mode">Dark / light</button>
+  <div class="eyebrow">Market analytics &amp; competitive dashboard · GenAI in IT services · companion to the <a href="https://lokpriye96.github.io/ai-ci-tracker/" style="color:inherit">AI-Powered CI Tracker</a></div>
+  <h1>AI is now a $16 bn business for eight IT services leaders, but at TCS and Infosys it is replacing core revenue, not adding to it</h1>
+  <p class="question"><b>Business question:</b> How big is the GenAI services revenue pool, who is actually monetising it, and is AI growing IT services firms or eating into their core business?</p>
+  <div class="meta">Eight firms: Accenture, TCS, Infosys, HCLTech, Cognizant, Capgemini, Wipro, Tech Mahindra. Latest quarter = calendar Q3 2026 (Accenture Q4 FY26, Jun–Aug). USD; run-rate = quarter × 4. Every AI figure carries an evidence grade: <b>A</b> company-reported · <b>B</b> derived from a company figure · <b>C</b> estimate with stated range. <span id="asof"></span> · <a href="https://github.com/lokpriye96/genai-services-market-analytics">Code, data &amp; method</a></div>
+</header>
+<div class="kpis" id="kpis"></div>
+<div class="filters" role="group" aria-label="Dashboard filters">
+  <div class="grp" id="caseFilter"><span class="gl">AI estimate case</span></div>
+  <div class="grp" id="scFilter"><span class="gl">2030 scenario</span></div>
+</div>
+
+<section class="sec"><h3>1 · Market size &amp; share</h3></section>
+<div class="grid">
+  <div class="card">
+    <h2>Sizing the AI services market: three lenses disagree by 4×</h2>
+    <p class="takeaway" id="tkSizing"></p>
+    <div id="cSizing"></div>
+    <div class="foot">Gartner (Sep-2026) counts AI embedded in ordinary projects ("indirect AI services"). The bottom-up figure counts only revenue vendors label as AI. Infosys's range has no stated year.</div>
+  </div>
+  <div class="card">
+    <div class="tools"><button class="linkbtn" data-table="tShare">Table</button></div>
+    <h2>Revenue run-rate and growth: the eight are growing slower than the market</h2>
+    <p class="takeaway" id="tkShare"></p>
+    <div id="cShare"></div>
+    <div class="tableview" id="tShare"></div>
+    <div class="foot">Bars = annualised revenue (USD bn); label = YoY growth in constant currency. Capgemini includes the WNS acquisition. Market line: Gartner IT services spending growth 2026.</div>
+  </div>
+</div>
+
+<section class="sec"><h3>2 · Who is monetising AI</h3></section>
+<div class="grid">
+  <div class="card">
+    <div class="tools"><button class="linkbtn" data-table="tPool">Table</button></div>
+    <h2>AI revenue run-rate by firm, with evidence grade</h2>
+    <p class="takeaway" id="tkPool"></p>
+    <div id="cPool"></div>
+    <div class="tableview" id="tPool"></div>
+    <div class="foot">Bar = selected case; whisker = low–high range. Solid = A/B (company figure); light = C (estimate). Switch Low / Mid / High in the filter bar.</div>
+  </div>
+  <div class="card">
+    <div class="tools"><button class="linkbtn" data-table="tTs">Table</button></div>
+    <h2>Disclosed AI revenue over time (annualised, USD bn)</h2>
+    <p class="takeaway" id="tkTs"></p>
+    <div class="legend" id="lgTs"></div>
+    <div id="cTs"></div>
+    <div class="tableview" id="tTs"></div>
+    <div class="foot">TCS: annualised AI services revenue. HCLTech: advanced AI quarter × 4. Infosys: reported AI share × revenue × 4. Accenture: FY totals, then Q1 FY26 × 4 (last quarterly figure found). Definitions differ; compare slopes, not levels.</div>
+  </div>
+</div>
+
+<section class="sec"><h3>3 · Is AI adding or replacing? (the AI-deflation test)</h3></section>
+<div class="grid">
+  <div class="card wide">
+    <div class="tools"><button class="linkbtn" data-table="tCore">Table</button></div>
+    <h2>H2 · Core (non-AI) revenue growth, annualised: shrinking at every Indian-heritage discloser</h2>
+    <p class="takeaway" id="tkCore"></p>
+    <div class="legend" id="lgCore"></div>
+    <div id="cCore"></div>
+    <div class="tableview" id="tCore"></div>
+    <div class="foot">Core = total revenue − AI revenue, at two points per firm (TCS, Infosys: Q3 FY26 → Q2 FY27; HCLTech: YoY; Accenture: FY24 → FY25). Some "AI revenue" may be existing work relabelled; no firm discloses that split.</div>
+  </div>
+</div>
+
+<section class="sec"><h3>4 · Competitive positioning</h3></section>
+<div class="grid">
+  <div class="card">
+    <h2>H3 · More AI revenue ≠ more growth</h2>
+    <p class="takeaway" id="tkPos"></p>
+    <div id="cPos"></div>
+    <div class="foot">x: AI share of revenue (selected case). y: revenue growth YoY, constant currency. Bubble area: revenue. Hollow = grade C estimate.</div>
+  </div>
+  <div class="card">
+    <h2>H5 · Project 1 announcement momentum vs growth</h2>
+    <p class="takeaway" id="tkMom"></p>
+    <div id="cMom"></div>
+    <div class="foot">x: verified CI events per firm in Project 1 (Jun-2025 to Nov-2026: partnerships, acquisitions, deals, financial disclosures). y: revenue growth YoY CC.</div>
+  </div>
+  <div class="card">
+    <div class="tools"><button class="linkbtn" data-table="tProd">Table</button></div>
+    <h2>H4 · Revenue vs headcount growth (YoY)</h2>
+    <p class="takeaway" id="tkProd"></p>
+    <div class="legend" id="lgProd"></div>
+    <div id="cProd"></div>
+    <div class="tableview" id="tProd"></div>
+    <div class="foot">Capgemini's headcount includes WNS (acquired). A firm "decouples" when revenue grows ≥ 2pp faster than headcount.</div>
+  </div>
+  <div class="card">
+    <h2>Scorecard</h2>
+    <div id="tScore"></div>
+  </div>
+</div>
+
+<section class="sec"><h3>5 · 2027–2030 scenarios for the eight firms</h3></section>
+<div class="grid">
+  <div class="card">
+    <div class="tools"><button class="linkbtn" data-table="tScen">Table</button></div>
+    <h2>Total revenue under three scenarios (USD bn)</h2>
+    <p class="takeaway" id="tkScen"></p>
+    <div class="legend" id="lgScen"></div>
+    <div id="cScen"></div>
+    <div class="tableview" id="tScen"></div>
+    <div class="foot" id="ftScen"></div>
+  </div>
+  <div class="card">
+    <h2>AI vs core revenue: <span id="scName"></span> scenario (USD bn)</h2>
+    <p class="takeaway" id="tkMix"></p>
+    <div class="legend" id="lgMix"></div>
+    <div id="cMix"></div>
+    <div class="foot">Stacked bars: AI + core = total. Label above each bar = AI growth needed that year just to keep total revenue flat.</div>
+  </div>
+</div>
+
+<section class="sec"><h3>6 · Hypotheses tested</h3></section>
+<div class="card wide" style="grid-column:auto"><div id="tHyp"></div></div>
+
+<details><summary>How each firm's AI number was built (assumptions)</summary><div id="tAssum" class="small"></div></details>
+<details>
+  <summary>Limitations &amp; how to read this</summary>
+  <ul class="small">
+    <li><b>No common definition of "AI revenue".</b> TCS reports "AI services", Infosys "AI-first" revenue share, HCLTech "advanced AI" (incl. related data work), Accenture "advanced AI" (excl. data and classical AI). Levels are not strictly comparable; that is why every figure carries a grade and a definition.</li>
+    <li><b>Relabelling risk.</b> Part of reported AI growth may be existing work reclassified as AI. The "core shrinking" result (H2) is therefore an upper bound on true cannibalisation.</li>
+    <li><b>Estimates for non-disclosers.</b> Cognizant, Wipro and Tech Mahindra disclose no AI revenue; Capgemini gives only a share of bookings; Accenture's last quarterly AI revenue found is Q1 FY26. Their figures are ranges, shown as such.</li>
+    <li><b>Run-rate basis.</b> Latest quarter × 4 ignores seasonality. Accenture's quarter is Jun–Aug, others Jul–Sep.</li>
+    <li><b>Currency and M&amp;A.</b> Capgemini converted at one EUR/USD rate for both quarters; its growth and headcount include WNS. HCLTech's latest USD revenue is derived from its reported growth rate.</li>
+    <li><b>Small sample.</b> Rank correlations use 8 firms (4 for disclosers); treat them as directional, not statistical proof.</li>
+    <li><b>Scenarios are not forecasts.</b> Levers are calibrated on observed 2025–26 AI and core growth and on published deflation estimates (Kotak 3–3.5%/yr; HCLTech 2–3%).</li>
+  </ul>
+</details>
+<details><summary>Sources</summary><div id="tSources" class="small"></div></details>
+<p class="meta">Independent portfolio project by Utkarsh Saxena. Public data only; not investment advice. Built with Python, SQLite, Excel and Power BI; this web view is hand-coded HTML/SVG.</p>
+</div>
+<div class="tip" id="tip" role="tooltip"></div>
+</div>
+<script>
+const D = {
+ "as_of": "2026-11-12",
+ "market_share": [
+  {
+   "company": "Accenture",
+   "hq_group": "Global",
+   "revenue_runrate_usd_bn": 74.72,
+   "share_of_eight_pct": 35.96,
+   "share_of_gartner_it_services_pct": 4.0,
+   "size_rank": 1,
+   "yoy_usd_pct": 6.14,
+   "yoy_cc_pct": 7.0,
+   "eight_firm_yoy_usd_pct": 5.12,
+   "gartner_it_services_growth_2026_pct": 8.69
+  },
+  {
+   "company": "TCS",
+   "hq_group": "India-heritage",
+   "revenue_runrate_usd_bn": 30.57,
+   "share_of_eight_pct": 14.71,
+   "share_of_gartner_it_services_pct": 1.64,
+   "size_rank": 2,
+   "yoy_usd_pct": 2.4,
+   "yoy_cc_pct": 2.8,
+   "eight_firm_yoy_usd_pct": 5.12,
+   "gartner_it_services_growth_2026_pct": 8.69
+  },
+  {
+   "company": "Capgemini",
+   "hq_group": "Global",
+   "revenue_runrate_usd_bn": 27.12,
+   "share_of_eight_pct": 13.05,
+   "share_of_gartner_it_services_pct": 1.45,
+   "size_rank": 3,
+   "yoy_usd_pct": 12.61,
+   "yoy_cc_pct": 11.7,
+   "eight_firm_yoy_usd_pct": 5.12,
+   "gartner_it_services_growth_2026_pct": 8.69
+  },
+  {
+   "company": "Cognizant",
+   "hq_group": "Global",
+   "revenue_runrate_usd_bn": 22.66,
+   "share_of_eight_pct": 10.9,
+   "share_of_gartner_it_services_pct": 1.21,
+   "size_rank": 4,
+   "yoy_usd_pct": 4.6,
+   "yoy_cc_pct": 4.8,
+   "eight_firm_yoy_usd_pct": 5.12,
+   "gartner_it_services_growth_2026_pct": 8.69
+  },
+  {
+   "company": "Infosys",
+   "hq_group": "India-heritage",
+   "revenue_runrate_usd_bn": 20.58,
+   "share_of_eight_pct": 9.91,
+   "share_of_gartner_it_services_pct": 1.1,
+   "size_rank": 5,
+   "yoy_usd_pct": 1.36,
+   "yoy_cc_pct": 1.5,
+   "eight_firm_yoy_usd_pct": 5.12,
+   "gartner_it_services_growth_2026_pct": 8.69
+  },
+  {
+   "company": "HCLTech",
+   "hq_group": "India-heritage",
+   "revenue_runrate_usd_bn": 14.9,
+   "share_of_eight_pct": 7.17,
+   "share_of_gartner_it_services_pct": 0.8,
+   "size_rank": 6,
+   "yoy_usd_pct": 2.19,
+   "yoy_cc_pct": 2.6,
+   "eight_firm_yoy_usd_pct": 5.12,
+   "gartner_it_services_growth_2026_pct": 8.69
+  },
+  {
+   "company": "Wipro",
+   "hq_group": "India-heritage",
+   "revenue_runrate_usd_bn": 10.45,
+   "share_of_eight_pct": 5.03,
+   "share_of_gartner_it_services_pct": 0.56,
+   "size_rank": 7,
+   "yoy_usd_pct": 0.3,
+   "yoy_cc_pct": 0.6,
+   "eight_firm_yoy_usd_pct": 5.12,
+   "gartner_it_services_growth_2026_pct": 8.69
+  },
+  {
+   "company": "Tech Mahindra",
+   "hq_group": "India-heritage",
+   "revenue_runrate_usd_bn": 6.77,
+   "share_of_eight_pct": 3.26,
+   "share_of_gartner_it_services_pct": 0.36,
+   "size_rank": 8,
+   "yoy_usd_pct": 6.54,
+   "yoy_cc_pct": 7.2,
+   "eight_firm_yoy_usd_pct": 5.12,
+   "gartner_it_services_growth_2026_pct": 8.69
+  }
+ ],
+ "ai_pool": [
+  {
+   "company": "Accenture",
+   "evidence_grade": "B",
+   "ai_runrate_mid_usd_bn": 5.5,
+   "ai_runrate_low_usd_bn": 4.4,
+   "ai_runrate_high_usd_bn": 6.6,
+   "ai_share_of_revenue_pct": 7.4,
+   "share_of_ai_pool_pct": 34.8,
+   "share_of_revenue_pct": 36.0,
+   "ai_share_index": 0.97,
+   "pool_mid_usd_bn": 15.8,
+   "pool_low_usd_bn": 13.22,
+   "pool_high_usd_bn": 18.91,
+   "pool_pct_company_based": 73.7
+  },
+  {
+   "company": "TCS",
+   "evidence_grade": "A",
+   "ai_runrate_mid_usd_bn": 3.1,
+   "ai_runrate_low_usd_bn": 3.1,
+   "ai_runrate_high_usd_bn": 3.1,
+   "ai_share_of_revenue_pct": 10.1,
+   "share_of_ai_pool_pct": 19.6,
+   "share_of_revenue_pct": 14.7,
+   "ai_share_index": 1.33,
+   "pool_mid_usd_bn": 15.8,
+   "pool_low_usd_bn": 13.22,
+   "pool_high_usd_bn": 18.91,
+   "pool_pct_company_based": 73.7
+  },
+  {
+   "company": "Capgemini",
+   "evidence_grade": "C",
+   "ai_runrate_mid_usd_bn": 2.17,
+   "ai_runrate_low_usd_bn": 1.49,
+   "ai_runrate_high_usd_bn": 2.98,
+   "ai_share_of_revenue_pct": 8.0,
+   "share_of_ai_pool_pct": 13.7,
+   "share_of_revenue_pct": 13.1,
+   "ai_share_index": 1.05,
+   "pool_mid_usd_bn": 15.8,
+   "pool_low_usd_bn": 13.22,
+   "pool_high_usd_bn": 18.91,
+   "pool_pct_company_based": 73.7
+  },
+  {
+   "company": "Infosys",
+   "evidence_grade": "B",
+   "ai_runrate_mid_usd_bn": 2.16,
+   "ai_runrate_low_usd_bn": 2.16,
+   "ai_runrate_high_usd_bn": 2.16,
+   "ai_share_of_revenue_pct": 10.5,
+   "share_of_ai_pool_pct": 13.7,
+   "share_of_revenue_pct": 9.9,
+   "ai_share_index": 1.38,
+   "pool_mid_usd_bn": 15.8,
+   "pool_low_usd_bn": 13.22,
+   "pool_high_usd_bn": 18.91,
+   "pool_pct_company_based": 73.7
+  },
+  {
+   "company": "Cognizant",
+   "evidence_grade": "C",
+   "ai_runrate_mid_usd_bn": 1.13,
+   "ai_runrate_low_usd_bn": 0.68,
+   "ai_runrate_high_usd_bn": 1.81,
+   "ai_share_of_revenue_pct": 5.0,
+   "share_of_ai_pool_pct": 7.2,
+   "share_of_revenue_pct": 10.9,
+   "ai_share_index": 0.66,
+   "pool_mid_usd_bn": 15.8,
+   "pool_low_usd_bn": 13.22,
+   "pool_high_usd_bn": 18.91,
+   "pool_pct_company_based": 73.7
+  },
+  {
+   "company": "HCLTech",
+   "evidence_grade": "A",
+   "ai_runrate_mid_usd_bn": 0.88,
+   "ai_runrate_low_usd_bn": 0.88,
+   "ai_runrate_high_usd_bn": 0.88,
+   "ai_share_of_revenue_pct": 5.9,
+   "share_of_ai_pool_pct": 5.5,
+   "share_of_revenue_pct": 7.2,
+   "ai_share_index": 0.77,
+   "pool_mid_usd_bn": 15.8,
+   "pool_low_usd_bn": 13.22,
+   "pool_high_usd_bn": 18.91,
+   "pool_pct_company_based": 73.7
+  },
+  {
+   "company": "Wipro",
+   "evidence_grade": "C",
+   "ai_runrate_mid_usd_bn": 0.52,
+   "ai_runrate_low_usd_bn": 0.31,
+   "ai_runrate_high_usd_bn": 0.84,
+   "ai_share_of_revenue_pct": 5.0,
+   "share_of_ai_pool_pct": 3.3,
+   "share_of_revenue_pct": 5.0,
+   "ai_share_index": 0.66,
+   "pool_mid_usd_bn": 15.8,
+   "pool_low_usd_bn": 13.22,
+   "pool_high_usd_bn": 18.91,
+   "pool_pct_company_based": 73.7
+  },
+  {
+   "company": "Tech Mahindra",
+   "evidence_grade": "C",
+   "ai_runrate_mid_usd_bn": 0.34,
+   "ai_runrate_low_usd_bn": 0.2,
+   "ai_runrate_high_usd_bn": 0.54,
+   "ai_share_of_revenue_pct": 5.0,
+   "share_of_ai_pool_pct": 2.1,
+   "share_of_revenue_pct": 3.3,
+   "ai_share_index": 0.66,
+   "pool_mid_usd_bn": 15.8,
+   "pool_low_usd_bn": 13.22,
+   "pool_high_usd_bn": 18.91,
+   "pool_pct_company_based": 73.7
+  }
+ ],
+ "core_vs_ai": [
+  {
+   "company": "Infosys",
+   "window": "Q3 FY26 -> Q2 FY27",
+   "revenue_start_usd_m": 5099.0,
+   "ai_start_usd_m": 280.0,
+   "core_start_usd_m": 4819.0,
+   "revenue_end_usd_m": 5145.0,
+   "ai_end_usd_m": 540.0,
+   "core_end_usd_m": 4605.0,
+   "ai_share_start_pct": 5.5,
+   "ai_share_end_pct": 10.5,
+   "total_growth_annualised_pct": 1.2,
+   "ai_growth_annualised_pct": 139.7,
+   "core_growth_annualised_pct": -5.9,
+   "core_contribution_to_change_pct": -465.0
+  },
+  {
+   "company": "TCS",
+   "window": "Q3 FY26 -> Q2 FY27",
+   "revenue_start_usd_m": 7509.0,
+   "ai_start_usd_m": 450.0,
+   "core_start_usd_m": 7059.0,
+   "revenue_end_usd_m": 7642.0,
+   "ai_end_usd_m": 775.0,
+   "core_end_usd_m": 6867.0,
+   "ai_share_start_pct": 6.0,
+   "ai_share_end_pct": 10.1,
+   "total_growth_annualised_pct": 2.4,
+   "ai_growth_annualised_pct": 106.4,
+   "core_growth_annualised_pct": -3.6,
+   "core_contribution_to_change_pct": -144.0
+  },
+  {
+   "company": "HCLTech",
+   "window": "Q2 FY26 -> Q2 FY27",
+   "revenue_start_usd_m": 3644.0,
+   "ai_start_usd_m": 123.0,
+   "core_start_usd_m": 3521.0,
+   "revenue_end_usd_m": 3724.0,
+   "ai_end_usd_m": 219.0,
+   "core_end_usd_m": 3505.0,
+   "ai_share_start_pct": 3.4,
+   "ai_share_end_pct": 5.9,
+   "total_growth_annualised_pct": 2.2,
+   "ai_growth_annualised_pct": 78.0,
+   "core_growth_annualised_pct": -0.5,
+   "core_contribution_to_change_pct": -20.0
+  },
+  {
+   "company": "Accenture",
+   "window": "FY24 -> FY25",
+   "revenue_start_usd_m": 64900.0,
+   "ai_start_usd_m": 900.0,
+   "core_start_usd_m": 64000.0,
+   "revenue_end_usd_m": 69700.0,
+   "ai_end_usd_m": 2700.0,
+   "core_end_usd_m": 67000.0,
+   "ai_share_start_pct": 1.4,
+   "ai_share_end_pct": 3.9,
+   "total_growth_annualised_pct": 7.4,
+   "ai_growth_annualised_pct": 200.0,
+   "core_growth_annualised_pct": 4.7,
+   "core_contribution_to_change_pct": 63.0
+  }
+ ],
+ "productivity": [
+  {
+   "company": "Tech Mahindra",
+   "hq_group": "India-heritage",
+   "revenue_yoy_usd_pct": 6.54,
+   "headcount_yoy_pct": -0.33,
+   "decoupling_gap_pp": 6.88,
+   "headcount": 152206,
+   "net_adds": -508,
+   "rev_per_employee_k_usd": 44.5,
+   "rev_per_employee_yoy_pct": 6.9,
+   "pattern": "Decoupling"
+  },
+  {
+   "company": "Cognizant",
+   "hq_group": "Global",
+   "revenue_yoy_usd_pct": 4.6,
+   "headcount_yoy_pct": 2.89,
+   "decoupling_gap_pp": 1.71,
+   "headcount": 359900,
+   "net_adds": 10100,
+   "rev_per_employee_k_usd": 63.0,
+   "rev_per_employee_yoy_pct": 1.66,
+   "pattern": "Weak decoupling"
+  },
+  {
+   "company": "Accenture",
+   "hq_group": "Global",
+   "revenue_yoy_usd_pct": 6.14,
+   "headcount_yoy_pct": 4.49,
+   "decoupling_gap_pp": 1.64,
+   "headcount": 814000,
+   "net_adds": 35000,
+   "rev_per_employee_k_usd": 91.8,
+   "rev_per_employee_yoy_pct": 1.57,
+   "pattern": "Weak decoupling"
+  },
+  {
+   "company": "TCS",
+   "hq_group": "India-heritage",
+   "revenue_yoy_usd_pct": 2.4,
+   "headcount_yoy_pct": 0.8,
+   "decoupling_gap_pp": 1.6,
+   "headcount": 598056,
+   "net_adds": 4742,
+   "rev_per_employee_k_usd": 51.1,
+   "rev_per_employee_yoy_pct": 1.59,
+   "pattern": "Weak decoupling"
+  },
+  {
+   "company": "Infosys",
+   "hq_group": "India-heritage",
+   "revenue_yoy_usd_pct": 1.36,
+   "headcount_yoy_pct": 0.17,
+   "decoupling_gap_pp": 1.19,
+   "headcount": 332542,
+   "net_adds": 551,
+   "rev_per_employee_k_usd": 61.9,
+   "rev_per_employee_yoy_pct": 1.19,
+   "pattern": "Weak decoupling"
+  },
+  {
+   "company": "HCLTech",
+   "hq_group": "India-heritage",
+   "revenue_yoy_usd_pct": 2.19,
+   "headcount_yoy_pct": 1.63,
+   "decoupling_gap_pp": 0.56,
+   "headcount": 230339,
+   "net_adds": 3699,
+   "rev_per_employee_k_usd": 64.7,
+   "rev_per_employee_yoy_pct": 0.55,
+   "pattern": "Weak decoupling"
+  },
+  {
+   "company": "Wipro",
+   "hq_group": "India-heritage",
+   "revenue_yoy_usd_pct": 0.3,
+   "headcount_yoy_pct": 0.35,
+   "decoupling_gap_pp": -0.05,
+   "headcount": 236328,
+   "net_adds": 836,
+   "rev_per_employee_k_usd": 44.2,
+   "rev_per_employee_yoy_pct": -0.06,
+   "pattern": "Headcount outgrowing revenue"
+  },
+  {
+   "company": "Capgemini",
+   "hq_group": "Global",
+   "revenue_yoy_usd_pct": 12.61,
+   "headcount_yoy_pct": 17.7,
+   "decoupling_gap_pp": -5.1,
+   "headcount": 417500,
+   "net_adds": 62800,
+   "rev_per_employee_k_usd": 65.0,
+   "rev_per_employee_yoy_pct": -4.33,
+   "pattern": "Headcount outgrowing revenue"
+  }
+ ],
+ "momentum": [
+  {
+   "company": "HCLTech",
+   "p1_events": 10,
+   "partnerships": 1,
+   "frontier_lab_events": 1,
+   "acquisitions": 2,
+   "deals_gcc": 2,
+   "frontier_labs": "OpenAI",
+   "ai_disclosure_grade": "A",
+   "ai_share_of_revenue_pct": 5.9,
+   "revenue_yoy_cc_pct": 2.6,
+   "rank_momentum": 1,
+   "rank_ai_intensity": 5,
+   "rank_growth": 6
+  },
+  {
+   "company": "TCS",
+   "p1_events": 10,
+   "partnerships": 6,
+   "frontier_lab_events": 3,
+   "acquisitions": 2,
+   "deals_gcc": 1,
+   "frontier_labs": "OpenAI,Mistral,Anthropic",
+   "ai_disclosure_grade": "A",
+   "ai_share_of_revenue_pct": 10.1,
+   "revenue_yoy_cc_pct": 2.8,
+   "rank_momentum": 1,
+   "rank_ai_intensity": 2,
+   "rank_growth": 5
+  },
+  {
+   "company": "Wipro",
+   "p1_events": 10,
+   "partnerships": 3,
+   "frontier_lab_events": 0,
+   "acquisitions": 3,
+   "deals_gcc": 0,
+   "frontier_labs": "-",
+   "ai_disclosure_grade": "C",
+   "ai_share_of_revenue_pct": 5.0,
+   "revenue_yoy_cc_pct": 0.6,
+   "rank_momentum": 1,
+   "rank_ai_intensity": 6,
+   "rank_growth": 8
+  },
+  {
+   "company": "Cognizant",
+   "p1_events": 9,
+   "partnerships": 3,
+   "frontier_lab_events": 1,
+   "acquisitions": 2,
+   "deals_gcc": 0,
+   "frontier_labs": "OpenAI",
+   "ai_disclosure_grade": "C",
+   "ai_share_of_revenue_pct": 5.0,
+   "revenue_yoy_cc_pct": 4.8,
+   "rank_momentum": 4,
+   "rank_ai_intensity": 6,
+   "rank_growth": 4
+  },
+  {
+   "company": "Accenture",
+   "p1_events": 8,
+   "partnerships": 3,
+   "frontier_lab_events": 2,
+   "acquisitions": 4,
+   "deals_gcc": 0,
+   "frontier_labs": "OpenAI,Anthropic",
+   "ai_disclosure_grade": "B",
+   "ai_share_of_revenue_pct": 7.4,
+   "revenue_yoy_cc_pct": 7.0,
+   "rank_momentum": 5,
+   "rank_ai_intensity": 4,
+   "rank_growth": 3
+  },
+  {
+   "company": "Capgemini",
+   "p1_events": 8,
+   "partnerships": 2,
+   "frontier_lab_events": 0,
+   "acquisitions": 2,
+   "deals_gcc": 1,
+   "frontier_labs": "-",
+   "ai_disclosure_grade": "C",
+   "ai_share_of_revenue_pct": 8.0,
+   "revenue_yoy_cc_pct": 11.7,
+   "rank_momentum": 5,
+   "rank_ai_intensity": 3,
+   "rank_growth": 1
+  },
+  {
+   "company": "Infosys",
+   "p1_events": 8,
+   "partnerships": 3,
+   "frontier_lab_events": 1,
+   "acquisitions": 2,
+   "deals_gcc": 1,
+   "frontier_labs": "Anthropic",
+   "ai_disclosure_grade": "B",
+   "ai_share_of_revenue_pct": 10.5,
+   "revenue_yoy_cc_pct": 1.5,
+   "rank_momentum": 5,
+   "rank_ai_intensity": 1,
+   "rank_growth": 7
+  },
+  {
+   "company": "Tech Mahindra",
+   "p1_events": 7,
+   "partnerships": 3,
+   "frontier_lab_events": 0,
+   "acquisitions": 1,
+   "deals_gcc": 0,
+   "frontier_labs": "-",
+   "ai_disclosure_grade": "C",
+   "ai_share_of_revenue_pct": 5.0,
+   "revenue_yoy_cc_pct": 7.2,
+   "rank_momentum": 8,
+   "rank_ai_intensity": 6,
+   "rank_growth": 2
+  }
+ ],
+ "scorecard": [
+  {
+   "company": "Accenture",
+   "hq_group": "Global",
+   "revenue_runrate_usd_bn": 74.7,
+   "growth_cc_pct": 7.0,
+   "ai_runrate_usd_bn": 5.5,
+   "ai_share_pct": 7.4,
+   "ai_grade": "B",
+   "book_to_bill": 1.19,
+   "bookings_basis": "new bookings (quarter)",
+   "rev_per_employee_k_usd": 91.8,
+   "headcount_yoy_pct": 4.5,
+   "p1_events": 8,
+   "p1_frontier_lab_events": 2
+  },
+  {
+   "company": "TCS",
+   "hq_group": "India-heritage",
+   "revenue_runrate_usd_bn": 30.6,
+   "growth_cc_pct": 2.8,
+   "ai_runrate_usd_bn": 3.1,
+   "ai_share_pct": 10.1,
+   "ai_grade": "A",
+   "book_to_bill": 1.26,
+   "bookings_basis": "TCV (quarter)",
+   "rev_per_employee_k_usd": 51.1,
+   "headcount_yoy_pct": 0.8,
+   "p1_events": 10,
+   "p1_frontier_lab_events": 3
+  },
+  {
+   "company": "Capgemini",
+   "hq_group": "Global",
+   "revenue_runrate_usd_bn": 27.1,
+   "growth_cc_pct": 11.7,
+   "ai_runrate_usd_bn": 2.17,
+   "ai_share_pct": 8.0,
+   "ai_grade": "C",
+   "book_to_bill": 0.89,
+   "bookings_basis": "converted: EUR 5401 / 0.8957",
+   "rev_per_employee_k_usd": 65.0,
+   "headcount_yoy_pct": 17.7,
+   "p1_events": 8,
+   "p1_frontier_lab_events": 0
+  },
+  {
+   "company": "Cognizant",
+   "hq_group": "Global",
+   "revenue_runrate_usd_bn": 22.7,
+   "growth_cc_pct": 4.8,
+   "ai_runrate_usd_bn": 1.13,
+   "ai_share_pct": 5.0,
+   "ai_grade": "C",
+   "book_to_bill": 1.27,
+   "bookings_basis": "derived: trailing-12-month bookings 28700 / 4",
+   "rev_per_employee_k_usd": 63.0,
+   "headcount_yoy_pct": 2.9,
+   "p1_events": 9,
+   "p1_frontier_lab_events": 1
+  },
+  {
+   "company": "Infosys",
+   "hq_group": "India-heritage",
+   "revenue_runrate_usd_bn": 20.6,
+   "growth_cc_pct": 1.5,
+   "ai_runrate_usd_bn": 2.16,
+   "ai_share_pct": 10.5,
+   "ai_grade": "B",
+   "book_to_bill": 1.01,
+   "bookings_basis": "large-deal TCV (quarter)",
+   "rev_per_employee_k_usd": 61.9,
+   "headcount_yoy_pct": 0.2,
+   "p1_events": 8,
+   "p1_frontier_lab_events": 1
+  },
+  {
+   "company": "HCLTech",
+   "hq_group": "India-heritage",
+   "revenue_runrate_usd_bn": 14.9,
+   "growth_cc_pct": 2.6,
+   "ai_runrate_usd_bn": 0.88,
+   "ai_share_pct": 5.9,
+   "ai_grade": "A",
+   "book_to_bill": 0.88,
+   "bookings_basis": "new bookings (quarter)",
+   "rev_per_employee_k_usd": 64.7,
+   "headcount_yoy_pct": 1.6,
+   "p1_events": 10,
+   "p1_frontier_lab_events": 1
+  },
+  {
+   "company": "Wipro",
+   "hq_group": "India-heritage",
+   "revenue_runrate_usd_bn": 10.4,
+   "growth_cc_pct": 0.6,
+   "ai_runrate_usd_bn": 0.52,
+   "ai_share_pct": 5.0,
+   "ai_grade": "C",
+   "book_to_bill": 0.99,
+   "bookings_basis": "total bookings (quarter)",
+   "rev_per_employee_k_usd": 44.2,
+   "headcount_yoy_pct": 0.4,
+   "p1_events": 10,
+   "p1_frontier_lab_events": 0
+  },
+  {
+   "company": "Tech Mahindra",
+   "hq_group": "India-heritage",
+   "revenue_runrate_usd_bn": 6.8,
+   "growth_cc_pct": 7.2,
+   "ai_runrate_usd_bn": 0.34,
+   "ai_share_pct": 5.0,
+   "ai_grade": "C",
+   "book_to_bill": 0.6,
+   "bookings_basis": "TCV (quarter)",
+   "rev_per_employee_k_usd": 44.5,
+   "headcount_yoy_pct": -0.3,
+   "p1_events": 7,
+   "p1_frontier_lab_events": 0
+  }
+ ],
+ "ai_timeseries": [
+  {
+   "company": "Accenture",
+   "period_label": "FY24 (Sep-23 to Aug-24)",
+   "quarter_end": "2024-08-31",
+   "metric": "ai_revenue_fy",
+   "value": 900.0,
+   "unit": "USD m",
+   "company_definition": "Advanced AI (GenAI + agentic + physical AI); excludes data and classical AI",
+   "evidence_grade": "B",
+   "source_id": "ACN_Q4FY25_CALL",
+   "note": "Derived: FY25 revenue of $2.7 bn 'tripled' over FY24",
+   "ai_annualised_usd_m": 900.0
+  },
+  {
+   "company": "Accenture",
+   "period_label": "FY25 (Sep-24 to Aug-25)",
+   "quarter_end": "2025-08-31",
+   "metric": "ai_revenue_fy",
+   "value": 2700.0,
+   "unit": "USD m",
+   "company_definition": "Advanced AI (GenAI + agentic + physical AI); excludes data and classical AI",
+   "evidence_grade": "A",
+   "source_id": "ACN_Q4FY25_CALL",
+   "note": null,
+   "ai_annualised_usd_m": 2700.0
+  },
+  {
+   "company": "Accenture",
+   "period_label": "FY25 (Sep-24 to Aug-25)",
+   "quarter_end": "2025-08-31",
+   "metric": "ai_bookings_fy",
+   "value": 5900.0,
+   "unit": "USD m",
+   "company_definition": "Advanced AI bookings",
+   "evidence_grade": "A",
+   "source_id": "ACN_Q4FY25_CALL",
+   "note": null,
+   "ai_annualised_usd_m": null
+  },
+  {
+   "company": "Accenture",
+   "period_label": "Q4 FY25",
+   "quarter_end": "2025-08-31",
+   "metric": "ai_bookings_quarter",
+   "value": 1800.0,
+   "unit": "USD m",
+   "company_definition": "Advanced AI bookings",
+   "evidence_grade": "A",
+   "source_id": "ACN_Q4FY25_CR",
+   "note": null,
+   "ai_annualised_usd_m": null
+  },
+  {
+   "company": "Accenture",
+   "period_label": "Q1 FY26",
+   "quarter_end": "2025-11-30",
+   "metric": "ai_bookings_quarter",
+   "value": 2200.0,
+   "unit": "USD m",
+   "company_definition": "Advanced AI bookings",
+   "evidence_grade": "A",
+   "source_id": "ACN_Q1FY26_CALL",
+   "note": null,
+   "ai_annualised_usd_m": null
+  },
+  {
+   "company": "Accenture",
+   "period_label": "Q1 FY26",
+   "quarter_end": "2025-11-30",
+   "metric": "ai_revenue_quarter",
+   "value": 1100.0,
+   "unit": "USD m",
+   "company_definition": "Advanced AI revenue (approximately)",
+   "evidence_grade": "A",
+   "source_id": "ACN_Q1FY26_CALL",
+   "note": "Last quarterly AI revenue figure found; not located in Q2-Q4 FY26 materials",
+   "ai_annualised_usd_m": 4400.0
+  },
+  {
+   "company": "Accenture",
+   "period_label": "FY26",
+   "quarter_end": "2026-08-31",
+   "metric": "ai_people",
+   "value": 110000.0,
+   "unit": "people",
+   "company_definition": "AI and data professionals",
+   "evidence_grade": "A",
+   "source_id": "ACN_AR2026",
+   "note": null,
+   "ai_annualised_usd_m": null
+  },
+  {
+   "company": "TCS",
+   "period_label": "Q3 FY26",
+   "quarter_end": "2025-12-31",
+   "metric": "ai_revenue_annualised",
+   "value": 1800.0,
+   "unit": "USD m",
+   "company_definition": "Annualised AI services revenue",
+   "evidence_grade": "A",
+   "source_id": "TCS_Q3FY26_PR",
+   "note": "~5.8% of revenue (Nearshore Americas)",
+   "ai_annualised_usd_m": 1800.0
+  },
+  {
+   "company": "TCS",
+   "period_label": "Q4 FY26",
+   "quarter_end": "2026-03-31",
+   "metric": "ai_revenue_annualised",
+   "value": 2300.0,
+   "unit": "USD m",
+   "company_definition": "Annualised AI services revenue",
+   "evidence_grade": "A",
+   "source_id": "TCS_Q4FY26_DH",
+   "note": "'crossed $2.3 billion'",
+   "ai_annualised_usd_m": 2300.0
+  },
+  {
+   "company": "TCS",
+   "period_label": "Q1 FY27",
+   "quarter_end": "2026-06-30",
+   "metric": "ai_revenue_annualised",
+   "value": 2600.0,
+   "unit": "USD m",
+   "company_definition": "Annualised AI services revenue",
+   "evidence_grade": "A",
+   "source_id": "TCS_Q1FY27_PR",
+   "note": "+13.6% QoQ",
+   "ai_annualised_usd_m": 2600.0
+  },
+  {
+   "company": "TCS",
+   "period_label": "Q2 FY27",
+   "quarter_end": "2026-09-30",
+   "metric": "ai_revenue_annualised",
+   "value": 3100.0,
+   "unit": "USD m",
+   "company_definition": "Annualised AI services revenue",
+   "evidence_grade": "A",
+   "source_id": "TCS_Q2FY27_QUARTR",
+   "note": "'>10% of revenue'",
+   "ai_annualised_usd_m": 3100.0
+  },
+  {
+   "company": "Infosys",
+   "period_label": "Q3 FY26",
+   "quarter_end": "2025-12-31",
+   "metric": "ai_share_of_revenue",
+   "value": 5.5,
+   "unit": "%",
+   "company_definition": "AI-first / AI services revenue share",
+   "evidence_grade": "A",
+   "source_id": "INFY_Q3FY26_AI",
+   "note": null,
+   "ai_annualised_usd_m": 1121.8
+  },
+  {
+   "company": "Infosys",
+   "period_label": "Q1 FY27",
+   "quarter_end": "2026-06-30",
+   "metric": "ai_share_of_revenue",
+   "value": 8.2,
+   "unit": "%",
+   "company_definition": "AI-first / AI services revenue share",
+   "evidence_grade": "A",
+   "source_id": "INFY_Q2FY27_CALL",
+   "note": null,
+   "ai_annualised_usd_m": null
+  },
+  {
+   "company": "Infosys",
+   "period_label": "Q2 FY27",
+   "quarter_end": "2026-09-30",
+   "metric": "ai_share_of_revenue",
+   "value": 10.5,
+   "unit": "%",
+   "company_definition": "AI-first / AI services revenue share",
+   "evidence_grade": "A",
+   "source_id": "INFY_Q2FY27_CALL",
+   "note": "AI revenue +29% QoQ",
+   "ai_annualised_usd_m": 2160.9
+  },
+  {
+   "company": "HCLTech",
+   "period_label": "Q2 FY26",
+   "quarter_end": "2025-09-30",
+   "metric": "ai_revenue_quarter",
+   "value": 123.0,
+   "unit": "USD m",
+   "company_definition": "Advanced AI revenue (GenAI + agentic + related data services)",
+   "evidence_grade": "B",
+   "source_id": "HCL_Q2FY26_OB;HCL_Q2FY27_PRN",
+   "note": "Printed as '>$100 mn'; 123 derived from 219 / 1.78 (+78% YoY CC)",
+   "ai_annualised_usd_m": 492.0
+  },
+  {
+   "company": "HCLTech",
+   "period_label": "Q4 FY26",
+   "quarter_end": "2026-03-31",
+   "metric": "ai_revenue_annualised",
+   "value": 620.0,
+   "unit": "USD m",
+   "company_definition": "Annualised advanced AI revenue",
+   "evidence_grade": "A",
+   "source_id": "P1_CI_TRACKER",
+   "note": "Project 1 event HCL financial disclosure (20-Apr-2026)",
+   "ai_annualised_usd_m": 620.0
+  },
+  {
+   "company": "HCLTech",
+   "period_label": "Q1 FY27",
+   "quarter_end": "2026-06-30",
+   "metric": "ai_revenue_quarter",
+   "value": 170.6,
+   "unit": "USD m",
+   "company_definition": "Advanced AI revenue",
+   "evidence_grade": "B",
+   "source_id": "HCL_Q2FY27_PRN",
+   "note": "Derived: 219 / 1.284 (+28.4% QoQ)",
+   "ai_annualised_usd_m": 682.4
+  },
+  {
+   "company": "HCLTech",
+   "period_label": "Q2 FY27",
+   "quarter_end": "2026-09-30",
+   "metric": "ai_revenue_quarter",
+   "value": 219.0,
+   "unit": "USD m",
+   "company_definition": "Advanced AI revenue",
+   "evidence_grade": "A",
+   "source_id": "HCL_Q2FY27_PR",
+   "note": "Annualised $876 mn",
+   "ai_annualised_usd_m": 876.0
+  },
+  {
+   "company": "HCLTech",
+   "period_label": "Q2 FY27",
+   "quarter_end": "2026-09-30",
+   "metric": "ai_revenue_annualised",
+   "value": 876.0,
+   "unit": "USD m",
+   "company_definition": "Annualised advanced AI revenue",
+   "evidence_grade": "A",
+   "source_id": "HCL_Q2FY27_PR",
+   "note": null,
+   "ai_annualised_usd_m": 876.0
+  },
+  {
+   "company": "Capgemini",
+   "period_label": "early 2025",
+   "quarter_end": "2025-06-30",
+   "metric": "ai_share_of_bookings",
+   "value": 5.0,
+   "unit": "%",
+   "company_definition": "Generative and agentic AI share of Group bookings",
+   "evidence_grade": "B",
+   "source_id": "CAP_FY25_REUTERS",
+   "note": "'around 5% earlier in the year'",
+   "ai_annualised_usd_m": null
+  },
+  {
+   "company": "Capgemini",
+   "period_label": "Q4 2025",
+   "quarter_end": "2025-12-31",
+   "metric": "ai_share_of_bookings",
+   "value": 10.0,
+   "unit": "%",
+   "company_definition": "Generative and agentic AI share of Group bookings",
+   "evidence_grade": "A",
+   "source_id": "CAP_FY25_REUTERS",
+   "note": "'more than 10%'",
+   "ai_annualised_usd_m": null
+  },
+  {
+   "company": "Capgemini",
+   "period_label": "Q1 2026",
+   "quarter_end": "2026-03-31",
+   "metric": "ai_share_of_bookings",
+   "value": 11.0,
+   "unit": "%",
+   "company_definition": "Generative and agentic AI share of Group bookings",
+   "evidence_grade": "A",
+   "source_id": "CAP_Q1_PR",
+   "note": "'more than 11%'",
+   "ai_annualised_usd_m": null
+  },
+  {
+   "company": "Cognizant",
+   "period_label": "Q3 2026",
+   "quarter_end": "2026-09-30",
+   "metric": "ai_engagements",
+   "value": 8500.0,
+   "unit": "count",
+   "company_definition": "AI engagements",
+   "evidence_grade": "A",
+   "source_id": "CTSH_AI_CRN",
+   "note": "No AI revenue disclosed",
+   "ai_annualised_usd_m": null
+  },
+  {
+   "company": "Cognizant",
+   "period_label": "Q3 2026",
+   "quarter_end": "2026-09-30",
+   "metric": "ai_assisted_code_share",
+   "value": 50.0,
+   "unit": "%",
+   "company_definition": "Share of software development that is AI-assisted",
+   "evidence_grade": "A",
+   "source_id": "CTSH_AI_CRN",
+   "note": "'over 50%'",
+   "ai_annualised_usd_m": null
+  },
+  {
+   "company": "Wipro",
+   "period_label": "Q2 FY27",
+   "quarter_end": "2026-09-30",
+   "metric": "ai_people",
+   "value": 2000.0,
+   "unit": "people",
+   "company_definition": "Engineers in AI-native unit",
+   "evidence_grade": "A",
+   "source_id": "WIT_AI_CRN",
+   "note": "No AI revenue disclosed",
+   "ai_annualised_usd_m": null
+  }
+ ],
+ "ai_assumptions": [
+  {
+   "company": "Accenture",
+   "method": "last disclosed quarterly AI revenue x 4 x uplift",
+   "evidence_grade": "B",
+   "rationale": "Last figure found: ~$1.1 bn in Q1 FY26 (Nov-25). Low = no growth since; mid = +25%; high = +50%. Q1 FY26 AI bookings of $2.2 bn were 2x AI revenue, so revenue was still rising"
+  },
+  {
+   "company": "TCS",
+   "method": "disclosed annualised AI revenue",
+   "evidence_grade": "A",
+   "rationale": "Company-reported annualised AI services revenue (Q2 FY27)"
+  },
+  {
+   "company": "Infosys",
+   "method": "reported AI share x latest quarterly revenue x 4",
+   "evidence_grade": "B",
+   "rationale": "Company-reported share (10.5% in Q2 FY27); dollar value derived"
+  },
+  {
+   "company": "HCLTech",
+   "method": "disclosed annualised AI revenue",
+   "evidence_grade": "A",
+   "rationale": "Company-reported annualised advanced AI revenue (Q2 FY27)"
+  },
+  {
+   "company": "Cognizant",
+   "method": "peer benchmark (no AI revenue disclosed)",
+   "evidence_grade": "C",
+   "rationale": "Benchmark = AI share at first disclosure by peers: TCS 5.8% (Dec-25), Infosys 5.5% (Dec-25), HCLTech ~3.4% (Sep-25)"
+  },
+  {
+   "company": "Capgemini",
+   "method": "GenAI/agentic share of bookings x conversion to revenue share",
+   "evidence_grade": "C",
+   "rationale": "AI was >11% of bookings in Q1 2026 (~5% in early 2025). Revenue mix lags bookings, so revenue share is assumed at 50-100% of the bookings share"
+  },
+  {
+   "company": "Wipro",
+   "method": "peer benchmark (no AI revenue disclosed)",
+   "evidence_grade": "C",
+   "rationale": "Same benchmark as Cognizant"
+  },
+  {
+   "company": "Tech Mahindra",
+   "method": "peer benchmark (no AI revenue disclosed)",
+   "evidence_grade": "C",
+   "rationale": "Same benchmark as Cognizant"
+  }
+ ],
+ "sizing": [
+  {
+   "lens": "A. Analyst top-down",
+   "measure": "Gartner: worldwide AI services spending, 2026",
+   "value_usd_bn": 576.5,
+   "low_usd_bn": null,
+   "high_usd_bn": null,
+   "reading": "Broadest definition: includes 'indirect' AI services where AI is embedded in ordinary projects.",
+   "source": "GARTNER_AI_SEP26"
+  },
+  {
+   "lens": "B. Management view",
+   "measure": "Infosys management: AI services market",
+   "value_usd_bn": 350.0,
+   "low_usd_bn": 300.0,
+   "high_usd_bn": 400.0,
+   "reading": "Stated as $300-400 bn; no year or definition given.",
+   "source": "INFY_MKT"
+  },
+  {
+   "lens": "C. Bottom-up (this project)",
+   "measure": "Eight firms' AI revenue run-rate, CY Q3 2026 x 4",
+   "value_usd_bn": 15.8,
+   "low_usd_bn": 13.2,
+   "high_usd_bn": 18.9,
+   "reading": "Disclosed (TCS, HCLTech), derived (Infosys, Accenture) and estimated (others) - 74% of the mid value rests on company figures.",
+   "source": "02_ai_pool.sql"
+  },
+  {
+   "lens": "C. Bottom-up (this project)",
+   "measure": "Implied vendor-labelled AI services market",
+   "value_usd_bn": 142.1,
+   "low_usd_bn": 118.9,
+   "high_usd_bn": 170.1,
+   "reading": "Eight-firm pool / their 11.1% share of Gartner's $1,867 bn IT services market. Assumes the rest of the market has the same AI intensity.",
+   "source": "derived"
+  }
+ ],
+ "sizing_notes": {
+  "eight_firm_revenue_runrate_usd_bn": 207.8,
+  "eight_firm_share_of_gartner_it_services_pct": 11.1,
+  "eight_firm_ai_intensity_pct": 7.6,
+  "gartner_to_vendor_labelled_ratio": 4.1,
+  "eight_firm_share_of_gartner_ai_services_pct": 2.7
+ },
+ "hypotheses": [
+  {
+   "id": "H1",
+   "hypothesis": "GenAI is now material revenue, not a pilot-stage side line.",
+   "test": "AI share of revenue at disclosing firms; size of the eight-firm AI pool.",
+   "evidence": "TCS 10.1% and Infosys 10.5% of revenue (company-disclosed); eight-firm AI run-rate ~$15.8 bn (range $13.2-18.9 bn), ~7.6% of their combined revenue. TCS's AI run-rate rose 72% in three quarters ($1.8 bn to $3.1 bn).",
+   "verdict": "Supported",
+   "so_what": "AI is now big enough to move the P&L. The open question has shifted from 'is AI real?' to 'is AI net-additive?'."
+  },
+  {
+   "id": "H2",
+   "hypothesis": "AI revenue growth is arriving alongside a shrinking core business (AI deflation).",
+   "test": "Split revenue into AI and non-AI at two points for every firm with an AI time series; annualise each.",
+   "evidence": "Core (non-AI) revenue shrank at all three Indian disclosers: Infosys -5.9%/yr, TCS -3.6%/yr, HCLTech -0.5%/yr, while total revenue grew only 2.2-2.4%. Accenture's core still grew +4.7% (FY24-FY25).",
+   "verdict": "Supported for Indian-heritage firms; not for Accenture",
+   "so_what": "At TCS and Infosys, AI growth is so far replacing core revenue, not adding to it. That fits the 2-3.5%/yr deflation analysts cite. Part of the shift may be existing work relabelled as AI, which no firm discloses."
+  },
+  {
+   "id": "H3",
+   "hypothesis": "The firms with the most AI revenue are not the ones growing fastest.",
+   "test": "Spearman rank correlation between AI share of revenue and constant-currency revenue growth (8 firms; and the 4 company-based disclosers).",
+   "evidence": "Rank correlation -0.05 across all eight and -0.40 across the four disclosers. Infosys (10.5% AI) grew 1.5%; TCS (10.1%) 2.8%; Capgemini (est. 8%) 11.7% incl. WNS; Tech Mahindra (est. 5%) 7.2%.",
+   "verdict": "Supported",
+   "so_what": "'AI revenue' is not yet a growth KPI. For CI and investor work, track core growth and book-to-bill next to the AI number."
+  },
+  {
+   "id": "H4",
+   "hypothesis": "AI has decoupled revenue from headcount.",
+   "test": "Revenue growth minus headcount growth (YoY), and revenue per employee.",
+   "evidence": "Median gap only +1.4pp. Six of eight show weak or no decoupling. Revenue per employee rose 0.5-1.7% at most firms; Tech Mahindra is the outlier (+6.9%, headcount down). Capgemini's headcount jumped 18% with the WNS acquisition.",
+   "verdict": "Weak - mostly not yet",
+   "so_what": "Productivity gains are being passed to clients as price, not kept as margin or non-linear growth. That is the deflation mechanism in H2 seen from the people side."
+  },
+  {
+   "id": "H5",
+   "hypothesis": "Announcement momentum (Project 1's CI events) predicts AI monetisation.",
+   "test": "Spearman rank correlation of verified Project 1 events per firm against AI share of revenue and against growth.",
+   "evidence": "Rank correlations: events vs AI share -0.05; events vs growth -0.65. Wipro and HCLTech tie TCS on event count (10 each). Wipro's revenue is flat and it discloses no AI revenue; Capgemini has the fewest frontier-lab ties and the fastest growth.",
+   "verdict": "Rejected",
+   "so_what": "Partnership press releases are a weak lead indicator. A CI programme should weight disclosed AI revenue, core growth and bookings above announcement counts - the main design lesson carried back to Project 1."
+  }
+ ],
+ "stats": {
+  "spearman_ai_intensity_vs_growth_all8": -0.05,
+  "spearman_ai_intensity_vs_growth_disclosers": -0.4,
+  "spearman_p1_events_vs_ai_intensity": -0.05,
+  "spearman_p1_events_vs_growth": -0.65,
+  "median_decoupling_gap_pp": 1.4,
+  "eight_firm_yoy_usd_pct": 5.12,
+  "gartner_it_services_growth_2026_pct": 8.69
+ },
+ "scenarios": [
+  {
+   "scenario": "Bear",
+   "year": 2026,
+   "ai_usd_bn": 15.8,
+   "core_usd_bn": 191.97,
+   "total_usd_bn": 207.77,
+   "ai_share_pct": 7.6,
+   "total_growth_pct": null,
+   "ai_growth_needed_for_flat_total_pct": null,
+   "cagr_2026_2030_pct": -0.31
+  },
+  {
+   "scenario": "Bear",
+   "year": 2027,
+   "ai_usd_bn": 21.33,
+   "core_usd_bn": 190.05,
+   "total_usd_bn": 211.38,
+   "ai_share_pct": 10.09,
+   "total_growth_pct": 1.74,
+   "ai_growth_needed_for_flat_total_pct": 12.15,
+   "cagr_2026_2030_pct": -0.31
+  },
+  {
+   "scenario": "Bear",
+   "year": 2028,
+   "ai_usd_bn": 26.02,
+   "core_usd_bn": 184.35,
+   "total_usd_bn": 210.37,
+   "ai_share_pct": 12.37,
+   "total_growth_pct": -0.48,
+   "ai_growth_needed_for_flat_total_pct": 26.73,
+   "cagr_2026_2030_pct": -0.31
+  },
+  {
+   "scenario": "Bear",
+   "year": 2029,
+   "ai_usd_bn": 29.93,
+   "core_usd_bn": 177.9,
+   "total_usd_bn": 207.82,
+   "ai_share_pct": 14.4,
+   "total_growth_pct": -1.21,
+   "ai_growth_needed_for_flat_total_pct": 24.79,
+   "cagr_2026_2030_pct": -0.31
+  },
+  {
+   "scenario": "Bear",
+   "year": 2030,
+   "ai_usd_bn": 33.52,
+   "core_usd_bn": 171.67,
+   "total_usd_bn": 205.19,
+   "ai_share_pct": 16.33,
+   "total_growth_pct": -1.27,
+   "ai_growth_needed_for_flat_total_pct": 20.81,
+   "cagr_2026_2030_pct": -0.31
+  },
+  {
+   "scenario": "Base",
+   "year": 2026,
+   "ai_usd_bn": 15.8,
+   "core_usd_bn": 191.97,
+   "total_usd_bn": 207.77,
+   "ai_share_pct": 7.6,
+   "total_growth_pct": null,
+   "ai_growth_needed_for_flat_total_pct": null,
+   "cagr_2026_2030_pct": 2.94
+  },
+  {
+   "scenario": "Base",
+   "year": 2027,
+   "ai_usd_bn": 23.7,
+   "core_usd_bn": 192.93,
+   "total_usd_bn": 216.63,
+   "ai_share_pct": 10.94,
+   "total_growth_pct": 4.26,
+   "ai_growth_needed_for_flat_total_pct": 0.0,
+   "cagr_2026_2030_pct": 2.94
+  },
+  {
+   "scenario": "Base",
+   "year": 2028,
+   "ai_usd_bn": 32.0,
+   "core_usd_bn": 191.0,
+   "total_usd_bn": 223.0,
+   "ai_share_pct": 14.35,
+   "total_growth_pct": 2.94,
+   "ai_growth_needed_for_flat_total_pct": 8.14,
+   "cagr_2026_2030_pct": 2.94
+  },
+  {
+   "scenario": "Base",
+   "year": 2029,
+   "ai_usd_bn": 39.99,
+   "core_usd_bn": 188.14,
+   "total_usd_bn": 228.13,
+   "ai_share_pct": 17.53,
+   "total_growth_pct": 2.3,
+   "ai_growth_needed_for_flat_total_pct": 8.95,
+   "cagr_2026_2030_pct": 2.94
+  },
+  {
+   "scenario": "Base",
+   "year": 2030,
+   "ai_usd_bn": 47.99,
+   "core_usd_bn": 185.31,
+   "total_usd_bn": 233.31,
+   "ai_share_pct": 20.57,
+   "total_growth_pct": 2.27,
+   "ai_growth_needed_for_flat_total_pct": 7.06,
+   "cagr_2026_2030_pct": 2.94
+  },
+  {
+   "scenario": "Bull",
+   "year": 2026,
+   "ai_usd_bn": 15.8,
+   "core_usd_bn": 191.97,
+   "total_usd_bn": 207.77,
+   "ai_share_pct": 7.6,
+   "total_growth_pct": null,
+   "ai_growth_needed_for_flat_total_pct": null,
+   "cagr_2026_2030_pct": 6.18
+  },
+  {
+   "scenario": "Bull",
+   "year": 2027,
+   "ai_usd_bn": 26.07,
+   "core_usd_bn": 194.85,
+   "total_usd_bn": 220.92,
+   "ai_share_pct": 11.8,
+   "total_growth_pct": 6.33,
+   "ai_growth_needed_for_flat_total_pct": 0.0,
+   "cagr_2026_2030_pct": 6.18
+  },
+  {
+   "scenario": "Bull",
+   "year": 2028,
+   "ai_usd_bn": 37.8,
+   "core_usd_bn": 196.8,
+   "total_usd_bn": 234.6,
+   "ai_share_pct": 16.11,
+   "total_growth_pct": 6.19,
+   "ai_growth_needed_for_flat_total_pct": 0.0,
+   "cagr_2026_2030_pct": 6.18
+  },
+  {
+   "scenario": "Bull",
+   "year": 2029,
+   "ai_usd_bn": 51.03,
+   "core_usd_bn": 197.78,
+   "total_usd_bn": 248.81,
+   "ai_share_pct": 20.51,
+   "total_growth_pct": 6.06,
+   "ai_growth_needed_for_flat_total_pct": 0.0,
+   "cagr_2026_2030_pct": 6.18
+  },
+  {
+   "scenario": "Bull",
+   "year": 2030,
+   "ai_usd_bn": 65.32,
+   "core_usd_bn": 198.77,
+   "total_usd_bn": 264.09,
+   "ai_share_pct": 24.73,
+   "total_growth_pct": 6.14,
+   "ai_growth_needed_for_flat_total_pct": 0.0,
+   "cagr_2026_2030_pct": 6.18
+  }
+ ],
+ "scenario_levers": {
+  "Bear": {
+   "ai_growth": [
+    0.35,
+    0.22,
+    0.15,
+    0.12
+   ],
+   "core_growth": [
+    -0.01,
+    -0.03,
+    -0.035,
+    -0.035
+   ],
+   "story": "Renewal repricing passes the full ~3.5%/yr AI deflation to clients (Kotak base case) with no volume offset; AI growth fades fast as pilots stall."
+  },
+  "Base": {
+   "ai_growth": [
+    0.5,
+    0.35,
+    0.25,
+    0.2
+   ],
+   "core_growth": [
+    0.005,
+    -0.01,
+    -0.015,
+    -0.015
+   ],
+   "story": "Core drifts from today's ~+1% organic to -1.5%/yr as large contracts renew at AI-adjusted prices; AI growth halves from today's ~70-80% and keeps decelerating."
+  },
+  "Bull": {
+   "ai_growth": [
+    0.65,
+    0.45,
+    0.35,
+    0.28
+   ],
+   "core_growth": [
+    0.015,
+    0.01,
+    0.005,
+    0.005
+   ],
+   "story": "Clients reinvest about half of AI savings in new work (Kotak's offset), so core stays slightly positive; agentic AI programmes scale quickly."
+  }
+ },
+ "scenario_calibration": {
+  "start_ai_usd_bn": 15.8,
+  "start_total_usd_bn": 207.8,
+  "start_core_usd_bn": 192.0,
+  "observed_ai_growth": "TCS +72% in three quarters; HCLTech +78% YoY CC; Accenture tripled in FY25",
+  "observed_core_growth": "Infosys -5.9%/yr, TCS -3.6%/yr, HCLTech -0.5%/yr (2025-26); Accenture +4.7% (FY25)",
+  "deflation_benchmarks": "Kotak 3-3.5%/yr through FY29; HCLTech 2-3%; analysts 10-15% cumulative over 3-5 years",
+  "gartner_it_services_growth_2026_pct": 8.69
+ },
+ "p1_events": [
+  {
+   "event_id": "WIP-009",
+   "company": "Wipro",
+   "event_date": "2026-11-10",
+   "event_type": "Partnership",
+   "counterparty": "Labelbox",
+   "counterparty_type": "AI-native firm",
+   "headline": "Wipro partners with Labelbox to deploy production-ready AI agents",
+   "source_url": "https://finance.yahoo.com/technology/ai/articles/labelbox-partners-wipro-scale-adoption-170000136.html"
+  },
+  {
+   "event_id": "WIP-010",
+   "company": "Wipro",
+   "event_date": "2026-11-10",
+   "event_type": "Investment",
+   "counterparty": "Labelbox",
+   "counterparty_type": "AI-native firm",
+   "headline": "Wipro Ventures invests in Labelbox's Series E round",
+   "source_url": "https://finance.yahoo.com/technology/ai/articles/labelbox-partners-wipro-scale-adoption-170000136.html"
+  },
+  {
+   "event_id": "CAP-007",
+   "company": "Capgemini",
+   "event_date": "2026-11-09",
+   "event_type": "Partnership",
+   "counterparty": "European Commission AI Office (with Wavestone, LNE)",
+   "counterparty_type": "Public institution",
+   "headline": "Capgemini to lead EU consortium assessing advanced AI risks",
+   "source_url": "https://www.engineering.com/capgemini-to-lead-eu-consortium-assessing-advanced-ai-risks/"
+  },
+  {
+   "event_id": "CAP-008",
+   "company": "Capgemini",
+   "event_date": "2026-11-09",
+   "event_type": "Deal / GCC",
+   "counterparty": "Telia Sweden",
+   "counterparty_type": "Client",
+   "headline": "Capgemini wins AI transformation mandate from Telia Sweden",
+   "source_url": "https://www.ad-hoc-news.de/boerse/news/corporate-news/capgemini-stock-gains-telia-sweden-ai-transformation-mandate/70485106"
+  },
+  {
+   "event_id": "ACN-008",
+   "company": "Accenture",
+   "event_date": "2026-11-04",
+   "event_type": "Partnership",
+   "counterparty": "IE University in Madrid",
+   "counterparty_type": "Academic",
+   "headline": "Accenture and IE University publish 'Leapfrogging Development' AI research",
+   "source_url": "https://finance.yahoo.com/technology/ai/articles/accenture-accused-publishing-research-full-122237861.html"
+  },
+  {
+   "event_id": "HCL-010",
+   "company": "HCLTech",
+   "event_date": "2026-11-02",
+   "event_type": "Launch",
+   "counterparty": null,
+   "counterparty_type": null,
+   "headline": "HCLTech launches AI agents to automate mainframe operations",
+   "source_url": "https://cio.economictimes.indiatimes.com/news/artificial-intelligence/hcltech-launches-ai-agents-to-automate-enterprise-mainframe-operations/135452621"
+  },
+  {
+   "event_id": "CAP-006",
+   "company": "Capgemini",
+   "event_date": "2026-10-30",
+   "event_type": "Financial disclosure",
+   "counterparty": null,
+   "counterparty_type": null,
+   "headline": "Capgemini Q3 revenue +11.7% cc; raises 2026 growth target",
+   "source_url": "https://www.staffingindustry.com/news/global-daily-news/capgeminis-q3-revenue-jumps-117-on-acquisitions"
+  },
+  {
+   "event_id": "CTS-009",
+   "company": "Cognizant",
+   "event_date": "2026-10-30",
+   "event_type": "Talent / CoE",
+   "counterparty": "OpenAI",
+   "counterparty_type": "Frontier model lab",
+   "headline": "Cognizant commits 25,000+ staff to an OpenAI Frontier Capability Group",
+   "source_url": "https://finviz.com/news/412396/cognizant-commits-more-than-25000-professionals-to-openai-delivery-as-enterprises-move-frontier-ai-into-production"
+  },
+  {
+   "event_id": "ACN-007",
+   "company": "Accenture",
+   "event_date": "2026-10-20",
+   "event_type": "Acquisition",
+   "counterparty": "Avicado",
+   "counterparty_type": "Domain consultancy",
+   "headline": "Accenture acquires construction-tech consultancy Avicado",
+   "source_url": "https://newsroom.accenture.com/news/2026/accenture-acquires-digital-native-construction-consulting-firm-avicado"
+  },
+  {
+   "event_id": "CTS-008",
+   "company": "Cognizant",
+   "event_date": "2026-10-19",
+   "event_type": "Partnership",
+   "counterparty": "Google Cloud",
+   "counterparty_type": "Hyperscaler",
+   "headline": "Cognizant forms 18,000-strong Gemini Frontier Capability Group",
+   "source_url": "https://www.googlecloudpresscorner.com/2026-10-19-Cognizant-and-Google-Cloud-Expand-Alliance-to-Accelerate-Agentic-Enterprise-Transformation"
+  },
+  {
+   "event_id": "INF-009",
+   "company": "Infosys",
+   "event_date": "2026-10-19",
+   "event_type": "Deal / GCC",
+   "counterparty": "Truist",
+   "counterparty_type": "Client",
+   "headline": "Infosys expands Truist deal to build its AI-first GCC in Hyderabad",
+   "source_url": "https://www.infosys.com/newsroom/press-releases/2026/collaboration-build-global-capability-center-india.html"
+  },
+  {
+   "event_id": "WIP-011",
+   "company": "Wipro",
+   "event_date": "2026-10-15",
+   "event_type": "Investment",
+   "counterparty": "FlarreAI",
+   "counterparty_type": "AI-native firm",
+   "headline": "Wipro takes a 20% stake in agentic AI start-up FlarreAI",
+   "source_url": "https://www.adgully.com/post/22390/wipro-acquires-20-stake-in-agentic-ai-start-up-flarreai"
+  },
+  {
+   "event_id": "ACN-006",
+   "company": "Accenture",
+   "event_date": "2026-10-13",
+   "event_type": "Acquisition",
+   "counterparty": "Sagacity",
+   "counterparty_type": "Data & analytics firm",
+   "headline": "Accenture acquires UK customer-intelligence firm Sagacity",
+   "source_url": "https://finviz.com/news/401519/accenture-acquires-sagacity-solutions-to-scale-ai-driven-customer-intelligence-across-accenture-songs-uk-ireland-operations"
+  },
+  {
+   "event_id": "TCS-008",
+   "company": "TCS",
+   "event_date": "2026-10-11",
+   "event_type": "Deal / GCC",
+   "counterparty": "Best Buy",
+   "counterparty_type": "Client",
+   "headline": "TCS to take over Best Buy's India GCC as an AI Capability Centre",
+   "source_url": "https://pulse2.com/tcs-q2-revenue-rises-11-2-to-7-56-billion-%e2%82%b973188-crore-as-annualized-ai-revenue-reaches-3-1-billion/amp/"
+  },
+  {
+   "event_id": "TCS-007",
+   "company": "TCS",
+   "event_date": "2026-10-08",
+   "event_type": "Financial disclosure",
+   "counterparty": null,
+   "counterparty_type": null,
+   "headline": "TCS annualised AI revenue reaches $3.1B (>10% of revenue)",
+   "source_url": "https://www.staffingindustry.com/news/global-daily-news/tcs-q2-revenue-climbs-28-as-ai-business-tops-3-billion"
+  },
+  {
+   "event_id": "CTS-007",
+   "company": "Cognizant",
+   "event_date": "2026-10-05",
+   "event_type": "Launch",
+   "counterparty": null,
+   "counterparty_type": null,
+   "headline": "Cognizant launches 'Activate' unit for emerging enterprises",
+   "source_url": "https://finviz.com/news/398580/cognizant-launches-cognizant-activate-to-bring-enterprise-ai-transformation-for-emerging-enterprises"
+  },
+  {
+   "event_id": "TEM-006",
+   "company": "Tech Mahindra",
+   "event_date": "2026-10-05",
+   "event_type": "Partnership",
+   "counterparty": "Google Cloud",
+   "counterparty_type": "Hyperscaler",
+   "headline": "Tech Mahindra expands Google Cloud partnership for agentic AI",
+   "source_url": "https://www.zawya.com/en/press-release/companies-news/tech-mahindra-expands-agentic-ai-readiness-with-google-cloud-gemini-enterprise-1517787"
+  },
+  {
+   "event_id": "TEM-007",
+   "company": "Tech Mahindra",
+   "event_date": "2026-10-05",
+   "event_type": "Talent / CoE",
+   "counterparty": "Google Cloud",
+   "counterparty_type": "Hyperscaler",
+   "headline": "Tech Mahindra trains 12,500+ staff in 'Build with Gemini' workshops",
+   "source_url": "https://www.zawya.com/en/press-release/companies-news/tech-mahindra-expands-agentic-ai-readiness-with-google-cloud-gemini-enterprise-1517787"
+  },
+  {
+   "event_id": "ACN-005",
+   "company": "Accenture",
+   "event_date": "2026-10-01",
+   "event_type": "Financial disclosure",
+   "counterparty": null,
+   "counterparty_type": null,
+   "headline": "Accenture: $4.9B across 17 acquisitions in FY26",
+   "source_url": "https://stocktwits.com/news-articles/markets/equity/accenture-acquires-sagacity-to-expand-ai-driven-customer-services-in-uk-ireland/cZxBLMKRBor"
+  },
+  {
+   "event_id": "INF-007",
+   "company": "Infosys",
+   "event_date": "2026-10-01",
+   "event_type": "Partnership",
+   "counterparty": "Columbia University",
+   "counterparty_type": "Academic",
+   "headline": "Infosys and Columbia launch an Enterprise AI Center in New York",
+   "source_url": "https://www.infosys.com/newsroom/press-releases/2026/collaboration-drive-innovation-unlock-business-value.html"
+  },
+  {
+   "event_id": "HCL-009",
+   "company": "HCLTech",
+   "event_date": "2026-09-28",
+   "event_type": "Acquisition",
+   "counterparty": "Robotiq.ai",
+   "counterparty_type": "Software product",
+   "headline": "HCLSoftware to acquire RPA platform Robotiq.ai",
+   "source_url": "https://www.reworked.co/the-wire/hclsoftware-to-acquire-robotiq-ai-strengthening-enterprise-agentic-automation/"
+  },
+  {
+   "event_id": "CTS-006",
+   "company": "Cognizant",
+   "event_date": "2026-09-23",
+   "event_type": "Client proof point",
+   "counterparty": "Odyssey Logistics (with Cognition)",
+   "counterparty_type": "Client",
+   "headline": "Cognizant reports 37% net cost saving from autonomous AI engineering",
+   "source_url": "https://www.placera.se/pressmeddelanden/cognizant-technology-solutions-cognizant-and-cognition-put-autonomous-ai-engineering-into-production-at-odyssey-logistics-with-a-37-percent-net-cost-saving-20260923"
+  },
+  {
+   "event_id": "TEM-004",
+   "company": "Tech Mahindra",
+   "event_date": "2026-09-22",
+   "event_type": "Partnership",
+   "counterparty": "CoRover.ai (BharatGPT)",
+   "counterparty_type": "AI-native firm",
+   "headline": "Tech Mahindra and CoRover.ai partner on sovereign AI",
+   "source_url": "https://www.unite.ai/corover-ai-and-tech-mahindra-partner-to-take-india-built-ai-global/"
+  },
+  {
+   "event_id": "CAP-005",
+   "company": "Capgemini",
+   "event_date": "2026-09-12",
+   "event_type": "Divestiture",
+   "counterparty": "ITC Federal (buyer)",
+   "counterparty_type": "Buyer",
+   "headline": "Capgemini agrees to sell Capgemini Government Solutions",
+   "source_url": "https://www.capgemini.com/co-es/news/press-releases/capgemini-firma-un-acuerdo-definitivo-para-vender-capgemini-government-solutions/"
+  },
+  {
+   "event_id": "CTS-005",
+   "company": "Cognizant",
+   "event_date": "2026-09-09",
+   "event_type": "Talent / CoE",
+   "counterparty": null,
+   "counterparty_type": null,
+   "headline": "Cognizant commits to 5,000 Frontier engineers + 10,000 AI operators",
+   "source_url": "https://www.techpartner.news/news/cognizant-commits-to-5000-ai-certified-engineers-and-10000-business-operators-628760"
+  },
+  {
+   "event_id": "TEM-008",
+   "company": "Tech Mahindra",
+   "event_date": "2026-09-03",
+   "event_type": "Talent / CoE",
+   "counterparty": "AWS",
+   "counterparty_type": "Hyperscaler",
+   "headline": "Tech Mahindra opens AWS Agentic Process Transformation Center",
+   "source_url": "https://finance.yahoo.com/technology/ai/articles/tech-mahindra-launches-aws-agentic-130000684.html"
+  },
+  {
+   "event_id": "WIP-008",
+   "company": "Wipro",
+   "event_date": "2026-08-27",
+   "event_type": "Partnership",
+   "counterparty": "Google Cloud",
+   "counterparty_type": "Hyperscaler",
+   "headline": "Wipro expands Google Cloud deal; launches LIFT framework",
+   "source_url": "https://www.wipro.com/newsroom/press-releases/2026/wipro-and-google-cloud-expand-partnership-to-scale-ai-into-core-enterprise-operations/"
+  },
+  {
+   "event_id": "TEM-003",
+   "company": "Tech Mahindra",
+   "event_date": "2026-08-20",
+   "event_type": "Partnership",
+   "counterparty": "ServiceNow",
+   "counterparty_type": "Enterprise platform",
+   "headline": "Tech Mahindra expands ServiceNow partnership, sets up AI CoE",
+   "source_url": "https://yourstory.com/ai-story/tech-mahindra-servicenow-enterprise-ai-beyond-pilots"
+  },
+  {
+   "event_id": "HCL-008",
+   "company": "HCLTech",
+   "event_date": "2026-07-17",
+   "event_type": "Deal / GCC",
+   "counterparty": "Guardian Life",
+   "counterparty_type": "Client",
+   "headline": "HCLTech signs 7-year AI deal and buys Guardian's India GCC",
+   "source_url": "https://yourstory.com/ai-story/hcltech-guardian-ai-partnership-india-gcc"
+  },
+  {
+   "event_id": "HCL-007",
+   "company": "HCLTech",
+   "event_date": "2026-07-13",
+   "event_type": "Investment",
+   "counterparty": "Own AI data centres",
+   "counterparty_type": "Infrastructure",
+   "headline": "HCLTech board approves up to \u20b93,500 crore for India AI data centres",
+   "source_url": "https://www.sahi.com/news/hcltech-signs-7-year-ai-deal-with-guardian-acquires-india-gcc-for-10-5-million-2229-PE1_COR"
+  },
+  {
+   "event_id": "HCL-004",
+   "company": "HCLTech",
+   "event_date": "2026-07-03",
+   "event_type": "Investment",
+   "counterparty": "Sarvam AI",
+   "counterparty_type": "AI-native firm",
+   "headline": "HCLTech leads Sarvam AI Series B with $150M",
+   "source_url": "https://india.entrepreneur.com/business-news/hcltech-signs-usd-1-14-bn-deal-with-fortune-global-50-firm"
+  },
+  {
+   "event_id": "HCL-005",
+   "company": "HCLTech",
+   "event_date": "2026-07-03",
+   "event_type": "Deal / GCC",
+   "counterparty": "Europe-HQ Fortune Global 50 firm",
+   "counterparty_type": "Client",
+   "headline": "HCLTech wins $1.14B AI operating-model deal",
+   "source_url": "https://india.entrepreneur.com/business-news/hcltech-signs-usd-1-14-bn-deal-with-fortune-global-50-firm"
+  },
+  {
+   "event_id": "HCL-006",
+   "company": "HCLTech",
+   "event_date": "2026-07-03",
+   "event_type": "Acquisition",
+   "counterparty": "Jaspersoft",
+   "counterparty_type": "Software product",
+   "headline": "HCLSoftware completes Jaspersoft acquisition",
+   "source_url": "https://www.outlookbusiness.com/corporate/hclsoftware-eyes-ai-led-analytics-with-wobby-jaspersoft-acquisitions"
+  },
+  {
+   "event_id": "TCS-006",
+   "company": "TCS",
+   "event_date": "2026-06-12",
+   "event_type": "Partnership",
+   "counterparty": "Anthropic",
+   "counterparty_type": "Frontier model lab",
+   "headline": "TCS becomes Global Premier Partner for Anthropic's Claude",
+   "source_url": "https://w.media/tcs-partners-with-anthropic-to-drive-enterprise-ai-adoption/"
+  },
+  {
+   "event_id": "TCS-005",
+   "company": "TCS",
+   "event_date": "2026-05-28",
+   "event_type": "Partnership",
+   "counterparty": "Mistral",
+   "counterparty_type": "Frontier model lab",
+   "headline": "TCS becomes first global SI partner for Mistral Forge",
+   "source_url": "https://capacityglobal.com/news/tcs-mistral-partnership-to-scale-enterprise-ai/"
+  },
+  {
+   "event_id": "WIP-006",
+   "company": "Wipro",
+   "event_date": "2026-05-28",
+   "event_type": "Partnership",
+   "counterparty": "ServiceNow",
+   "counterparty_type": "Enterprise platform",
+   "headline": "Wipro expands ServiceNow partnership for agentic workflows",
+   "source_url": "https://www.analyticsinsight.net/press-release/wipro-expands-servicenow-partnership-to-embed-agentic-ai-workflows-across-core-enterprise-functions"
+  },
+  {
+   "event_id": "TEM-002",
+   "company": "Tech Mahindra",
+   "event_date": "2026-05-01",
+   "event_type": "Acquisition",
+   "counterparty": "Avant Techno Solutions",
+   "counterparty_type": "Domain consultancy",
+   "headline": "Tech Mahindra acquires 85% of Canada's Avant (payments)",
+   "source_url": "https://financialreports.eu/filings/tech-mahindra/capitalfinancing-update/2026/42163209/"
+  },
+  {
+   "event_id": "CTS-004",
+   "company": "Cognizant",
+   "event_date": "2026-04-29",
+   "event_type": "Acquisition",
+   "counterparty": "Astreya",
+   "counterparty_type": "Managed services firm",
+   "headline": "Cognizant to acquire AI-infrastructure specialist Astreya (~$600M)",
+   "source_url": "https://siliconangle.com/?p=743499"
+  },
+  {
+   "event_id": "TCS-004",
+   "company": "TCS",
+   "event_date": "2026-04-27",
+   "event_type": "Partnership",
+   "counterparty": "Google Cloud",
+   "counterparty_type": "Hyperscaler",
+   "headline": "TCS expands Google Cloud partnership with four AI offerings",
+   "source_url": "https://itbrief.co.uk/story/tcs-expands-google-cloud-tie-up-with-four-ai-offerings"
+  },
+  {
+   "event_id": "CAP-004",
+   "company": "Capgemini",
+   "event_date": "2026-04-23",
+   "event_type": "Partnership",
+   "counterparty": "Google Cloud",
+   "counterparty_type": "Hyperscaler",
+   "headline": "Capgemini unveils Google Cloud AI Enterprise Hub",
+   "source_url": "https://www.capgemini.com/news/press-releases/capgemini-unveils-google-cloud-ai-enterprise-hub-to-accelerate-agentic-ai-enterprise-transformation/"
+  },
+  {
+   "event_id": "INF-006",
+   "company": "Infosys",
+   "event_date": "2026-04-23",
+   "event_type": "Partnership",
+   "counterparty": "Google Cloud",
+   "counterparty_type": "Hyperscaler",
+   "headline": "Infosys expands Google Cloud tie-up for agentic AI",
+   "source_url": "https://channellife.co.nz/story/infosys-expands-google-cloud-tie-up-for-agentic-ai"
+  },
+  {
+   "event_id": "HCL-003",
+   "company": "HCLTech",
+   "event_date": "2026-04-20",
+   "event_type": "Financial disclosure",
+   "counterparty": null,
+   "counterparty_type": null,
+   "headline": "HCLTech reports $620M annualised 'Advanced AI' revenue for FY26",
+   "source_url": "https://india.entrepreneur.com/business-news/hcltech-signs-usd-1-14-bn-deal-with-fortune-global-50-firm"
+  },
+  {
+   "event_id": "WIP-005",
+   "company": "Wipro",
+   "event_date": "2026-04-16",
+   "event_type": "Acquisition",
+   "counterparty": "Alpha Net Consulting (contracts)",
+   "counterparty_type": "Contract / book of business",
+   "headline": "Wipro buys Alpha Net customer contracts for up to $70.8M",
+   "source_url": "https://www.cxodigitalpulse.com/?p=51496"
+  },
+  {
+   "event_id": "WIP-004",
+   "company": "Wipro",
+   "event_date": "2026-04-05",
+   "event_type": "Acquisition",
+   "counterparty": "Mindsprint (Olam Group)",
+   "counterparty_type": "Captive / GCC",
+   "headline": "Wipro buys Olam's IT arm Mindsprint and wins $1B+ 8-year deal",
+   "source_url": "https://www.freepressjournal.in/business/wipro-acquires-100-stake-in-mindsprint-for-375-million-to-expand-ai-led-transformation-play"
+  },
+  {
+   "event_id": "HCL-002",
+   "company": "HCLTech",
+   "event_date": "2026-04-01",
+   "event_type": "Launch",
+   "counterparty": null,
+   "counterparty_type": null,
+   "headline": "HCLTech launches AI Force 2.0 agentic platform",
+   "source_url": "https://www.hcltech.com/ja-jp/press-releases/hcltech-launches-ai-force-20-deliver-enterprise-grade-agentic-ai"
+  },
+  {
+   "event_id": "WIP-003",
+   "company": "Wipro",
+   "event_date": "2026-04-01",
+   "event_type": "Launch",
+   "counterparty": null,
+   "counterparty_type": null,
+   "headline": "Wipro creates an AI-Native Business & Platforms Unit",
+   "source_url": "https://www.wipro.com/newsroom/press-releases/2026/wipro-announces-ai-native-business-and-platforms-unit-to-complement-core-services-and-drive-next-phase-of-growth/"
+  },
+  {
+   "event_id": "INF-005",
+   "company": "Infosys",
+   "event_date": "2026-03-26",
+   "event_type": "Acquisition",
+   "counterparty": "Stratus",
+   "counterparty_type": "Domain consultancy",
+   "headline": "Infosys to acquire P&C insurance specialist Stratus",
+   "source_url": "https://ibsintelligence.com/ibsi-news/infosys-acquires-stratus-to-boost-insurance-capabilities/"
+  },
+  {
+   "event_id": "INF-004",
+   "company": "Infosys",
+   "event_date": "2026-03-25",
+   "event_type": "Acquisition",
+   "counterparty": "Optimum Healthcare IT",
+   "counterparty_type": "Domain consultancy",
+   "headline": "Infosys to acquire Optimum Healthcare IT",
+   "source_url": "https://www.infosys.com/newsroom/press-releases/2026/acquire-leading-healthcare-digital-transformation-company.html"
+  },
+  {
+   "event_id": "TEM-001",
+   "company": "Tech Mahindra",
+   "event_date": "2026-03-06",
+   "event_type": "Launch",
+   "counterparty": "Microsoft",
+   "counterparty_type": "Hyperscaler",
+   "headline": "Tech Mahindra and Microsoft launch ontology-driven agentic AI platform",
+   "source_url": "https://www.mahindra.com/news-room/press-release/en/tech-mahindra-collaborates-with-microsoft-to-launch-ontology-driven-agentic-ai-platform-to-accelerate-telecom-and-data-mesh-transformation"
+  },
+  {
+   "event_id": "ACN-004",
+   "company": "Accenture",
+   "event_date": "2026-02-24",
+   "event_type": "Acquisition",
+   "counterparty": "Avanseus (AI solution)",
+   "counterparty_type": "AI-native firm",
+   "headline": "Accenture buys Avanseus AI tech for autonomous telecom networks",
+   "source_url": "https://insurance-canada.ca/2026/03/20/accenture-acquires-avanseus-ai-technology/"
+  },
+  {
+   "event_id": "TCS-003",
+   "company": "TCS",
+   "event_date": "2026-02-23",
+   "event_type": "Partnership",
+   "counterparty": "ServiceNow",
+   "counterparty_type": "Enterprise platform",
+   "headline": "TCS signs multi-year AI partnership with ServiceNow",
+   "source_url": "https://www.business-standard.com/markets/capital-market-news/tcs-signs-multi-year-partnership-with-servicenow-126022300396_1.html"
+  },
+  {
+   "event_id": "TCS-002",
+   "company": "TCS",
+   "event_date": "2026-02-19",
+   "event_type": "Partnership",
+   "counterparty": "OpenAI",
+   "counterparty_type": "Frontier model lab",
+   "headline": "Tata Group, TCS and OpenAI sign multi-part AI partnership",
+   "source_url": "https://www.tata.com/content/dam/tata/pdf/tata-group-openAI-feb2026.pdf"
+  },
+  {
+   "event_id": "INF-003",
+   "company": "Infosys",
+   "event_date": "2026-02-18",
+   "event_type": "Launch",
+   "counterparty": null,
+   "counterparty_type": null,
+   "headline": "Infosys unveils 'AI First Value Framework' ($300B+ opportunity)",
+   "source_url": "https://www.aap.com.au/aapreleases/cision20260217ae89261"
+  },
+  {
+   "event_id": "INF-001",
+   "company": "Infosys",
+   "event_date": "2026-02-17",
+   "event_type": "Partnership",
+   "counterparty": "Anthropic",
+   "counterparty_type": "Frontier model lab",
+   "headline": "Infosys and Anthropic collaborate on agentic AI for regulated industries",
+   "source_url": "https://www.infosys.com/newsroom/press-releases/2026/advanced-enterprise-ai-solutions-industries.html"
+  },
+  {
+   "event_id": "INF-002",
+   "company": "Infosys",
+   "event_date": "2026-02-17",
+   "event_type": "Financial disclosure",
+   "counterparty": null,
+   "counterparty_type": null,
+   "headline": "Infosys discloses AI services revenue at 5.5% of quarterly revenue",
+   "source_url": "https://techcrunch.com/2026/02/17/as-ai-jitters-rattle-it-stocks-infosys-partners-with-anthropic-to-build-enterprise-grade-ai-agents/"
+  },
+  {
+   "event_id": "CAP-003",
+   "company": "Capgemini",
+   "event_date": "2026-02-13",
+   "event_type": "Financial disclosure",
+   "counterparty": null,
+   "counterparty_type": null,
+   "headline": "Capgemini: GenAI/agentic >10% of Q4 bookings",
+   "source_url": "https://finance.yahoo.com/news/capgemini-exceeds-revenue-target-ai-061541263.html"
+  },
+  {
+   "event_id": "WIP-002",
+   "company": "Wipro",
+   "event_date": "2026-02-12",
+   "event_type": "Launch",
+   "counterparty": null,
+   "counterparty_type": null,
+   "headline": "Wipro unveils AI-powered operating model for business operations",
+   "source_url": "https://www.consultancy.uk/news/43135/wipro-unveils-ai-powered-operating-model-to-support-end-to-end-services"
+  },
+  {
+   "event_id": "CTS-003",
+   "company": "Cognizant",
+   "event_date": "2026-01-28",
+   "event_type": "Partnership",
+   "counterparty": "Cognition (Devin)",
+   "counterparty_type": "AI-native firm",
+   "headline": "Cognizant partners with Cognition on autonomous software engineering",
+   "source_url": "https://www.nasdaq.com/press-release/cognizant-and-cognition-partner-scale-autonomous-software-engineering-and-deliver"
+  },
+  {
+   "event_id": "TCS-001",
+   "company": "TCS",
+   "event_date": "2026-01-14",
+   "event_type": "Partnership",
+   "counterparty": "AMD",
+   "counterparty_type": "Chip / compute",
+   "headline": "TCS and AMD form strategic AI partnership",
+   "source_url": "https://www.autocarpro.in/news/tcs-and-amd-form-strategic-partnership-to-accelerate-enterprise-ai-deployment-130588?amp=1"
+  },
+  {
+   "event_id": "CTS-002",
+   "company": "Cognizant",
+   "event_date": "2026-01-09",
+   "event_type": "Partnership",
+   "counterparty": "Microsoft",
+   "counterparty_type": "Hyperscaler",
+   "headline": "Cognizant and Microsoft sign multi-year co-build, co-sell deal",
+   "source_url": "https://www.techpartner.news/news/cognizant-and-microsoft-partner-to-co-build-ai-solutions-622862"
+  },
+  {
+   "event_id": "ACN-003",
+   "company": "Accenture",
+   "event_date": "2026-01-06",
+   "event_type": "Acquisition",
+   "counterparty": "Faculty",
+   "counterparty_type": "AI-native firm",
+   "headline": "Accenture agrees to acquire UK applied-AI firm Faculty",
+   "source_url": "https://faculty.ai/insights/articles/accenture-to-acquire-faculty-to-scale-ai-capabilities"
+  },
+  {
+   "event_id": "CTS-001",
+   "company": "Cognizant",
+   "event_date": "2026-01-01",
+   "event_type": "Acquisition",
+   "counterparty": "3Cloud",
+   "counterparty_type": "Cloud services firm",
+   "headline": "Cognizant completes 3Cloud acquisition (Azure)",
+   "source_url": "https://siliconangle.com/?p=743499"
+  },
+  {
+   "event_id": "TCS-009",
+   "company": "TCS",
+   "event_date": "2025-12-10",
+   "event_type": "Acquisition",
+   "counterparty": "Coastal Cloud",
+   "counterparty_type": "Domain consultancy",
+   "headline": "TCS buys Salesforce consultancy Coastal Cloud, its largest acquisition",
+   "source_url": "https://www.moneycontrol.com/news/business/information-technology/tcs-salesforce-consulting-bets-gives-it-an-edge-over-rivals-in-agentic-ai-say-analysts-13721696.html"
+  },
+  {
+   "event_id": "ACN-002",
+   "company": "Accenture",
+   "event_date": "2025-12-09",
+   "event_type": "Partnership",
+   "counterparty": "Anthropic",
+   "counterparty_type": "Frontier model lab",
+   "headline": "Accenture and Anthropic launch multi-year partnership",
+   "source_url": "https://www.businesswire.com/news/home/20251209640751/en"
+  },
+  {
+   "event_id": "ACN-001",
+   "company": "Accenture",
+   "event_date": "2025-12-01",
+   "event_type": "Partnership",
+   "counterparty": "OpenAI",
+   "counterparty_type": "Frontier model lab",
+   "headline": "Accenture names OpenAI a primary AI partner",
+   "source_url": "https://www.peoplematters.in/news/business/openai-and-accenture-partner-to-speed-enterprise-adoption-of-advanced-ai-47491"
+  },
+  {
+   "event_id": "CAP-002",
+   "company": "Capgemini",
+   "event_date": "2025-11-03",
+   "event_type": "Acquisition",
+   "counterparty": "Cloud4C",
+   "counterparty_type": "Cloud services firm",
+   "headline": "Capgemini closes Cloud4C acquisition",
+   "source_url": "https://www.eenewseurope.com/en/french-capgemini-closes-acquisition-of-cloud4c"
+  },
+  {
+   "event_id": "TCS-010",
+   "company": "TCS",
+   "event_date": "2025-10-11",
+   "event_type": "Acquisition",
+   "counterparty": "ListEngage MidCo",
+   "counterparty_type": "Domain consultancy",
+   "headline": "TCS acquires ListEngage for $72.8M to add digital marketing services",
+   "source_url": "https://www.moneycontrol.com/news/business/information-technology/tcs-salesforce-consulting-bets-gives-it-an-edge-over-rivals-in-agentic-ai-say-analysts-13721696.html"
+  },
+  {
+   "event_id": "WIP-001",
+   "company": "Wipro",
+   "event_date": "2025-08-21",
+   "event_type": "Acquisition",
+   "counterparty": "HARMAN DTS",
+   "counterparty_type": "Engineering services firm",
+   "headline": "Wipro to acquire HARMAN's DTS unit for up to $375M",
+   "source_url": "https://www.outlookbusiness.com/corporate/wipro-to-acquire-harmans-dts-business-unit-for-usd-375-million"
+  },
+  {
+   "event_id": "CAP-001",
+   "company": "Capgemini",
+   "event_date": "2025-07-07",
+   "event_type": "Acquisition",
+   "counterparty": "WNS",
+   "counterparty_type": "BPM / operations firm",
+   "headline": "Capgemini to acquire WNS for $3.3B to lead agentic 'Intelligent Operations'",
+   "source_url": "https://www.business-standard.com/companies/news/capgemini-acquires-wns-cash-deal-ai-agentic-strategy-125070700371_1.html"
+  },
+  {
+   "event_id": "HCL-001",
+   "company": "HCLTech",
+   "event_date": "2025-06-30",
+   "event_type": "Partnership",
+   "counterparty": "OpenAI",
+   "counterparty_type": "Frontier model lab",
+   "headline": "HCLTech signs multi-year strategic partnership with OpenAI",
+   "source_url": "https://itbrief.com.au/story/hcltech-partners-with-openai-to-drive-enterprise-ai-adoption"
+  }
+ ],
+ "sources": [
+  {
+   "source_id": "ACN_Q4FY26_8K",
+   "publisher": "Accenture (SEC 8-K)",
+   "title": "Accenture Reports Fourth-Quarter and Full-Year Fiscal 2026 Results",
+   "release_date": "2026-10-01",
+   "url": "https://www.sec.gov/Archives/edgar/data/0001467373/000146737326000037/q4fy26earnings8-kexhibit.htm",
+   "source_type": "primary"
+  },
+  {
+   "source_id": "ACN_Q4FY26_PULSE",
+   "publisher": "Pulse 2.0",
+   "title": "Accenture Reports Q4 Revenue Of $18.7 Billion And FY2026 Revenue Of $74.2 Billion",
+   "release_date": "2026-10-02",
+   "url": "https://pulse2.com/accenture-reports-q4-revenue-of-18-7-billion-and-fy2026-revenue-of-74-2-billion/",
+   "source_type": "secondary (reports company release)"
+  },
+  {
+   "source_id": "ACN_FACTSHEET",
+   "publisher": "Accenture Newsroom",
+   "title": "Accenture fact sheet (FY26 revenue and year-end employees)",
+   "release_date": "2026-10",
+   "url": "https://newsroom.accenture.com/fact-sheet",
+   "source_type": "primary"
+  },
+  {
+   "source_id": "ACN_Q4FY25_CALL",
+   "publisher": "Accenture",
+   "title": "Fourth Quarter Fiscal 2025 conference call transcript",
+   "release_date": "2025-09-25",
+   "url": "https://www.investor.accenture.com/~/media/Files/A/Accenture-IR-V3/quarterly-earnings/2025/q4-fy-25/accenture-fourth-quarter-fiscal-2025-conference-call-transcript.pdf",
+   "source_type": "primary"
+  },
+  {
+   "source_id": "ACN_Q4FY25_CR",
+   "publisher": "Constellation Research",
+   "title": "Accenture: Enterprise AI deployments hit inflection point (Q4 FY25)",
+   "release_date": "2025-09-25",
+   "url": "https://www.constellationr.com/index%2ephp/insights/news/accenture-enterprise-ai-deployments-hit-inflection-point",
+   "source_type": "secondary (reports company call)"
+  },
+  {
+   "source_id": "ACN_Q1FY26_CALL",
+   "publisher": "Accenture",
+   "title": "First Quarter Fiscal 2026 conference call transcript",
+   "release_date": "2025-12-18",
+   "url": "https://investor.accenture.com/~/media/Files/A/accenture-v4/investors/earnings-reports/2026/accenture-first-quarter-fiscal-2026-conference-call-transcript.pdf",
+   "source_type": "primary"
+  },
+  {
+   "source_id": "ACN_AR2026",
+   "publisher": "Accenture",
+   "title": "Accenture Annual Report 2026",
+   "release_date": "2026-10",
+   "url": "https://www.accenture.com/content/dam/accenture/final/accenture-com/document-fy27/q1/Accenture-Annual-Report-2026.pdf",
+   "source_type": "primary"
+  },
+  {
+   "source_id": "TCS_Q2FY27_QUARTR",
+   "publisher": "Quartr",
+   "title": "Tata Consultancy Services Q2 FY27 earnings summary",
+   "release_date": "2026-10-08",
+   "url": "https://quartr.com/events/tata-consultancy-services-limited-tcs-q2-26-27_3suYK3xn",
+   "source_type": "secondary (summarises company release)"
+  },
+  {
+   "source_id": "TCS_Q2FY27_OUTLOOK",
+   "publisher": "Outlook Business",
+   "title": "TCS Q2 Results: annualised AI revenue crosses $3 bn; headcount 5,98,056",
+   "release_date": "2026-10-08",
+   "url": "https://www.outlookbusiness.com/amp/story/corporate/tcs-q2-results-profit-revenue-dividend-ai-workforce-deals-margins-share-price",
+   "source_type": "secondary (reports company release)"
+  },
+  {
+   "source_id": "TCS_Q1FY27_PR",
+   "publisher": "TCS",
+   "title": "TCS begins FY27 with continued growth (Q1 FY27 USD press release)",
+   "release_date": "2026-07-09",
+   "url": "https://www.tcs.com/content/dam/tcs/investor-relations/financial-statements/2026-27/q1/IFRS/Press%20Release%20-%20USD.pdf",
+   "source_type": "primary"
+  },
+  {
+   "source_id": "TCS_Q4FY26_DH",
+   "publisher": "Deccan Herald",
+   "title": "TCS Q4: annualised AI revenue crossed $2.3 bn",
+   "release_date": "2026-04",
+   "url": "https://www.deccanherald.com/business/companies/tcs-q4-net-profit-jumps-1222-to-rs-13718-crore-3961962",
+   "source_type": "secondary (reports company release)"
+  },
+  {
+   "source_id": "TCS_Q3FY26_PR",
+   "publisher": "Tata Group (TCS release)",
+   "title": "AI-led growth and strong order book highlight TCS' Q3 (revenue $7,509 mn; AI $1.8 bn)",
+   "release_date": "2026-01-12",
+   "url": "https://www.tataworld.com/news/openinside/ai-led-growth-strong-order-book-tcs-q3",
+   "source_type": "primary"
+  },
+  {
+   "source_id": "TCS_Q3FY26_NA",
+   "publisher": "Nearshore Americas",
+   "title": "TCS Q3 results: AI services ~5.8% of sales",
+   "release_date": "2026-01",
+   "url": "https://nearshoreamericas.com/tcs-q3-results-show-how-ai-is-rescuing-indias-it-services/",
+   "source_type": "secondary"
+  },
+  {
+   "source_id": "TCS_HC_FY26",
+   "publisher": "Storyboard18",
+   "title": "TCS headcount 593,314 as of 30 Sep 2025",
+   "release_date": "2025-10",
+   "url": "https://www.storyboard18.com/how-it-works/tcs-to-release-with-care-mid-level-staff-who-fail-to-fit-new-roles-says-chro-82740.htm",
+   "source_type": "secondary (reports company data)"
+  },
+  {
+   "source_id": "TCS_Q2FY26_OUTLOOK",
+   "publisher": "Outlook Business",
+   "title": "TCS Q3 FY26: TCV $9.3 bn vs $10 bn previous quarter",
+   "release_date": "2026-01-12",
+   "url": "https://www.outlookbusiness.com/corporate/tcs-q3-results-profit-falls-14-amid-rs-3138-cr-labour-code-implementation-charges-ai-revenue-hits-usd-18bn",
+   "source_type": "secondary (reports company release)"
+  },
+  {
+   "source_id": "INFY_Q2FY27_SIA",
+   "publisher": "Staffing Industry Analysts",
+   "title": "Infosys Q2 revenue edges up (USD 5,145 mn vs 5,076 mn)",
+   "release_date": "2026-10-23",
+   "url": "https://www.staffingindustry.com/news/global-daily-news/infosys-q2-revenue-edges-up-but-trims-full-year-revenue-outlook",
+   "source_type": "secondary (reports company release)"
+  },
+  {
+   "source_id": "INFY_Q2FY27_CALL",
+   "publisher": "Infosys (SEC 6-K)",
+   "title": "Q2 FY27 earnings call: AI revenue 10.5% of revenue (8.2% last quarter)",
+   "release_date": "2026-10-23",
+   "url": "https://www.sec.gov/Archives/edgar/data/0001067491/000106749126000044/exv99w05.htm",
+   "source_type": "primary"
+  },
+  {
+   "source_id": "INFY_Q3FY26_PR",
+   "publisher": "Infosys (PR Newswire)",
+   "title": "Strong Q3 performance: $5,099 million Q3 revenues",
+   "release_date": "2026-01-14",
+   "url": "https://kyodonewsprwire.jp/index.php/release/202601142470",
+   "source_type": "primary"
+  },
+  {
+   "source_id": "INFY_Q3FY26_AI",
+   "publisher": "domain-B",
+   "title": "Infosys reports 5.5% of quarterly revenue from AI services",
+   "release_date": "2026-02-17",
+   "url": "https://www.domain-b.com/technology/artificial-intelligence/infosys-ai-revenue-share-q3-2026",
+   "source_type": "secondary (reports CEO statement)"
+  },
+  {
+   "source_id": "INFY_MKT",
+   "publisher": "Whalesbook",
+   "title": "Infosys Q3 FY26: management sees a $300-400 bn AI services market",
+   "release_date": "2026-02",
+   "url": "https://www.whalesbook.com/news/English/tech/Infosys-Q3-FY26-AI-Revenue-Hits-55percent-90percent-Workforce-AI-Enabled/699de6ff04a25a58c850f450",
+   "source_type": "secondary"
+  },
+  {
+   "source_id": "HC_INDIA_Q2FY27",
+   "publisher": "People Matters",
+   "title": "Indian IT hiring in Q2 FY27 (HCLTech 230,339; Infosys 332,542 vs 331,991; Wipro 236,328 vs 235,492)",
+   "release_date": "2026-10",
+   "url": "https://www.peoplematters.in/amp/news/business/indian-it-hiring-in-q2-hcltech-adds-6450-employees-as-wipro-loses-6716-52954",
+   "source_type": "secondary (reports company data)"
+  },
+  {
+   "source_id": "HCL_Q2FY27_PR",
+   "publisher": "HCLTech",
+   "title": "HCLTech delivers strong Q2 led by record deal bookings of $3.3 billion",
+   "release_date": "2026-10-12",
+   "url": "https://www.hcltech.com/press-releases/hcltech-delivers-strong-q2-led-record-deal-bookings-33-billion",
+   "source_type": "primary"
+  },
+  {
+   "source_id": "HCL_Q2FY27_PRN",
+   "publisher": "HCLTech (PR Newswire)",
+   "title": "Q2 FY27: annualised advanced AI revenue $876M; AI +28.4% QoQ and +78% YoY CC",
+   "release_date": "2026-10-13",
+   "url": "https://macaubusiness.com/hcltech-delivers-strong-q2-led-by-record-deal-bookings-of-3-3-billion/",
+   "source_type": "primary (wire release)"
+  },
+  {
+   "source_id": "HCL_Q2FY27_TICKER",
+   "publisher": "Finology Ticker",
+   "title": "HCL Tech Q2 FY27: bookings $3.26 bn; headcount 2,30,339",
+   "release_date": "2026-10-13",
+   "url": "https://ticker.finology.in/discover/market-update/hcl-tech-q2-fy27-results-analysis",
+   "source_type": "secondary"
+  },
+  {
+   "source_id": "HCL_Q2FY26_OB",
+   "publisher": "Outlook Business",
+   "title": "HCLTech Q2 FY26: revenue $3,644 mn; advanced AI revenue crossed $100 mn",
+   "release_date": "2025-10-13",
+   "url": "https://www.outlookbusiness.com/corporate/hcltech-q2-profit-remains-flat-at-4235-crore-declares-12-per-share-dividend",
+   "source_type": "secondary (reports company release)"
+  },
+  {
+   "source_id": "HCL_Q2FY26_HC",
+   "publisher": "Outlook Business",
+   "title": "HCLTech headcount 226,640 at 30 Sep 2025",
+   "release_date": "2025-10-13",
+   "url": "https://www.outlookbusiness.com/corporate/hcltech-merges-quarterly-variable-with-fixed-salary-adds-3500-staff-in-q2-fy26",
+   "source_type": "secondary (reports company data)"
+  },
+  {
+   "source_id": "HCL_Q2FY26_TCV",
+   "publisher": "Muthoot Securities",
+   "title": "HCLTech Q2 FY26 TCV $2,569 mn",
+   "release_date": "2025-10-13",
+   "url": "https://www.muthootsecurities.com/CorporateInfo/ComNews/HCL-Technologies-Ltd/24287010087",
+   "source_type": "secondary"
+  },
+  {
+   "source_id": "WIT_Q2FY27_JM",
+   "publisher": "JM Financial",
+   "title": "Wipro Q2: bookings $2,595 mn; large deals $674 mn",
+   "release_date": "2026-10-15",
+   "url": "https://www.jmfinancialservices.in/market-news-and-insights/1737085",
+   "source_type": "secondary (reports company release)"
+  },
+  {
+   "source_id": "WIT_Q2FY27_TMM",
+   "publisher": "The Machine Maker",
+   "title": "Wipro IT services revenue $2,611.5 mn (+0.3% YoY)",
+   "release_date": "2026-10-15",
+   "url": "https://themachinemaker.com/?p=113394",
+   "source_type": "secondary (reports company release)"
+  },
+  {
+   "source_id": "WIT_Q2FY27_8K",
+   "publisher": "Wipro (SEC 6-K)",
+   "title": "Wipro results for the quarter ended 30 Sep 2026 (IT services +0.6% YoY CC)",
+   "release_date": "2026-10-15",
+   "url": "https://www.sec.gov/Archives/edgar/data/0001123799/000119312526426841/d188224dex991.htm",
+   "source_type": "primary"
+  },
+  {
+   "source_id": "WIT_AI_CRN",
+   "publisher": "CRN Asia",
+   "title": "Wipro Q2: AI-native unit now has over 2,000 engineers",
+   "release_date": "2026-10-15",
+   "url": "https://www.crnasia.com/india/news/2026/wipro-q2-earnings-we-will-continue-to-make-these-investments-even-when-they-create-near-term-margin-headwinds-ceo-says",
+   "source_type": "secondary"
+  },
+  {
+   "source_id": "CTSH_Q3_8K",
+   "publisher": "Cognizant (SEC 8-K)",
+   "title": "Cognizant third quarter 2026 results",
+   "release_date": "2026-10-29",
+   "url": "https://www.sec.gov/Archives/edgar/data/0001058290/000105829026000039/exhibit9919302026.htm",
+   "source_type": "primary"
+  },
+  {
+   "source_id": "CTSH_Q3_FINVIZ",
+   "publisher": "Finviz (company release)",
+   "title": "Cognizant Reports Third Quarter 2026 Results (revenue $5,664 mn vs $5,415 mn; TTM bookings $28.7 bn)",
+   "release_date": "2026-10-29",
+   "url": "https://finviz.com/news/411168/cognizant-reports-third-quarter-2026-results",
+   "source_type": "primary (wire release)"
+  },
+  {
+   "source_id": "CTSH_HC",
+   "publisher": "NewsBytes",
+   "title": "Cognizant headcount 359,900 (+10,100 YoY)",
+   "release_date": "2026-10-29",
+   "url": "https://www.newsbytesapp.com/news/business/cognizant-trims-growth-to-4-to-44-despite-57b-quarter/tldr",
+   "source_type": "secondary"
+  },
+  {
+   "source_id": "CTSH_AI_CRN",
+   "publisher": "CRN Asia",
+   "title": "Cognizant Q3: over 50% of software development AI-assisted; 8,500 AI engagements",
+   "release_date": "2026-10-29",
+   "url": "https://www.crnasia.com/india/news/2026/cognizant-q3-earnings-we-view-agentic-ai-as-the-most-significant-enterprise-opportunity-since-digitisation-ceo-says",
+   "source_type": "secondary"
+  },
+  {
+   "source_id": "CAP_Q3_PR",
+   "publisher": "Capgemini (via Taiwan News wire)",
+   "title": "Q3 2026 momentum drives upgrade in Capgemini's 2026 outlook",
+   "release_date": "2026-10-30",
+   "url": "https://www.taiwannews.com.tw/en/news/6468890",
+   "source_type": "primary (wire release)"
+  },
+  {
+   "source_id": "CAP_Q3_REUTERS",
+   "publisher": "Reuters (via WSAU / KFGO)",
+   "title": "Capgemini Q3 revenue \u20ac6.07 bn ($6.78 bn); $1 = 0.8957 euros",
+   "release_date": "2026-10-30",
+   "url": "https://wsau.com/?p=1031470",
+   "source_type": "secondary"
+  },
+  {
+   "source_id": "CAP_Q3_HC",
+   "publisher": "Id\u00e9al Investisseur",
+   "title": "Capgemini employed 417,500 people (+62,800 YoY; mainly WNS)",
+   "release_date": "2026-10-30",
+   "url": "https://www.ideal-investisseur.fr/en/stock-news/capgemini-revenue-up-11-7-in-the-third-quarter-2026-target-raised/28290.html",
+   "source_type": "secondary"
+  },
+  {
+   "source_id": "CAP_Q3_SIA",
+   "publisher": "Staffing Industry Analysts",
+   "title": "Capgemini Q3 and nine-month revenue (\u20ac6,073 mn vs \u20ac5,393 mn)",
+   "release_date": "2026-10-30",
+   "url": "https://www.staffingindustry.com/news/global-daily-news/capgeminis-q3-revenue-jumps-117-on-acquisitions",
+   "source_type": "secondary"
+  },
+  {
+   "source_id": "CAP_FY25_REUTERS",
+   "publisher": "Reuters (via Yahoo Finance)",
+   "title": "Capgemini: GenAI and agentic AI >10% of Q4 bookings (around 5% earlier in the year)",
+   "release_date": "2026-02-13",
+   "url": "https://finance.yahoo.com/news/capgemini-exceeds-revenue-target-ai-061541263.html",
+   "source_type": "secondary"
+  },
+  {
+   "source_id": "CAP_Q1_PR",
+   "publisher": "Capgemini (via Taiwan News wire)",
+   "title": "Q1 2026: generative and agentic AI >11% of Group bookings",
+   "release_date": "2026-04-30",
+   "url": "https://www.taiwannews.com.tw/news/6351502",
+   "source_type": "primary (wire release)"
+  },
+  {
+   "source_id": "TECHM_Q2FY27",
+   "publisher": "FinTech BizNews (company release)",
+   "title": "Tech Mahindra Q2 FY27: revenue $1,693 mn; TCV $1,023 mn",
+   "release_date": "2026-10-15",
+   "url": "https://fintechbiznews.com/fintech-technology/tech-mahindra-q2-fy27-ebit-up-405-yoy",
+   "source_type": "primary (release text)"
+  },
+  {
+   "source_id": "TECHM_Q2FY27_HC",
+   "publisher": "Staffing Industry Analysts",
+   "title": "Tech Mahindra headcount 152,206",
+   "release_date": "2026-10-15",
+   "url": "https://www.staffingindustry.com/news/global-daily-news/tech-mahindras-profit-climbs-327-deal-wins-surge",
+   "source_type": "secondary"
+  },
+  {
+   "source_id": "TECHM_Q2FY26",
+   "publisher": "TelecomTV (company release)",
+   "title": "Tech Mahindra Q2 FY26: revenue $1,589 mn",
+   "release_date": "2025-10-14",
+   "url": "https://telecomtv.com/content/digital-platforms-services/tech-mahindra-reports-153-yoy-growth-in-profit-after-tax-pat-in-fiscal-q2-51565",
+   "source_type": "primary (release text)"
+  },
+  {
+   "source_id": "TECHM_Q2FY26_HC",
+   "publisher": "Outlook Business",
+   "title": "Tech Mahindra headcount 152,714 at end Q2 FY26; deal wins $816 mn",
+   "release_date": "2025-10-14",
+   "url": "https://www.outlookbusiness.com/amp/story/corporate/tech-mahindras-q2-profit-declines-45-amid-fragile-business-conditions",
+   "source_type": "secondary"
+  },
+  {
+   "source_id": "GARTNER_AI_SEP26",
+   "publisher": "Gartner",
+   "title": "Gartner Forecasts Worldwide AI Spending to Grow 49.5% in 2026 (Table 1)",
+   "release_date": "2026-09-16",
+   "url": "https://gartner.com/en/newsroom/press-releases/2026-09-16-gartner-forecasts-worldwide-ai-spending-to-grow-49-point-5-percent-in-2026",
+   "source_type": "primary"
+  },
+  {
+   "source_id": "GARTNER_AI_2030",
+   "publisher": "AI Magazine",
+   "title": "Gartner: $1.2 tn AI services opportunity by 2030",
+   "release_date": "2026-09",
+   "url": "https://aimagazine.com/news/gartner-worldwide-ai-spend-to-grow-50-in-2026-to-us-2-7tn",
+   "source_type": "secondary (reports Gartner)"
+  },
+  {
+   "source_id": "GARTNER_IT_FEB26",
+   "publisher": "Gartner",
+   "title": "Gartner Forecasts Worldwide IT Spending to Grow 10.8% in 2026 (IT services $1.87 tn)",
+   "release_date": "2026-02-03",
+   "url": "https://gcom.pdo.aws.gartner.com/en/newsroom/press-releases/2026-02-03-gartner-forecasts-worldwide-it-spending-to-grow-10-point-8-percent-in-2026-totaling-6-point-15-trillion-dollars",
+   "source_type": "primary"
+  },
+  {
+   "source_id": "KOTAK_DEFL",
+   "publisher": "Kotak Neo (Kotak Institutional Equities)",
+   "title": "Kotak expects revenue deflation of ~3-3.5% a year for Indian IT through FY2029",
+   "release_date": "2026",
+   "url": "https://www.kotakneo.com/news/sectors/it-stocks-kotak-downgrades-infosys-tcs-to-add-ltm-to-sell-after-sharp-rally/",
+   "source_type": "secondary (broker view)"
+  },
+  {
+   "source_id": "AIM_DEFL",
+   "publisher": "Analytics India Magazine",
+   "title": "AI deflation is beginning to hollow out India's IT revenue engine (HCL 2-3%; analysts 10-15% cumulative over 3-5 years)",
+   "release_date": "2026",
+   "url": "https://analyticsindiamag.com/it-services/ai-deflation-is-beginning-to-hollow-out-indias-it-revenue-engine",
+   "source_type": "secondary"
+  },
+  {
+   "source_id": "P1_CI_TRACKER",
+   "publisher": "Utkarsh Saxena (Project 1)",
+   "title": "AI-Powered Competitive Intelligence Tracker - ci_events.csv (commit 00f3e36)",
+   "release_date": "2026-11-12",
+   "url": "https://github.com/lokpriye96/ai-ci-tracker",
+   "source_type": "primary (own verified dataset)"
+  }
+ ]
+};
+const COS = ["Accenture","TCS","Infosys","HCLTech","Cognizant","Capgemini","Wipro","Tech Mahindra"];
+const COL = {Accenture:"var(--c1)",TCS:"var(--c2)",Infosys:"var(--c3)",HCLTech:"var(--c4)",Cognizant:"var(--c5)",Capgemini:"var(--c6)",Wipro:"var(--c7)","Tech Mahindra":"var(--c8)"};
+const SCOL = {Bear:"var(--c8)",Base:"var(--c1)",Bull:"var(--c3)"};
+const state = {case:"mid", scen:"Base"};
+const NS="http://www.w3.org/2000/svg";
+const f1=v=>v==null?"–":(+v).toFixed(1), f2=v=>v==null?"–":(+v).toFixed(2), f0=v=>v==null?"–":Math.round(v).toLocaleString("en-US");
+const pct=v=>v==null?"–":((v>0?"+":"")+(+v).toFixed(1)+"%");
+function el(t,a={},p){const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);if(p)p.appendChild(e);return e;}
+function h(t,a={},x){const e=document.createElement(t);for(const k in a)e.setAttribute(k,a[k]);if(x!=null)e.textContent=x;return e;}
+const tip=document.getElementById("tip");
+function showTip(ev,title,rows){tip.replaceChildren();tip.appendChild(h("div",{class:"t"},title));rows.forEach(r=>{const d=h("div",{class:"r"});const l=h("span");if(r.c){const i=h("i");i.style.background=r.c;l.appendChild(i);}l.appendChild(document.createTextNode(r.k));d.appendChild(l);d.appendChild(h("b",{},r.v));tip.appendChild(d);});tip.style.display="block";const w=tip.offsetWidth,hh=tip.offsetHeight;tip.style.left=Math.min(innerWidth-w-8,(ev.clientX||0)+14)+"px";tip.style.top=Math.max(8,(ev.clientY||0)-hh-10)+"px";}
+function hideTip(){tip.style.display="none";}
+function bindTip(node,title,rows){node.setAttribute("tabindex","0");node.addEventListener("pointermove",e=>showTip(e,title,rows));node.addEventListener("pointerleave",hideTip);node.addEventListener("focus",()=>{const b=node.getBoundingClientRect();showTip({clientX:b.x+b.width/2,clientY:b.y},title,rows);});node.addEventListener("blur",hideTip);}
+function niceTicks(min,max,n=5){const span=max-min||1,s0=span/n,mag=Math.pow(10,Math.floor(Math.log10(s0)));const st=[1,2,2.5,5,10].map(m=>m*mag).find(s=>s>=s0);const lo=Math.floor(min/st)*st,hi=Math.ceil(max/st)*st,t=[];for(let v=lo;v<=hi+1e-9;v+=st)t.push(+v.toFixed(10));return t;}
+function frame(id,W,H,m){const c=document.getElementById(id);c.replaceChildren();const svg=el("svg",{viewBox:`0 0 ${W} ${H}`,role:"img"});c.appendChild(svg);return {svg,W,H,m,iw:W-m.l-m.r,ih:H-m.t-m.b};}
+function legend(id,items,box){const L=document.getElementById(id);L.replaceChildren();items.forEach(it=>{const s=h("span");const i=h("i",{class:box?"box":""});i.style.background=it.c;if(it.o)i.style.opacity=it.o;s.appendChild(i);s.appendChild(document.createTextNode(it.k));L.appendChild(s);});}
+function table(id,head,rows,num=[]){const T=document.getElementById(id);T.replaceChildren();const t=h("table"),th=h("thead"),tr=h("tr");head.forEach((x,i)=>tr.appendChild(h("th",{class:num.includes(i)?"num":""},x)));th.appendChild(tr);t.appendChild(th);const tb=h("tbody");rows.forEach(r=>{const tr=h("tr");r.forEach((x,i)=>{const td=h("td",{class:num.includes(i)?"num":""});if(x instanceof Node)td.appendChild(x);else td.textContent=x;tr.appendChild(td);});tb.appendChild(tr);});t.appendChild(tb);T.appendChild(t);}
+document.querySelectorAll("[data-table]").forEach(b=>b.addEventListener("click",()=>{const t=document.getElementById(b.dataset.table);t.classList.toggle("on");b.textContent=t.classList.contains("on")?"Hide table":"Table";}));
+function rbar(svg,x,y,w,hgt,fill,attrs={}){ // horizontal bar rounded at the data end
+  const r=Math.min(4,hgt/2,Math.abs(w)/2);if(w>=0){return el("path",{d:`M${x},${y}H${x+w-r}Q${x+w},${y} ${x+w},${y+r}V${y+hgt-r}Q${x+w},${y+hgt} ${x+w-r},${y+hgt}H${x}Z`,fill,class:"mark",...attrs},svg);}
+  return el("path",{d:`M${x},${y}H${x+w+r}Q${x+w},${y} ${x+w},${y+r}V${y+hgt-r}Q${x+w},${y+hgt} ${x+w+r},${y+hgt}H${x}Z`,fill,class:"mark",...attrs},svg);}
+
+const MS = Object.fromEntries(D.market_share.map(r=>[r.company,r]));
+const POOL = Object.fromEntries(D.ai_pool.map(r=>[r.company,r]));
+const CORE = Object.fromEntries(D.core_vs_ai.map(r=>[r.company,r]));
+const PROD = Object.fromEntries(D.productivity.map(r=>[r.company,r]));
+const MOM = Object.fromEntries(D.momentum.map(r=>[r.company,r]));
+const ST = D.stats, SN = D.sizing_notes;
+const aiOf = c => POOL[c]["ai_runrate_"+state.case+"_usd_bn"];
+const poolTot = () => COS.reduce((a,c)=>a+aiOf(c),0);
+const revTot = COS.reduce((a,c)=>a+MS[c].revenue_runrate_usd_bn,0);
+document.getElementById("asof").textContent = "Data as of " + D.as_of + ".";
+
+function renderFilters(){
+  const cf=document.getElementById("caseFilter");[...cf.querySelectorAll("button")].forEach(b=>b.remove());
+  [["low","Low"],["mid","Mid"],["high","High"]].forEach(([k,lab])=>{const b=h("button",{class:"pill",type:"button","aria-pressed":state.case===k},lab);b.addEventListener("click",()=>{state.case=k;renderAll();});cf.appendChild(b);});
+  const sf=document.getElementById("scFilter");[...sf.querySelectorAll("button")].forEach(b=>b.remove());
+  ["Bear","Base","Bull"].forEach(s=>{const b=h("button",{class:"pill",type:"button","aria-pressed":state.scen===s},s);b.addEventListener("click",()=>{state.scen=s;renderAll();});sf.appendChild(b);});
+}
+function renderKpis(){
+  const pt=poolTot(), sc=D.scenarios.filter(r=>r.scenario===state.scen), s30=sc.find(r=>r.year===2030);
+  const tiles=[
+    {lab:"AI revenue run-rate, eight firms ("+state.case+")",val:"$"+pt.toFixed(1)+" bn",sub:"range $"+f1(POOL.TCS.pool_low_usd_bn)+"–"+f1(POOL.TCS.pool_high_usd_bn)+" bn · "+f1(POOL.TCS.pool_pct_company_based)+"% on company figures"},
+    {lab:"AI share of their revenue",val:(pt/revTot*100).toFixed(1)+"%",sub:"TCS 10.1% · Infosys 10.5% (disclosed)"},
+    {lab:"Core (non-AI) growth, annualised",val:pct(CORE.Infosys.core_growth_annualised_pct)+" / "+pct(CORE.TCS.core_growth_annualised_pct),sub:"Infosys / TCS, Q3 FY26 → Q2 FY27"},
+    {lab:"Eight-firm growth vs market",val:pct(ST.eight_firm_yoy_usd_pct),sub:"vs Gartner IT services "+pct(ST.gartner_it_services_growth_2026_pct)+" (2026)"},
+    {lab:"2030 revenue, "+state.scen+" scenario",val:"$"+f0(s30.total_usd_bn)+" bn",sub:"CAGR "+pct(s30.cagr_2026_2030_pct)+" · AI "+f1(s30.ai_share_pct)+"% of total"},
+  ];
+  const K=document.getElementById("kpis");K.replaceChildren();tiles.forEach(t=>{const d=h("div",{class:"tile"});d.appendChild(h("div",{class:"lab"},t.lab));d.appendChild(h("div",{class:"val"},t.val));d.appendChild(h("div",{class:"sub"},t.sub));K.appendChild(d);});
+}
+function renderSizing(){
+  const S=D.sizing, f=frame("cSizing",560,232,{t:6,r:110,b:20,l:196});
+  const max=600, x=v=>f.m.l+v/max*f.iw;
+  niceTicks(0,max,3).forEach(t=>{el("line",{x1:x(t),x2:x(t),y1:f.m.t,y2:f.H-f.m.b,stroke:"var(--grid)"},f.svg);const tx=el("text",{x:x(t),y:f.H-f.m.b+13,"text-anchor":"middle"},f.svg);tx.textContent="$"+t+"bn";});
+  const labels=["Gartner AI services 2026","Infosys mgmt: AI services mkt","Implied vendor-labelled market","Eight firms' AI run-rate"];
+  const order=[0,1,3,2];
+  order.forEach((k,i)=>{const r=S[k],yy=f.m.t+i*50+6;const t=el("text",{x:f.m.l-8,y:yy+15,"text-anchor":"end",class:"lbl"},f.svg);t.textContent=labels[i];
+    const v=k===2?poolTot():r.value_usd_bn, col=i<2?"var(--muted)":"var(--c1)";
+    rbar(f.svg,f.m.l,yy,x(v)-f.m.l,22,col);
+    if(r.low_usd_bn!=null && k!==2){el("line",{x1:x(r.low_usd_bn),x2:x(r.high_usd_bn),y1:yy+11,y2:yy+11,stroke:"var(--text-primary)","stroke-width":1.5},f.svg);[r.low_usd_bn,r.high_usd_bn].forEach(z=>el("line",{x1:x(z),x2:x(z),y1:yy+5,y2:yy+17,stroke:"var(--text-primary)","stroke-width":1.5},f.svg));}
+    const vt=el("text",{x:x(Math.max(v,r.high_usd_bn||0))+6,y:yy+15},f.svg);vt.textContent="$"+(v<100?v.toFixed(1):Math.round(v))+" bn";
+    const hit=el("rect",{x:f.m.l,y:yy-4,width:f.iw,height:30,class:"hit"},f.svg);bindTip(hit,labels[i],[{k:"Value",v:"$"+f1(v)+" bn",c:col},{k:"Reading",v:r.reading.slice(0,60)+(r.reading.length>60?"…":"")}]);});
+  document.getElementById("tkSizing").textContent=`Vendors label about $${f0(SN.eight_firm_revenue_runrate_usd_bn*0+S[3].value_usd_bn)} bn of the market as AI when scaled from the eight firms' ${SN.eight_firm_share_of_gartner_it_services_pct}% share; Gartner's $${f0(S[0].value_usd_bn)} bn is ${SN.gartner_to_vendor_labelled_ratio}× larger. The eight hold just ${SN.eight_firm_share_of_gartner_ai_services_pct}% of Gartner's AI services spend. "AI market size" is a definition choice, not a fact.`;
+}
+function renderShare(){
+  const f=frame("cShare",560,280,{t:8,r:70,b:22,l:96});
+  const rows=COS.map(c=>MS[c]).sort((a,b)=>b.revenue_runrate_usd_bn-a.revenue_runrate_usd_bn);
+  const max=80,x=v=>f.m.l+v/max*f.iw;
+  niceTicks(0,max,4).forEach(t=>{el("line",{x1:x(t),x2:x(t),y1:f.m.t,y2:f.H-f.m.b,stroke:"var(--grid)"},f.svg);const tx=el("text",{x:x(t),y:f.H-f.m.b+13,"text-anchor":"middle"},f.svg);tx.textContent="$"+t+"bn";});
+  rows.forEach((r,i)=>{const yy=f.m.t+i*31+3;const t=el("text",{x:f.m.l-8,y:yy+13,"text-anchor":"end",class:"lbl"},f.svg);t.textContent=r.company;
+    rbar(f.svg,f.m.l,yy,x(r.revenue_runrate_usd_bn)-f.m.l,18,COL[r.company]);
+    const vt=el("text",{x:x(r.revenue_runrate_usd_bn)+6,y:yy+13},f.svg);vt.textContent="$"+f1(r.revenue_runrate_usd_bn)+" bn · "+pct(r.yoy_cc_pct);
+    const hit=el("rect",{x:f.m.l,y:yy-3,width:f.iw,height:26,class:"hit"},f.svg);bindTip(hit,r.company,[{k:"Revenue run-rate",v:"$"+f1(r.revenue_runrate_usd_bn)+" bn",c:COL[r.company]},{k:"Share of eight",v:f1(r.share_of_eight_pct)+"%"},{k:"Share of Gartner IT services",v:f2(r.share_of_gartner_it_services_pct)+"%"},{k:"YoY CC",v:pct(r.yoy_cc_pct)}]);});
+  document.getElementById("tkShare").textContent=`Together the eight run at $${f0(revTot)} bn, ${SN.eight_firm_share_of_gartner_it_services_pct}% of Gartner's $1.87 tn IT services market. They grew ${pct(ST.eight_firm_yoy_usd_pct)} YoY in USD (with Capgemini's WNS deal) against market growth of ${pct(ST.gartner_it_services_growth_2026_pct)}: the incumbents are losing share.`;
+  table("tShare",["Company","Run-rate $bn","Share of eight","Share of Gartner ITS","YoY USD","YoY CC"],rows.map(r=>[r.company,f1(r.revenue_runrate_usd_bn),f1(r.share_of_eight_pct)+"%",f2(r.share_of_gartner_it_services_pct)+"%",pct(r.yoy_usd_pct),pct(r.yoy_cc_pct)]),[1,2,3,4,5]);
+}
+function renderPool(){
+  const rows=COS.map(c=>POOL[c]).sort((a,b)=>aiOf(b.company)-aiOf(a.company));
+  const f=frame("cPool",560,290,{t:8,r:96,b:22,l:96});const max=7,x=v=>f.m.l+v/max*f.iw;
+  niceTicks(0,max,7).forEach(t=>{el("line",{x1:x(t),x2:x(t),y1:f.m.t,y2:f.H-f.m.b,stroke:"var(--grid)"},f.svg);const tx=el("text",{x:x(t),y:f.H-f.m.b+13,"text-anchor":"middle"},f.svg);tx.textContent="$"+t+"bn";});
+  rows.forEach((r,i)=>{const c=r.company,v=aiOf(c),yy=f.m.t+i*32+3,est=r.evidence_grade==="C";
+    const t=el("text",{x:f.m.l-8,y:yy+13,"text-anchor":"end",class:"lbl"},f.svg);t.textContent=c;
+    rbar(f.svg,f.m.l,yy,x(v)-f.m.l,18,COL[c],{opacity:est?.45:1});
+    if(r.ai_runrate_high_usd_bn>r.ai_runrate_low_usd_bn){el("line",{x1:x(r.ai_runrate_low_usd_bn),x2:x(r.ai_runrate_high_usd_bn),y1:yy+9,y2:yy+9,stroke:"var(--text-primary)","stroke-width":1.5},f.svg);[r.ai_runrate_low_usd_bn,r.ai_runrate_high_usd_bn].forEach(z=>el("line",{x1:x(z),x2:x(z),y1:yy+3,y2:yy+15,stroke:"var(--text-primary)","stroke-width":1.5},f.svg));}
+    const vt=el("text",{x:x(Math.max(v,r.ai_runrate_high_usd_bn))+6,y:yy+13},f.svg);vt.textContent="$"+f2(v)+" bn · "+r.evidence_grade+" · "+f1(v/MS[c].revenue_runrate_usd_bn*100)+"%";
+    const hit=el("rect",{x:f.m.l,y:yy-3,width:f.iw,height:26,class:"hit"},f.svg);bindTip(hit,c+" · grade "+r.evidence_grade,[{k:"AI run-rate ("+state.case+")",v:"$"+f2(v)+" bn",c:COL[c]},{k:"Range",v:"$"+f2(r.ai_runrate_low_usd_bn)+"–"+f2(r.ai_runrate_high_usd_bn)+" bn"},{k:"AI share of revenue",v:f1(v/MS[c].revenue_runrate_usd_bn*100)+"%"},{k:"Share of AI pool",v:f1(v/poolTot()*100)+"%"}]);});
+  const pt=poolTot();
+  document.getElementById("tkPool").textContent=`Accenture is the largest AI vendor in dollars (~$${f1(aiOf("Accenture"))} bn), but TCS and Infosys are the most AI-intensive (>10% of revenue) and over-index on their revenue share. Cognizant, Wipro and Tech Mahindra disclose nothing, so their bars are estimates.`;
+  table("tPool",["Company","Grade","AI $bn (low)","AI $bn (mid)","AI $bn (high)","AI % of revenue","Share of pool","AI share index"],rows.map(r=>[r.company,r.evidence_grade,f2(r.ai_runrate_low_usd_bn),f2(r.ai_runrate_mid_usd_bn),f2(r.ai_runrate_high_usd_bn),f1(aiOf(r.company)/MS[r.company].revenue_runrate_usd_bn*100)+"%",f1(aiOf(r.company)/pt*100)+"%",f2((aiOf(r.company)/pt)/(MS[r.company].revenue_runrate_usd_bn/revTot))]),[2,3,4,5,6,7]);
+}
+function renderTs(){
+  const T=D.ai_timeseries.filter(r=>r.ai_annualised_usd_m!=null && !(r.company==="HCLTech" && r.metric==="ai_revenue_annualised" && r.quarter_end==="2026-09-30"));
+  const cos=["Accenture","TCS","Infosys","HCLTech"];
+  const dates=T.map(r=>new Date(r.quarter_end).getTime()), d0=new Date("2024-07-01").getTime(), d1=new Date("2026-10-31").getTime();
+  const f=frame("cTs",560,270,{t:14,r:96,b:26,l:40});const yt=niceTicks(0,5,5);
+  const x=d=>f.m.l+(d-d0)/(d1-d0)*f.iw, y=v=>f.m.t+f.ih-v/yt[yt.length-1]*f.ih;
+  yt.forEach(t=>{el("line",{x1:f.m.l,x2:f.W-f.m.r,y1:y(t),y2:y(t),stroke:"var(--grid)"},f.svg);const tx=el("text",{x:f.m.l-6,y:y(t)+3.5,"text-anchor":"end"},f.svg);tx.textContent="$"+t;});
+  ["2024-09-30","2025-03-31","2025-09-30","2026-03-31","2026-09-30"].forEach(s=>{const tx=el("text",{x:x(new Date(s).getTime()),y:f.H-f.m.b+15,"text-anchor":"middle"},f.svg);tx.textContent=s.slice(0,7);});
+  el("line",{x1:f.m.l,x2:f.W-f.m.r,y1:f.m.t+f.ih,y2:f.m.t+f.ih,stroke:"var(--axis)"},f.svg);
+  const labs=[];
+  cos.forEach(c=>{const pts=T.filter(r=>r.company===c).sort((a,b)=>a.quarter_end<b.quarter_end?-1:1);let d="";
+    pts.forEach((p,i)=>{d+=(i?"L":"M")+x(new Date(p.quarter_end).getTime()).toFixed(1)+","+y(p.ai_annualised_usd_m/1000).toFixed(1);});
+    el("path",{d,fill:"none",stroke:COL[c],"stroke-width":2,"stroke-linejoin":"round"},f.svg);
+    pts.forEach(p=>{const cx=x(new Date(p.quarter_end).getTime()),cy=y(p.ai_annualised_usd_m/1000);el("circle",{cx,cy,r:4,fill:COL[c],stroke:"var(--surface-1)","stroke-width":2},f.svg);const hit=el("circle",{cx,cy,r:12,class:"hit"},f.svg);bindTip(hit,c+" · "+p.period_label,[{k:"Annualised AI revenue",v:"$"+f2(p.ai_annualised_usd_m/1000)+" bn",c:COL[c]},{k:"As reported",v:p.value+" "+p.unit},{k:"Grade",v:p.evidence_grade}]);});
+    const l=pts[pts.length-1];labs.push({y:y(l.ai_annualised_usd_m/1000),x:x(new Date(l.quarter_end).getTime()),t:c+" $"+f1(l.ai_annualised_usd_m/1000)});});
+  labs.sort((a,b)=>a.y-b.y);for(let i=1;i<labs.length;i++)if(labs[i].y-labs[i-1].y<13)labs[i].y=labs[i-1].y+13;
+  labs.forEach(l=>{const t=el("text",{x:l.x+8,y:l.y+4,class:"lbl"},f.svg);t.textContent=l.t;});
+  legend("lgTs",cos.map(c=>({k:c,c:COL[c]})));
+  document.getElementById("tkTs").textContent="TCS went from $1.8 bn to $3.1 bn annualised in three quarters (+72%); Infosys's AI share nearly doubled (5.5% → 10.5%); HCLTech +78% YoY. Accenture tripled AI revenue in FY25 but stopped quarterly disclosure after Q1 FY26.";
+  table("tTs",["Company","Period","Metric","As reported","Annualised $bn","Grade"],D.ai_timeseries.map(r=>[r.company,r.period_label,r.metric,r.value+" "+r.unit,r.ai_annualised_usd_m==null?"–":f2(r.ai_annualised_usd_m/1000),r.evidence_grade]),[3,4]);
+}
+function renderCore(){
+  const rows=["Infosys","TCS","HCLTech","Accenture"].map(c=>CORE[c]);
+  const ser=[{k:"Total revenue growth",f:"total_growth_annualised_pct",c:"var(--muted)"},{k:"Core (non-AI) growth",f:"core_growth_annualised_pct",c:"var(--neg)"}];
+  legend("lgCore",[...ser,{k:"AI growth (label, % p.a.)",c:"transparent"}],true);
+  const f=frame("cCore",1180,250,{t:22,r:20,b:30,l:40});const yt=niceTicks(-7,8,5),y0=yt[0],y1=yt[yt.length-1];const y=v=>f.m.t+f.ih-(v-y0)/(y1-y0)*f.ih;
+  yt.forEach(t=>{el("line",{x1:f.m.l,x2:f.W-f.m.r,y1:y(t),y2:y(t),stroke:"var(--grid)"},f.svg);const tx=el("text",{x:f.m.l-6,y:y(t)+3.5,"text-anchor":"end"},f.svg);tx.textContent=t+"%";});
+  const gw=f.iw/rows.length,bw=48;
+  rows.forEach((r,i)=>{const cx=f.m.l+i*gw+gw/2;
+    ser.forEach((s,j)=>{const v=r[s.f],x0=cx+(j-1)*(bw+6)+3,top=Math.min(y(v),y(0)),hg=Math.max(1,Math.abs(y(v)-y(0)));
+      const col=j===1?(v<0?"var(--neg)":"var(--pos)"):s.c;el("rect",{x:x0,y:top,width:bw,height:hg,rx:3,fill:col,class:"mark"},f.svg);
+      const t=el("text",{x:x0+bw/2,y:v>=0?y(v)-5:y(v)+13,"text-anchor":"middle",class:"lbl"},f.svg);t.textContent=pct(v);
+      const hit=el("rect",{x:x0-2,y:f.m.t,width:bw+4,height:f.ih,class:"hit"},f.svg);bindTip(hit,r.company+" · "+r.window,[{k:s.k,v:pct(v),c:col},{k:"AI growth p.a.",v:pct(r.ai_growth_annualised_pct)},{k:"AI share",v:f1(r.ai_share_start_pct)+"% → "+f1(r.ai_share_end_pct)+"%"},{k:"Core revenue",v:"$"+f0(r.core_start_usd_m)+" → $"+f0(r.core_end_usd_m)+" m"}]);});
+    const lt=el("text",{x:cx,y:f.H-f.m.b+15,"text-anchor":"middle",class:"lbl"},f.svg);lt.textContent=r.company;
+    const st=el("text",{x:cx,y:f.H-2,"text-anchor":"middle"},f.svg);st.textContent=r.window+" · AI "+pct(r.ai_growth_annualised_pct)+" p.a.";});
+  el("line",{x1:f.m.l,x2:f.W-f.m.r,y1:y(0),y2:y(0),stroke:"var(--axis)"},f.svg);
+  document.getElementById("tkCore").textContent=`Strip AI out and the core business is shrinking at Infosys (${pct(CORE.Infosys.core_growth_annualised_pct)}/yr), TCS (${pct(CORE.TCS.core_growth_annualised_pct)}/yr) and HCLTech (${pct(CORE.HCLTech.core_growth_annualised_pct)}/yr), even as AI grows 78–140% a year. At TCS and Infosys AI is replacing revenue, not adding to it — the "AI deflation" analysts describe (Kotak: 3–3.5%/yr). Accenture's core still grew ${pct(CORE.Accenture.core_growth_annualised_pct)} in FY25.`;
+  table("tCore",["Company","Window","Revenue start→end $m","AI start→end $m","Core start→end $m","Total p.a.","AI p.a.","Core p.a."],rows.map(r=>[r.company,r.window,f0(r.revenue_start_usd_m)+" → "+f0(r.revenue_end_usd_m),f0(r.ai_start_usd_m)+" → "+f0(r.ai_end_usd_m),f0(r.core_start_usd_m)+" → "+f0(r.core_end_usd_m),pct(r.total_growth_annualised_pct),pct(r.ai_growth_annualised_pct),pct(r.core_growth_annualised_pct)]),[5,6,7]);
+}
+function scatter(id,pts,xopt,yopt){
+  const f=frame(id,560,300,{t:16,r:24,b:36,l:44});const xt=niceTicks(xopt.min,xopt.max,xopt.n||6),yt=niceTicks(yopt.min,yopt.max,5);
+  const x=v=>f.m.l+(v-xt[0])/(xt[xt.length-1]-xt[0])*f.iw,y=v=>f.m.t+f.ih-(v-yt[0])/(yt[yt.length-1]-yt[0])*f.ih;
+  yt.forEach(t=>{el("line",{x1:f.m.l,x2:f.W-f.m.r,y1:y(t),y2:y(t),stroke:"var(--grid)"},f.svg);const tx=el("text",{x:f.m.l-6,y:y(t)+3.5,"text-anchor":"end"},f.svg);tx.textContent=t+"%";});
+  xt.forEach(t=>{const tx=el("text",{x:x(t),y:f.H-f.m.b+15,"text-anchor":"middle"},f.svg);tx.textContent=xopt.fmt(t);});
+  const xl=el("text",{x:f.m.l+f.iw/2,y:f.H-3,"text-anchor":"middle"},f.svg);xl.textContent=xopt.label;
+  el("line",{x1:f.m.l,x2:f.W-f.m.r,y1:f.m.t+f.ih,y2:f.m.t+f.ih,stroke:"var(--axis)"},f.svg);
+  const P=pts.map(p=>({...p,cx:x(p.x),cy:y(p.y)}));
+  P.sort((a,b)=>b.s-a.s).forEach(p=>{el("circle",{cx:p.cx,cy:p.cy,r:p.r,fill:p.hollow?"none":COL[p.c],"fill-opacity":.8,stroke:p.hollow?COL[p.c]:"var(--surface-1)","stroke-width":p.hollow?2.5:2,class:"mark"},f.svg);});
+  const boxes=[],ov=(a,b)=>a.x<b.x+b.w&&b.x<a.x+a.w&&a.y<b.y+b.h&&b.y<a.y+a.h;
+  const hitsCircle=(b,self)=>P.some(q=>q!==self&&q.cx+q.r>b.x&&q.cx-q.r<b.x+b.w&&q.cy+q.r>b.y&&q.cy-q.r<b.y+b.h);
+  [...P].sort((a,b)=>a.cx-b.cx).forEach(p=>{const w=p.c.length*6.6,hh=12,r=p.r;
+    const cands=[[r+4,-hh/2],[-r-4-w,-hh/2],[-w/2,-r-3-hh],[-w/2,r+3],[r+2,-r-hh],[r+2,r-2],[-r-2-w,-r-hh],[-r-2-w,r-2]];
+    let best=null;for(const [dx,dy] of cands){const b={x:p.cx+dx,y:p.cy+dy,w,h:hh};if(b.x<f.m.l||b.x+b.w>f.W-2||b.y<2||b.y+b.h>f.m.t+f.ih)continue;if(boxes.some(o=>ov(o,b))||hitsCircle(b,p))continue;best=b;break;}
+    if(!best){best={x:p.cx+r+4,y:p.cy-hh/2,w,h:hh};while(boxes.some(o=>ov(o,best)))best.y+=hh;}
+    boxes.push(best);const t=el("text",{x:best.x,y:best.y+hh-2,class:"lbl"},f.svg);t.textContent=p.c;
+    const hit=el("circle",{cx:p.cx,cy:p.cy,r:Math.max(r,12),class:"hit"},f.svg);bindTip(hit,p.c,p.tip);});
+}
+function renderPos(){
+  const pts=COS.map(c=>({c,x:aiOf(c)/MS[c].revenue_runrate_usd_bn*100,y:MS[c].yoy_cc_pct,s:MS[c].revenue_runrate_usd_bn,r:5+Math.sqrt(MS[c].revenue_runrate_usd_bn)*1.6,hollow:POOL[c].evidence_grade==="C",tip:[{k:"AI share of revenue",v:f1(aiOf(c)/MS[c].revenue_runrate_usd_bn*100)+"%",c:COL[c]},{k:"Growth YoY CC",v:pct(MS[c].yoy_cc_pct)},{k:"Revenue run-rate",v:"$"+f1(MS[c].revenue_runrate_usd_bn)+" bn"},{k:"AI grade",v:POOL[c].evidence_grade}]}));
+  scatter("cPos",pts,{min:0,max:12,n:6,fmt:t=>t+"%",label:"AI share of revenue →"},{min:0,max:12});
+  document.getElementById("tkPos").textContent=`The two most AI-intensive firms (Infosys, TCS) are among the slowest growers. Rank correlation between AI share and growth: ${ST.spearman_ai_intensity_vs_growth_all8>0?"+":""}${ST.spearman_ai_intensity_vs_growth_all8} across all eight, ${ST.spearman_ai_intensity_vs_growth_disclosers} across the four company-based disclosers. AI revenue is not yet a growth signal.`;
+}
+function renderMom(){
+  const pts=COS.map(c=>({c,x:MOM[c].p1_events,y:MS[c].yoy_cc_pct,s:MS[c].revenue_runrate_usd_bn,r:7,hollow:false,tip:[{k:"Project 1 verified events",v:String(MOM[c].p1_events),c:COL[c]},{k:"Frontier-lab ties",v:MOM[c].frontier_labs},{k:"Partnerships",v:String(MOM[c].partnerships)},{k:"Growth YoY CC",v:pct(MS[c].yoy_cc_pct)}]}));
+  scatter("cMom",pts,{min:6,max:11,n:5,fmt:t=>String(t),label:"Verified CI events in Project 1 →"},{min:0,max:12});
+  document.getElementById("tkMom").textContent=`Rank correlation between announcement count and growth is ${ST.spearman_p1_events_vs_growth}: the noisiest announcers (TCS, HCLTech, Wipro: 10 events each) grew slowest; Capgemini, with no frontier-lab tie, grew fastest. Verdict for H5: rejected — weight disclosed revenue above press releases.`;
+}
+function renderProd(){
+  const rows=COS.map(c=>PROD[c]).sort((a,b)=>b.decoupling_gap_pp-a.decoupling_gap_pp);
+  legend("lgProd",[{k:"Revenue growth YoY (USD)",c:"var(--c1)"},{k:"Headcount growth YoY",c:"var(--muted)"}],true);
+  const f=frame("cProd",560,300,{t:8,r:60,b:22,l:96});const x=v=>f.m.l+(v+2)/22*f.iw;
+  niceTicks(-2,20,5).forEach(t=>{el("line",{x1:x(t),x2:x(t),y1:f.m.t,y2:f.H-f.m.b,stroke:"var(--grid)"},f.svg);const tx=el("text",{x:x(t),y:f.H-f.m.b+13,"text-anchor":"middle"},f.svg);tx.textContent=t+"%";});
+  rows.forEach((r,i)=>{const yy=f.m.t+i*33+3;const t=el("text",{x:f.m.l-8,y:yy+13,"text-anchor":"end",class:"lbl"},f.svg);t.textContent=r.company;
+    [[r.revenue_yoy_usd_pct,"var(--c1)",0],[r.headcount_yoy_pct,"var(--muted)",11]].forEach(([v,c,off])=>{rbar(f.svg,x(0),yy+off,x(v)-x(0),9,c);});
+    const vt=el("text",{x:x(Math.max(r.revenue_yoy_usd_pct,r.headcount_yoy_pct,0))+6,y:yy+13},f.svg);vt.textContent=(r.decoupling_gap_pp>0?"+":"")+f1(r.decoupling_gap_pp)+"pp";
+    const hit=el("rect",{x:f.m.l,y:yy-3,width:f.iw,height:28,class:"hit"},f.svg);bindTip(hit,r.company,[{k:"Revenue YoY",v:pct(r.revenue_yoy_usd_pct),c:"var(--c1)"},{k:"Headcount YoY",v:pct(r.headcount_yoy_pct),c:"var(--muted)"},{k:"Net adds",v:f0(r.net_adds)},{k:"Rev/employee",v:"$"+f1(r.rev_per_employee_k_usd)+"k ("+pct(r.rev_per_employee_yoy_pct)+")"}]);});
+  el("line",{x1:x(0),x2:x(0),y1:f.m.t,y2:f.H-f.m.b,stroke:"var(--axis)"},f.svg);
+  document.getElementById("tkProd").textContent=`Median gap is only ${ST.median_decoupling_gap_pp>0?"+":""}${ST.median_decoupling_gap_pp}pp. Most firms still add people roughly in line with revenue; only Tech Mahindra clearly decouples (+${f1(PROD["Tech Mahindra"].rev_per_employee_yoy_pct)}% revenue per employee). AI productivity is being passed to clients as price, not banked as non-linear growth.`;
+  table("tProd",["Company","Revenue YoY","Headcount YoY","Gap pp","Headcount","Net adds","Rev/employee $k","Rev/employee YoY","Pattern"],rows.map(r=>[r.company,pct(r.revenue_yoy_usd_pct),pct(r.headcount_yoy_pct),f2(r.decoupling_gap_pp),f0(r.headcount),f0(r.net_adds),f1(r.rev_per_employee_k_usd),pct(r.rev_per_employee_yoy_pct),r.pattern]),[1,2,3,4,5,6,7]);
+}
+function renderScore(){
+  const S=D.scorecard;
+  table("tScore",["Company","Revenue $bn","Growth CC","AI $bn","AI %","Grade","Book-to-bill","Rev/emp $k","P1 events"],S.map(r=>[r.company,f1(r.revenue_runrate_usd_bn),pct(r.growth_cc_pct),f2(aiOf(r.company)),f1(aiOf(r.company)/MS[r.company].revenue_runrate_usd_bn*100)+"%",h("span",{class:"chip"},r.ai_grade),f2(r.book_to_bill),f1(r.rev_per_employee_k_usd),String(r.p1_events)]),[1,2,3,4,6,7,8]);
+  document.getElementById("tScore").appendChild(h("p",{class:"small"},"Book-to-bill uses each firm's own bookings basis (Infosys: large deals only; Cognizant: TTM ÷ 4). Use it within a firm over time, not as an exact cross-firm comparison."));
+}
+function renderScen(){
+  const yrs=[2026,2027,2028,2029,2030];
+  const f=frame("cScen",560,270,{t:14,r:118,b:26,l:46});const yt=niceTicks(190,270,4),y0=yt[0],y1=yt[yt.length-1];
+  const x=i=>f.m.l+i*f.iw/(yrs.length-1),y=v=>f.m.t+f.ih-(v-y0)/(y1-y0)*f.ih;
+  yt.forEach(t=>{el("line",{x1:f.m.l,x2:f.W-f.m.r,y1:y(t),y2:y(t),stroke:"var(--grid)"},f.svg);const tx=el("text",{x:f.m.l-6,y:y(t)+3.5,"text-anchor":"end"},f.svg);tx.textContent="$"+t;});
+  yrs.forEach((yy,i)=>{const tx=el("text",{x:x(i),y:f.H-f.m.b+15,"text-anchor":"middle"},f.svg);tx.textContent=yy===2026?"2026 (run-rate)":yy;});
+  const labs=[];
+  ["Bear","Base","Bull"].forEach(s=>{const pts=D.scenarios.filter(r=>r.scenario===s);let d="";pts.forEach((p,i)=>{d+=(i?"L":"M")+x(i)+","+y(p.total_usd_bn);});
+    el("path",{d,fill:"none",stroke:SCOL[s],"stroke-width":s===state.scen?2.5:2,"stroke-dasharray":s===state.scen?"":"5 4"},f.svg);
+    pts.forEach((p,i)=>{el("circle",{cx:x(i),cy:y(p.total_usd_bn),r:4,fill:SCOL[s],stroke:"var(--surface-1)","stroke-width":2},f.svg);const hit=el("circle",{cx:x(i),cy:y(p.total_usd_bn),r:12,class:"hit"},f.svg);bindTip(hit,s+" · "+p.year,[{k:"Total revenue",v:"$"+f1(p.total_usd_bn)+" bn",c:SCOL[s]},{k:"AI share",v:f1(p.ai_share_pct)+"%"},{k:"Growth",v:p.total_growth_pct==null?"–":pct(p.total_growth_pct)}]);});
+    const l=pts[pts.length-1];labs.push({y:y(l.total_usd_bn),t:s+" $"+f0(l.total_usd_bn)+"bn · "+pct(l.cagr_2026_2030_pct)});});
+  labs.forEach(l=>{const t=el("text",{x:x(4)+8,y:l.y+4,class:"lbl"},f.svg);t.textContent=l.t;});
+  legend("lgScen",["Bear","Base","Bull"].map(s=>({k:s+(s===state.scen?" (selected)":""),c:SCOL[s]})));
+  const s30=D.scenarios.find(r=>r.scenario===state.scen&&r.year===2030);
+  document.getElementById("tkScen").textContent=`${state.scen}: $${f0(s30.total_usd_bn)} bn by 2030 (${pct(s30.cagr_2026_2030_pct)} CAGR), with AI at ${f1(s30.ai_share_pct)}% of revenue. ${D.scenario_levers[state.scen].story} Even the Bull case grows slower than Gartner's IT services market (+8.7% in 2026), so the incumbents keep losing share.`;
+  const L=D.scenario_levers;document.getElementById("ftScen").textContent="Levers (2027→2030): "+["Bear","Base","Bull"].map(s=>`${s}: AI ${L[s].ai_growth.map(v=>Math.round(v*100)).join("/")}%, core ${L[s].core_growth.map(v=>(v*100).toFixed(1)).join("/")}%`).join(" · ")+". Start: $"+f1(D.scenario_calibration.start_ai_usd_bn)+" bn AI of $"+f1(D.scenario_calibration.start_total_usd_bn)+" bn total.";
+  table("tScen",["Scenario","Year","AI $bn","Core $bn","Total $bn","AI share","Growth","AI growth needed for flat total"],D.scenarios.map(r=>[r.scenario,r.year,f1(r.ai_usd_bn),f1(r.core_usd_bn),f1(r.total_usd_bn),f1(r.ai_share_pct)+"%",r.total_growth_pct==null?"–":pct(r.total_growth_pct),r.ai_growth_needed_for_flat_total_pct==null?"–":f1(r.ai_growth_needed_for_flat_total_pct)+"%"]),[2,3,4,5,6,7]);
+}
+function renderMix(){
+  document.getElementById("scName").textContent=state.scen;
+  const pts=D.scenarios.filter(r=>r.scenario===state.scen);
+  legend("lgMix",[{k:"Core (non-AI)",c:"var(--muted)"},{k:"AI",c:SCOL[state.scen]}],true);
+  const f=frame("cMix",560,270,{t:26,r:10,b:26,l:46});const yt=niceTicks(0,280,4),y=v=>f.m.t+f.ih-v/yt[yt.length-1]*f.ih;
+  yt.forEach(t=>{el("line",{x1:f.m.l,x2:f.W-f.m.r,y1:y(t),y2:y(t),stroke:"var(--grid)"},f.svg);const tx=el("text",{x:f.m.l-6,y:y(t)+3.5,"text-anchor":"end"},f.svg);tx.textContent="$"+t;});
+  const bw=f.iw/pts.length;
+  pts.forEach((p,i)=>{const x0=f.m.l+i*bw+bw*0.2,w=bw*0.6;
+    el("rect",{x:x0,y:y(p.core_usd_bn),width:w,height:y(0)-y(p.core_usd_bn),fill:"var(--muted)",class:"mark"},f.svg);
+    el("rect",{x:x0,y:y(p.total_usd_bn),width:w,height:Math.max(0,y(p.core_usd_bn)-y(p.total_usd_bn)-2),rx:3,fill:SCOL[state.scen],class:"mark"},f.svg);
+    const t=el("text",{x:x0+w/2,y:y(p.total_usd_bn)-6,"text-anchor":"middle",class:"lbl"},f.svg);t.textContent=p.ai_growth_needed_for_flat_total_pct==null?"start":(p.ai_growth_needed_for_flat_total_pct<=0.05?"core growing":"needs AI +"+f1(p.ai_growth_needed_for_flat_total_pct)+"%");
+    const tx=el("text",{x:x0+w/2,y:f.H-f.m.b+15,"text-anchor":"middle"},f.svg);tx.textContent=p.year;
+    const hit=el("rect",{x:x0,y:f.m.t,width:w,height:f.ih,class:"hit"},f.svg);bindTip(hit,state.scen+" · "+p.year,[{k:"AI",v:"$"+f1(p.ai_usd_bn)+" bn",c:SCOL[state.scen]},{k:"Core",v:"$"+f1(p.core_usd_bn)+" bn",c:"var(--muted)"},{k:"AI share",v:f1(p.ai_share_pct)+"%"}]);});
+  const p30=pts[pts.length-1];
+  document.getElementById("tkMix").textContent=`AI grows from $${f1(pts[0].ai_usd_bn)} bn to $${f1(p30.ai_usd_bn)} bn by 2030 while core moves from $${f0(pts[0].core_usd_bn)} bn to $${f0(p30.core_usd_bn)} bn. With a large shrinking core, AI must grow ~${f1(p30.ai_growth_needed_for_flat_total_pct||0)}% a year just to stand still.`;
+}
+function renderHyp(){table("tHyp",["#","Hypothesis","Test","Evidence","Verdict","So what"],D.hypotheses.map(r=>[r.id,r.hypothesis,r.test,r.evidence,h("span",{class:"chip"},r.verdict),r.so_what]));}
+function renderAssum(){table("tAssum",["Company","Grade","Method","Rationale"],D.ai_assumptions.map(r=>[r.company,r.evidence_grade,r.method,r.rationale]));}
+function renderSources(){const T=document.getElementById("tSources");T.replaceChildren();const ul=h("ul");D.sources.forEach(s=>{const li=h("li");li.appendChild(document.createTextNode(`[${s.source_id}] ${s.publisher} — ${s.title} (${s.release_date}, ${s.source_type}). `));li.appendChild(h("a",{href:s.url,target:"_blank",rel:"noopener"},"Link"));ul.appendChild(li);});T.appendChild(ul);}
+document.getElementById("themeBtn").addEventListener("click",()=>{const r=document.documentElement;const dark=r.dataset.theme?r.dataset.theme==="dark":matchMedia("(prefers-color-scheme: dark)").matches;r.dataset.theme=dark?"light":"dark";});
+function renderAll(){renderFilters();renderKpis();renderSizing();renderShare();renderPool();renderTs();renderCore();renderPos();renderMom();renderProd();renderScore();renderScen();renderMix();renderHyp();}
+renderAll();renderAssum();renderSources();
+</script>
+</body>
+</html>

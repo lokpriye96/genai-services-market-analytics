@@ -1,0 +1,9 @@
+company,method,evidence_grade,ai_runrate_low_usd_m,ai_runrate_mid_usd_m,ai_runrate_high_usd_m,revenue_runrate_usd_m
+Accenture,last disclosed quarterly AI revenue x 4 x uplift,B,4400.0,5500.0,6600.0,74720.0
+TCS,disclosed annualised AI revenue,A,3100.0,3100.0,3100.0,30568.0
+Infosys,reported AI share x latest quarterly revenue x 4,B,2160.9,2160.9,2160.9,20580.0
+HCLTech,disclosed annualised AI revenue,A,876.0,876.0,876.0,14896.0
+Cognizant,peer benchmark (no AI revenue disclosed),C,679.7,1132.8,1812.5,22656.0
+Capgemini,GenAI/agentic share of bookings x conversion to revenue share,C,1491.6,2169.6,2983.2,27120.0
+Wipro,peer benchmark (no AI revenue disclosed),C,313.4,522.3,835.7,10446.0
+Tech Mahindra,peer benchmark (no AI revenue disclosed),C,203.2,338.6,541.8,6772.0

@@ -1,0 +1,26 @@
+company,period_label,quarter_end,metric,value,unit,evidence_grade,ai_annualised_usd_m,source_id
+Accenture,FY24 (Sep-23 to Aug-24),2024-08-31,ai_revenue_fy,900.0,USD m,B,900.0,ACN_Q4FY25_CALL
+Accenture,FY25 (Sep-24 to Aug-25),2025-08-31,ai_revenue_fy,2700.0,USD m,A,2700.0,ACN_Q4FY25_CALL
+Accenture,FY25 (Sep-24 to Aug-25),2025-08-31,ai_bookings_fy,5900.0,USD m,A,,ACN_Q4FY25_CALL
+Accenture,Q4 FY25,2025-08-31,ai_bookings_quarter,1800.0,USD m,A,,ACN_Q4FY25_CR
+Accenture,Q1 FY26,2025-11-30,ai_bookings_quarter,2200.0,USD m,A,,ACN_Q1FY26_CALL
+Accenture,Q1 FY26,2025-11-30,ai_revenue_quarter,1100.0,USD m,A,4400.0,ACN_Q1FY26_CALL
+Accenture,FY26,2026-08-31,ai_people,110000.0,people,A,,ACN_AR2026
+Capgemini,early 2025,2025-06-30,ai_share_of_bookings,5.0,%,B,,CAP_FY25_REUTERS
+Capgemini,Q4 2025,2025-12-31,ai_share_of_bookings,10.0,%,A,,CAP_FY25_REUTERS
+Capgemini,Q1 2026,2026-03-31,ai_share_of_bookings,11.0,%,A,,CAP_Q1_PR
+Cognizant,Q3 2026,2026-09-30,ai_engagements,8500.0,count,A,,CTSH_AI_CRN
+Cognizant,Q3 2026,2026-09-30,ai_assisted_code_share,50.0,%,A,,CTSH_AI_CRN
+HCLTech,Q2 FY26,2025-09-30,ai_revenue_quarter,123.0,USD m,B,492.0,HCL_Q2FY26_OB;HCL_Q2FY27_PRN
+HCLTech,Q4 FY26,2026-03-31,ai_revenue_annualised,620.0,USD m,A,620.0,P1_CI_TRACKER
+HCLTech,Q1 FY27,2026-06-30,ai_revenue_quarter,170.6,USD m,B,682.4,HCL_Q2FY27_PRN
+HCLTech,Q2 FY27,2026-09-30,ai_revenue_quarter,219.0,USD m,A,876.0,HCL_Q2FY27_PR
+HCLTech,Q2 FY27,2026-09-30,ai_revenue_annualised,876.0,USD m,A,876.0,HCL_Q2FY27_PR
+Infosys,Q3 FY26,2025-12-31,ai_share_of_revenue,5.5,%,A,1121.8,INFY_Q3FY26_AI
+Infosys,Q1 FY27,2026-06-30,ai_share_of_revenue,8.2,%,A,,INFY_Q2FY27_CALL
+Infosys,Q2 FY27,2026-09-30,ai_share_of_revenue,10.5,%,A,2160.9,INFY_Q2FY27_CALL
+TCS,Q3 FY26,2025-12-31,ai_revenue_annualised,1800.0,USD m,A,1800.0,TCS_Q3FY26_PR
+TCS,Q4 FY26,2026-03-31,ai_revenue_annualised,2300.0,USD m,A,2300.0,TCS_Q4FY26_DH
+TCS,Q1 FY27,2026-06-30,ai_revenue_annualised,2600.0,USD m,A,2600.0,TCS_Q1FY27_PR
+TCS,Q2 FY27,2026-09-30,ai_revenue_annualised,3100.0,USD m,A,3100.0,TCS_Q2FY27_QUARTR
+Wipro,Q2 FY27,2026-09-30,ai_people,2000.0,people,A,,WIT_AI_CRN

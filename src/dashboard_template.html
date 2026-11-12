@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GenAI Services Market Analytics & Competitive Dashboard</title>
+<meta name="description" content="How big is the GenAI services revenue pool in IT services, who is monetising it, and is AI adding to or eating into core revenue? Eight firms, public filings, graded evidence, 2030 scenarios.">
+<style>
+.viz-root{color-scheme:light;--page:#f9f9f7;--surface-1:#fcfcfb;--text-primary:#0b0b0b;--text-secondary:#52514e;--muted:#898781;--grid:#e1e0d9;--axis:#c3c2b7;--border:rgba(11,11,11,.10);--chip:#f0efec;
+--c1:#2a78d6;--c2:#eb6834;--c3:#1baf7a;--c4:#eda100;--c5:#e87ba4;--c6:#008300;--c7:#6250d6;--c8:#e34948;--neg:#e34948;--pos:#2a78d6}
+@media (prefers-color-scheme: dark){:root:where(:not([data-theme="light"])) .viz-root{color-scheme:dark;--page:#0d0d0d;--surface-1:#1a1a19;--text-primary:#f0efec;--text-secondary:#c3c2b7;--muted:#898781;--grid:#2c2c2a;--axis:#383835;--border:rgba(255,255,255,.10);--chip:#2c2c2a;
+--c1:#3987e5;--c2:#d95926;--c3:#199e70;--c4:#c98500;--c5:#d55181;--c6:#008300;--c7:#9085e9;--c8:#e66767;--neg:#e66767;--pos:#3987e5}}
+:root[data-theme="dark"] .viz-root{color-scheme:dark;--page:#0d0d0d;--surface-1:#1a1a19;--text-primary:#f0efec;--text-secondary:#c3c2b7;--muted:#898781;--grid:#2c2c2a;--axis:#383835;--border:rgba(255,255,255,.10);--chip:#2c2c2a;
+--c1:#3987e5;--c2:#d95926;--c3:#199e70;--c4:#c98500;--c5:#d55181;--c6:#008300;--c7:#9085e9;--c8:#e66767;--neg:#e66767;--pos:#3987e5}
+*{box-sizing:border-box}html,body{margin:0}body{font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+.viz-root{background:var(--page);color:var(--text-primary);min-height:100vh;padding:28px clamp(14px,3vw,40px) 60px;line-height:1.45;overflow-x:hidden}
+.wrap{max-width:1240px;margin:0 auto}
+header h1{font-size:clamp(22px,2.6vw,30px);margin:0 0 6px;letter-spacing:-.01em}
+.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--text-secondary);margin-bottom:8px}
+.question{font-size:16px;color:var(--text-secondary);max-width:920px;margin:0 0 4px}
+.meta{font-size:12px;color:var(--muted);margin-top:8px}.meta a{color:inherit}
+.theme-btn{float:right;border:1px solid var(--border);background:var(--surface-1);color:var(--text-primary);border-radius:8px;padding:6px 10px;font:inherit;font-size:13px;cursor:pointer}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin:22px 0 18px}
+.tile{background:var(--surface-1);border:1px solid var(--border);border-radius:12px;padding:14px 16px}
+.tile .lab{font-size:12px;color:var(--text-secondary)}.tile .val{font-size:27px;font-weight:650;margin:4px 0 2px;letter-spacing:-.01em}.tile .sub{font-size:12px;color:var(--muted)}
+.filters{display:flex;flex-wrap:wrap;gap:18px;align-items:center;background:var(--surface-1);border:1px solid var(--border);border-radius:12px;padding:10px 14px;margin-bottom:18px;position:sticky;top:0;z-index:5}
+.filters .grp{display:flex;gap:6px;align-items:center;flex-wrap:wrap}.filters .gl{font-size:12px;color:var(--text-secondary);margin-right:4px}
+.pill{border:1px solid var(--border);background:transparent;color:var(--text-primary);border-radius:999px;padding:5px 11px;font:inherit;font-size:13px;cursor:pointer}
+.pill[aria-pressed="true"]{background:var(--chip);font-weight:600}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
+.card{background:var(--surface-1);border:1px solid var(--border);border-radius:12px;padding:16px 16px 12px;grid-column:span 6;min-width:0}
+.card.wide{grid-column:span 12}@media (max-width:900px){.card{grid-column:span 12}}
+.card h2{font-size:15px;margin:0 0 2px}.card .takeaway{font-size:13px;color:var(--text-secondary);margin:0 0 10px}
+.card .foot{font-size:11px;color:var(--muted);margin-top:6px}.card .tools{float:right}
+.card > div[id^="t"]{overflow-x:auto}
+.linkbtn{background:none;border:none;color:var(--text-secondary);font:inherit;font-size:12px;cursor:pointer;text-decoration:underline;padding:0}
+svg{display:block;width:100%;height:auto;overflow:visible}
+svg text{fill:var(--text-secondary);font-size:11px;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+svg .lbl{fill:var(--text-primary);font-size:11.5px;font-weight:600}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:12px;color:var(--text-secondary);margin:2px 0 6px}
+.legend span{display:inline-flex;align-items:center;gap:6px}.legend i{display:inline-block;width:14px;height:3px;border-radius:2px}.legend i.box{height:10px;width:10px;border-radius:2px}
+table{border-collapse:collapse;width:100%;font-size:12.5px}th,td{text-align:left;padding:6px 8px;border-bottom:1px solid var(--grid);vertical-align:top}th{color:var(--text-secondary);font-weight:600}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+.tableview{display:none;max-height:320px;overflow:auto;margin-top:8px}.tableview.on{display:block}
+.chip{display:inline-block;border:1px solid var(--border);border-radius:999px;padding:1px 8px;font-size:11.5px;white-space:nowrap;background:var(--chip)}
+.tip{position:fixed;pointer-events:none;background:var(--surface-1);color:var(--text-primary);border:1px solid var(--border);border-radius:8px;padding:8px 10px;font-size:12px;box-shadow:0 4px 18px rgba(0,0,0,.12);z-index:50;display:none;min-width:150px;max-width:300px}
+.tip .t{color:var(--text-secondary);margin-bottom:4px}.tip .r{display:flex;align-items:center;gap:8px;justify-content:space-between}.tip .r i{display:inline-block;width:12px;height:3px;border-radius:2px;margin-right:6px}.tip .r b{font-variant-numeric:tabular-nums}
+details{background:var(--surface-1);border:1px solid var(--border);border-radius:12px;padding:12px 16px;margin-top:14px}details summary{cursor:pointer;font-weight:600;font-size:14px}
+.small{font-size:12.5px;color:var(--text-secondary)}.hit{fill:transparent}.mark:hover{opacity:.82}
+.ann line{stroke:var(--muted);stroke-dasharray:3 3}
+section.sec{margin:26px 0 10px}section.sec h3{font-size:13px;text-transform:uppercase;letter-spacing:.07em;color:var(--text-secondary);margin:0}
+.callout{border:1px solid var(--border);background:var(--chip);border-radius:10px;padding:10px 12px;font-size:13px;margin:8px 0}
+</style>
+</head>
+<body>
+<div class="viz-root"><div class="wrap">
+<header>
+  <button class="theme-btn" id="themeBtn" type="button" aria-label="Toggle dark mode">Dark / light</button>
+  <div class="eyebrow">Market analytics &amp; competitive dashboard · GenAI in IT services · companion to the <a href="https://lokpriye96.github.io/ai-ci-tracker/" style="color:inherit">AI-Powered CI Tracker</a></div>
+  <h1>AI is now a $16 bn business for eight IT services leaders, but at TCS and Infosys it is replacing core revenue, not adding to it</h1>
+  <p class="question"><b>Business question:</b> How big is the GenAI services revenue pool, who is actually monetising it, and is AI growing IT services firms or eating into their core business?</p>
+  <div class="meta">Eight firms: Accenture, TCS, Infosys, HCLTech, Cognizant, Capgemini, Wipro, Tech Mahindra. Latest quarter = calendar Q3 2026 (Accenture Q4 FY26, Jun–Aug). USD; run-rate = quarter × 4. Every AI figure carries an evidence grade: <b>A</b> company-reported · <b>B</b> derived from a company figure · <b>C</b> estimate with stated range. <span id="asof"></span> · <a href="https://github.com/lokpriye96/genai-services-market-analytics">Code, data &amp; method</a></div>
+</header>
+<div class="kpis" id="kpis"></div>
+<div class="filters" role="group" aria-label="Dashboard filters">
+  <div class="grp" id="caseFilter"><span class="gl">AI estimate case</span></div>
+  <div class="grp" id="scFilter"><span class="gl">2030 scenario</span></div>
+</div>
+
+<section class="sec"><h3>1 · Market size &amp; share</h3></section>
+<div class="grid">
+  <div class="card">
+    <h2>Sizing the AI services market: three lenses disagree by 4×</h2>
+    <p class="takeaway" id="tkSizing"></p>
+    <div id="cSizing"></div>
+    <div class="foot">Gartner (Sep-2026) counts AI embedded in ordinary projects ("indirect AI services"). The bottom-up figure counts only revenue vendors label as AI. Infosys's range has no stated year.</div>
+  </div>
+  <div class="card">
+    <div class="tools"><button class="linkbtn" data-table="tShare">Table</button></div>
+    <h2>Revenue run-rate and growth: the eight are growing slower than the market</h2>
+    <p class="takeaway" id="tkShare"></p>
+    <div id="cShare"></div>
+    <div class="tableview" id="tShare"></div>
+    <div class="foot">Bars = annualised revenue (USD bn); label = YoY growth in constant currency. Capgemini includes the WNS acquisition. Market line: Gartner IT services spending growth 2026.</div>
+  </div>
+</div>
+
+<section class="sec"><h3>2 · Who is monetising AI</h3></section>
+<div class="grid">
+  <div class="card">
+    <div class="tools"><button class="linkbtn" data-table="tPool">Table</button></div>
+    <h2>AI revenue run-rate by firm, with evidence grade</h2>
+    <p class="takeaway" id="tkPool"></p>
+    <div id="cPool"></div>
+    <div class="tableview" id="tPool"></div>
+    <div class="foot">Bar = selected case; whisker = low–high range. Solid = A/B (company figure); light = C (estimate). Switch Low / Mid / High in the filter bar.</div>
+  </div>
+  <div class="card">
+    <div class="tools"><button class="linkbtn" data-table="tTs">Table</button></div>
+    <h2>Disclosed AI revenue over time (annualised, USD bn)</h2>
+    <p class="takeaway" id="tkTs"></p>
+    <div class="legend" id="lgTs"></div>
+    <div id="cTs"></div>
+    <div class="tableview" id="tTs"></div>
+    <div class="foot">TCS: annualised AI services revenue. HCLTech: advanced AI quarter × 4. Infosys: reported AI share × revenue × 4. Accenture: FY totals, then Q1 FY26 × 4 (last quarterly figure found). Definitions differ; compare slopes, not levels.</div>
+  </div>
+</div>
+
+<section class="sec"><h3>3 · Is AI adding or replacing? (the AI-deflation test)</h3></section>
+<div class="grid">
+  <div class="card wide">
+    <div class="tools"><button class="linkbtn" data-table="tCore">Table</button></div>
+    <h2>H2 · Core (non-AI) revenue growth, annualised: shrinking at every Indian-heritage discloser</h2>
+    <p class="takeaway" id="tkCore"></p>
+    <div class="legend" id="lgCore"></div>
+    <div id="cCore"></div>
+    <div class="tableview" id="tCore"></div>
+    <div class="foot">Core = total revenue − AI revenue, at two points per firm (TCS, Infosys: Q3 FY26 → Q2 FY27; HCLTech: YoY; Accenture: FY24 → FY25). Some "AI revenue" may be existing work relabelled; no firm discloses that split.</div>
+  </div>
+</div>
+
+<section class="sec"><h3>4 · Competitive positioning</h3></section>
+<div class="grid">
+  <div class="card">
+    <h2>H3 · More AI revenue ≠ more growth</h2>
+    <p class="takeaway" id="tkPos"></p>
+    <div id="cPos"></div>
+    <div class="foot">x: AI share of revenue (selected case). y: revenue growth YoY, constant currency. Bubble area: revenue. Hollow = grade C estimate.</div>
+  </div>
+  <div class="card">
+    <h2>H5 · Project 1 announcement momentum vs growth</h2>
+    <p class="takeaway" id="tkMom"></p>
+    <div id="cMom"></div>
+    <div class="foot">x: verified CI events per firm in Project 1 (Jun-2025 to Nov-2026: partnerships, acquisitions, deals, financial disclosures). y: revenue growth YoY CC.</div>
+  </div>
+  <div class="card">
+    <div class="tools"><button class="linkbtn" data-table="tProd">Table</button></div>
+    <h2>H4 · Revenue vs headcount growth (YoY)</h2>
+    <p class="takeaway" id="tkProd"></p>
+    <div class="legend" id="lgProd"></div>
+    <div id="cProd"></div>
+    <div class="tableview" id="tProd"></div>
+    <div class="foot">Capgemini's headcount includes WNS (acquired). A firm "decouples" when revenue grows ≥ 2pp faster than headcount.</div>
+  </div>
+  <div class="card">
+    <h2>Scorecard</h2>
+    <div id="tScore"></div>
+  </div>
+</div>
+
+<section class="sec"><h3>5 · 2027–2030 scenarios for the eight firms</h3></section>
+<div class="grid">
+  <div class="card">
+    <div class="tools"><button class="linkbtn" data-table="tScen">Table</button></div>
+    <h2>Total revenue under three scenarios (USD bn)</h2>
+    <p class="takeaway" id="tkScen"></p>
+    <div class="legend" id="lgScen"></div>
+    <div id="cScen"></div>
+    <div class="tableview" id="tScen"></div>
+    <div class="foot" id="ftScen"></div>
+  </div>
+  <div class="card">
+    <h2>AI vs core revenue: <span id="scName"></span> scenario (USD bn)</h2>
+    <p class="takeaway" id="tkMix"></p>
+    <div class="legend" id="lgMix"></div>
+    <div id="cMix"></div>
+    <div class="foot">Stacked bars: AI + core = total. Label above each bar = AI growth needed that year just to keep total revenue flat.</div>
+  </div>
+</div>
+
+<section class="sec"><h3>6 · Hypotheses tested</h3></section>
+<div class="card wide" style="grid-column:auto"><div id="tHyp"></div></div>
+
+<details><summary>How each firm's AI number was built (assumptions)</summary><div id="tAssum" class="small"></div></details>
+<details>
+  <summary>Limitations &amp; how to read this</summary>
+  <ul class="small">
+    <li><b>No common definition of "AI revenue".</b> TCS reports "AI services", Infosys "AI-first" revenue share, HCLTech "advanced AI" (incl. related data work), Accenture "advanced AI" (excl. data and classical AI). Levels are not strictly comparable; that is why every figure carries a grade and a definition.</li>
+    <li><b>Relabelling risk.</b> Part of reported AI growth may be existing work reclassified as AI. The "core shrinking" result (H2) is therefore an upper bound on true cannibalisation.</li>
+    <li><b>Estimates for non-disclosers.</b> Cognizant, Wipro and Tech Mahindra disclose no AI revenue; Capgemini gives only a share of bookings; Accenture's last quarterly AI revenue found is Q1 FY26. Their figures are ranges, shown as such.</li>
+    <li><b>Run-rate basis.</b> Latest quarter × 4 ignores seasonality. Accenture's quarter is Jun–Aug, others Jul–Sep.</li>
+    <li><b>Currency and M&amp;A.</b> Capgemini converted at one EUR/USD rate for both quarters; its growth and headcount include WNS. HCLTech's latest USD revenue is derived from its reported growth rate.</li>
+    <li><b>Small sample.</b> Rank correlations use 8 firms (4 for disclosers); treat them as directional, not statistical proof.</li>
+    <li><b>Scenarios are not forecasts.</b> Levers are calibrated on observed 2025–26 AI and core growth and on published deflation estimates (Kotak 3–3.5%/yr; HCLTech 2–3%).</li>
+  </ul>
+</details>
+<details><summary>Sources</summary><div id="tSources" class="small"></div></details>
+<p class="meta">Independent portfolio project by Utkarsh Saxena. Public data only; not investment advice. Built with Python, SQLite, Excel and Power BI; this web view is hand-coded HTML/SVG.</p>
+</div>
+<div class="tip" id="tip" role="tooltip"></div>
+</div>
+<script>
+const D = /*__DATA__*/null;
+const COS = ["Accenture","TCS","Infosys","HCLTech","Cognizant","Capgemini","Wipro","Tech Mahindra"];
+const COL = {Accenture:"var(--c1)",TCS:"var(--c2)",Infosys:"var(--c3)",HCLTech:"var(--c4)",Cognizant:"var(--c5)",Capgemini:"var(--c6)",Wipro:"var(--c7)","Tech Mahindra":"var(--c8)"};
+const SCOL = {Bear:"var(--c8)",Base:"var(--c1)",Bull:"var(--c3)"};
+const state = {case:"mid", scen:"Base"};
+const NS="http://www.w3.org/2000/svg";
+const f1=v=>v==null?"–":(+v).toFixed(1), f2=v=>v==null?"–":(+v).toFixed(2), f0=v=>v==null?"–":Math.round(v).toLocaleString("en-US");
+const pct=v=>v==null?"–":((v>0?"+":"")+(+v).toFixed(1)+"%");
+function el(t,a={},p){const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);if(p)p.appendChild(e);return e;}
+function h(t,a={},x){const e=document.createElement(t);for(const k in a)e.setAttribute(k,a[k]);if(x!=null)e.textContent=x;return e;}
+const tip=document.getElementById("tip");
+function showTip(ev,title,rows){tip.replaceChildren();tip.appendChild(h("div",{class:"t"},title));rows.forEach(r=>{const d=h("div",{class:"r"});const l=h("span");if(r.c){const i=h("i");i.style.background=r.c;l.appendChild(i);}l.appendChild(document.createTextNode(r.k));d.appendChild(l);d.appendChild(h("b",{},r.v));tip.appendChild(d);});tip.style.display="block";const w=tip.offsetWidth,hh=tip.offsetHeight;tip.style.left=Math.min(innerWidth-w-8,(ev.clientX||0)+14)+"px";tip.style.top=Math.max(8,(ev.clientY||0)-hh-10)+"px";}
+function hideTip(){tip.style.display="none";}
+function bindTip(node,title,rows){node.setAttribute("tabindex","0");node.addEventListener("pointermove",e=>showTip(e,title,rows));node.addEventListener("pointerleave",hideTip);node.addEventListener("focus",()=>{const b=node.getBoundingClientRect();showTip({clientX:b.x+b.width/2,clientY:b.y},title,rows);});node.addEventListener("blur",hideTip);}
+function niceTicks(min,max,n=5){const span=max-min||1,s0=span/n,mag=Math.pow(10,Math.floor(Math.log10(s0)));const st=[1,2,2.5,5,10].map(m=>m*mag).find(s=>s>=s0);const lo=Math.floor(min/st)*st,hi=Math.ceil(max/st)*st,t=[];for(let v=lo;v<=hi+1e-9;v+=st)t.push(+v.toFixed(10));return t;}
+function frame(id,W,H,m){const c=document.getElementById(id);c.replaceChildren();const svg=el("svg",{viewBox:`0 0 ${W} ${H}`,role:"img"});c.appendChild(svg);return {svg,W,H,m,iw:W-m.l-m.r,ih:H-m.t-m.b};}
+function legend(id,items,box){const L=document.getElementById(id);L.replaceChildren();items.forEach(it=>{const s=h("span");const i=h("i",{class:box?"box":""});i.style.background=it.c;if(it.o)i.style.opacity=it.o;s.appendChild(i);s.appendChild(document.createTextNode(it.k));L.appendChild(s);});}
+function table(id,head,rows,num=[]){const T=document.getElementById(id);T.replaceChildren();const t=h("table"),th=h("thead"),tr=h("tr");head.forEach((x,i)=>tr.appendChild(h("th",{class:num.includes(i)?"num":""},x)));th.appendChild(tr);t.appendChild(th);const tb=h("tbody");rows.forEach(r=>{const tr=h("tr");r.forEach((x,i)=>{const td=h("td",{class:num.includes(i)?"num":""});if(x instanceof Node)td.appendChild(x);else td.textContent=x;tr.appendChild(td);});tb.appendChild(tr);});t.appendChild(tb);T.appendChild(t);}
+document.querySelectorAll("[data-table]").forEach(b=>b.addEventListener("click",()=>{const t=document.getElementById(b.dataset.table);t.classList.toggle("on");b.textContent=t.classList.contains("on")?"Hide table":"Table";}));
+function rbar(svg,x,y,w,hgt,fill,attrs={}){ // horizontal bar rounded at the data end
+  const r=Math.min(4,hgt/2,Math.abs(w)/2);if(w>=0){return el("path",{d:`M${x},${y}H${x+w-r}Q${x+w},${y} ${x+w},${y+r}V${y+hgt-r}Q${x+w},${y+hgt} ${x+w-r},${y+hgt}H${x}Z`,fill,class:"mark",...attrs},svg);}
+  return el("path",{d:`M${x},${y}H${x+w+r}Q${x+w},${y} ${x+w},${y+r}V${y+hgt-r}Q${x+w},${y+hgt} ${x+w+r},${y+hgt}H${x}Z`,fill,class:"mark",...attrs},svg);}
+
+const MS = Object.fromEntries(D.market_share.map(r=>[r.company,r]));
+const POOL = Object.fromEntries(D.ai_pool.map(r=>[r.company,r]));
+const CORE = Object.fromEntries(D.core_vs_ai.map(r=>[r.company,r]));
+const PROD = Object.fromEntries(D.productivity.map(r=>[r.company,r]));
+const MOM = Object.fromEntries(D.momentum.map(r=>[r.company,r]));
+const ST = D.stats, SN = D.sizing_notes;
+const aiOf = c => POOL[c]["ai_runrate_"+state.case+"_usd_bn"];
+const poolTot = () => COS.reduce((a,c)=>a+aiOf(c),0);
+const revTot = COS.reduce((a,c)=>a+MS[c].revenue_runrate_usd_bn,0);
+document.getElementById("asof").textContent = "Data as of " + D.as_of + ".";
+
+function renderFilters(){
+  const cf=document.getElementById("caseFilter");[...cf.querySelectorAll("button")].forEach(b=>b.remove());
+  [["low","Low"],["mid","Mid"],["high","High"]].forEach(([k,lab])=>{const b=h("button",{class:"pill",type:"button","aria-pressed":state.case===k},lab);b.addEventListener("click",()=>{state.case=k;renderAll();});cf.appendChild(b);});
+  const sf=document.getElementById("scFilter");[...sf.querySelectorAll("button")].forEach(b=>b.remove());
+  ["Bear","Base","Bull"].forEach(s=>{const b=h("button",{class:"pill",type:"button","aria-pressed":state.scen===s},s);b.addEventListener("click",()=>{state.scen=s;renderAll();});sf.appendChild(b);});
+}
+function renderKpis(){
+  const pt=poolTot(), sc=D.scenarios.filter(r=>r.scenario===state.scen), s30=sc.find(r=>r.year===2030);
+  const tiles=[
+    {lab:"AI revenue run-rate, eight firms ("+state.case+")",val:"$"+pt.toFixed(1)+" bn",sub:"range $"+f1(POOL.TCS.pool_low_usd_bn)+"–"+f1(POOL.TCS.pool_high_usd_bn)+" bn · "+f1(POOL.TCS.pool_pct_company_based)+"% on company figures"},
+    {lab:"AI share of their revenue",val:(pt/revTot*100).toFixed(1)+"%",sub:"TCS 10.1% · Infosys 10.5% (disclosed)"},
+    {lab:"Core (non-AI) growth, annualised",val:pct(CORE.Infosys.core_growth_annualised_pct)+" / "+pct(CORE.TCS.core_growth_annualised_pct),sub:"Infosys / TCS, Q3 FY26 → Q2 FY27"},
+    {lab:"Eight-firm growth vs market",val:pct(ST.eight_firm_yoy_usd_pct),sub:"vs Gartner IT services "+pct(ST.gartner_it_services_growth_2026_pct)+" (2026)"},
+    {lab:"2030 revenue, "+state.scen+" scenario",val:"$"+f0(s30.total_usd_bn)+" bn",sub:"CAGR "+pct(s30.cagr_2026_2030_pct)+" · AI "+f1(s30.ai_share_pct)+"% of total"},
+  ];
+  const K=document.getElementById("kpis");K.replaceChildren();tiles.forEach(t=>{const d=h("div",{class:"tile"});d.appendChild(h("div",{class:"lab"},t.lab));d.appendChild(h("div",{class:"val"},t.val));d.appendChild(h("div",{class:"sub"},t.sub));K.appendChild(d);});
+}
+function renderSizing(){
+  const S=D.sizing, f=frame("cSizing",560,232,{t:6,r:110,b:20,l:196});
+  const max=600, x=v=>f.m.l+v/max*f.iw;
+  niceTicks(0,max,3).forEach(t=>{el("line",{x1:x(t),x2:x(t),y1:f.m.t,y2:f.H-f.m.b,stroke:"var(--grid)"},f.svg);const tx=el("text",{x:x(t),y:f.H-f.m.b+13,"text-anchor":"middle"},f.svg);tx.textContent="$"+t+"bn";});
+  const labels=["Gartner AI services 2026","Infosys mgmt: AI services mkt","Implied vendor-labelled market","Eight firms' AI run-rate"];
+  const order=[0,1,3,2];
+  order.forEach((k,i)=>{const r=S[k],yy=f.m.t+i*50+6;const t=el("text",{x:f.m.l-8,y:yy+15,"text-anchor":"end",class:"lbl"},f.svg);t.textContent=labels[i];
+    const v=k===2?poolTot():r.value_usd_bn, col=i<2?"var(--muted)":"var(--c1)";
+    rbar(f.svg,f.m.l,yy,x(v)-f.m.l,22,col);
+    if(r.low_usd_bn!=null && k!==2){el("line",{x1:x(r.low_usd_bn),x2:x(r.high_usd_bn),y1:yy+11,y2:yy+11,stroke:"var(--text-primary)","stroke-width":1.5},f.svg);[r.low_usd_bn,r.high_usd_bn].forEach(z=>el("line",{x1:x(z),x2:x(z),y1:yy+5,y2:yy+17,stroke:"var(--text-primary)","stroke-width":1.5},f.svg));}
+    const vt=el("text",{x:x(Math.max(v,r.high_usd_bn||0))+6,y:yy+15},f.svg);vt.textContent="$"+(v<100?v.toFixed(1):Math.round(v))+" bn";
+    const hit=el("rect",{x:f.m.l,y:yy-4,width:f.iw,height:30,class:"hit"},f.svg);bindTip(hit,labels[i],[{k:"Value",v:"$"+f1(v)+" bn",c:col},{k:"Reading",v:r.reading.slice(0,60)+(r.reading.length>60?"…":"")}]);});
+  document.getElementById("tkSizing").textContent=`Vendors label about $${f0(SN.eight_firm_revenue_runrate_usd_bn*0+S[3].value_usd_bn)} bn of the market as AI when scaled from the eight firms' ${SN.eight_firm_share_of_gartner_it_services_pct}% share; Gartner's $${f0(S[0].value_usd_bn)} bn is ${SN.gartner_to_vendor_labelled_ratio}× larger. The eight hold just ${SN.eight_firm_share_of_gartner_ai_services_pct}% of Gartner's AI services spend. "AI market size" is a definition choice, not a fact.`;
+}
+function renderShare(){
+  const f=frame("cShare",560,280,{t:8,r:70,b:22,l:96});
+  const rows=COS.map(c=>MS[c]).sort((a,b)=>b.revenue_runrate_usd_bn-a.revenue_runrate_usd_bn);
+  const max=80,x=v=>f.m.l+v/max*f.iw;
+  niceTicks(0,max,4).forEach(t=>{el("line",{x1:x(t),x2:x(t),y1:f.m.t,y2:f.H-f.m.b,stroke:"var(--grid)"},f.svg);const tx=el("text",{x:x(t),y:f.H-f.m.b+13,"text-anchor":"middle"},f.svg);tx.textContent="$"+t+"bn";});
+  rows.forEach((r,i)=>{const yy=f.m.t+i*31+3;const t=el("text",{x:f.m.l-8,y:yy+13,"text-anchor":"end",class:"lbl"},f.svg);t.textContent=r.company;
+    rbar(f.svg,f.m.l,yy,x(r.revenue_runrate_usd_bn)-f.m.l,18,COL[r.company]);
+    const vt=el("text",{x:x(r.revenue_runrate_usd_bn)+6,y:yy+13},f.svg);vt.textContent="$"+f1(r.revenue_runrate_usd_bn)+" bn · "+pct(r.yoy_cc_pct);
+    const hit=el("rect",{x:f.m.l,y:yy-3,width:f.iw,height:26,class:"hit"},f.svg);bindTip(hit,r.company,[{k:"Revenue run-rate",v:"$"+f1(r.revenue_runrate_usd_bn)+" bn",c:COL[r.company]},{k:"Share of eight",v:f1(r.share_of_eight_pct)+"%"},{k:"Share of Gartner IT services",v:f2(r.share_of_gartner_it_services_pct)+"%"},{k:"YoY CC",v:pct(r.yoy_cc_pct)}]);});
+  document.getElementById("tkShare").textContent=`Together the eight run at $${f0(revTot)} bn, ${SN.eight_firm_share_of_gartner_it_services_pct}% of Gartner's $1.87 tn IT services market. They grew ${pct(ST.eight_firm_yoy_usd_pct)} YoY in USD (with Capgemini's WNS deal) against market growth of ${pct(ST.gartner_it_services_growth_2026_pct)}: the incumbents are losing share.`;
+  table("tShare",["Company","Run-rate $bn","Share of eight","Share of Gartner ITS","YoY USD","YoY CC"],rows.map(r=>[r.company,f1(r.revenue_runrate_usd_bn),f1(r.share_of_eight_pct)+"%",f2(r.share_of_gartner_it_services_pct)+"%",pct(r.yoy_usd_pct),pct(r.yoy_cc_pct)]),[1,2,3,4,5]);
+}
+function renderPool(){
+  const rows=COS.map(c=>POOL[c]).sort((a,b)=>aiOf(b.company)-aiOf(a.company));
+  const f=frame("cPool",560,290,{t:8,r:96,b:22,l:96});const max=7,x=v=>f.m.l+v/max*f.iw;
+  niceTicks(0,max,7).forEach(t=>{el("line",{x1:x(t),x2:x(t),y1:f.m.t,y2:f.H-f.m.b,stroke:"var(--grid)"},f.svg);const tx=el("text",{x:x(t),y:f.H-f.m.b+13,"text-anchor":"middle"},f.svg);tx.textContent="$"+t+"bn";});
+  rows.forEach((r,i)=>{const c=r.company,v=aiOf(c),yy=f.m.t+i*32+3,est=r.evidence_grade==="C";
+    const t=el("text",{x:f.m.l-8,y:yy+13,"text-anchor":"end",class:"lbl"},f.svg);t.textContent=c;
+    rbar(f.svg,f.m.l,yy,x(v)-f.m.l,18,COL[c],{opacity:est?.45:1});
+    if(r.ai_runrate_high_usd_bn>r.ai_runrate_low_usd_bn){el("line",{x1:x(r.ai_runrate_low_usd_bn),x2:x(r.ai_runrate_high_usd_bn),y1:yy+9,y2:yy+9,stroke:"var(--text-primary)","stroke-width":1.5},f.svg);[r.ai_runrate_low_usd_bn,r.ai_runrate_high_usd_bn].forEach(z=>el("line",{x1:x(z),x2:x(z),y1:yy+3,y2:yy+15,stroke:"var(--text-primary)","stroke-width":1.5},f.svg));}
+    const vt=el("text",{x:x(Math.max(v,r.ai_runrate_high_usd_bn))+6,y:yy+13},f.svg);vt.textContent="$"+f2(v)+" bn · "+r.evidence_grade+" · "+f1(v/MS[c].revenue_runrate_usd_bn*100)+"%";
+    const hit=el("rect",{x:f.m.l,y:yy-3,width:f.iw,height:26,class:"hit"},f.svg);bindTip(hit,c+" · grade "+r.evidence_grade,[{k:"AI run-rate ("+state.case+")",v:"$"+f2(v)+" bn",c:COL[c]},{k:"Range",v:"$"+f2(r.ai_runrate_low_usd_bn)+"–"+f2(r.ai_runrate_high_usd_bn)+" bn"},{k:"AI share of revenue",v:f1(v/MS[c].revenue_runrate_usd_bn*100)+"%"},{k:"Share of AI pool",v:f1(v/poolTot()*100)+"%"}]);});
+  const pt=poolTot();
+  document.getElementById("tkPool").textContent=`Accenture is the largest AI vendor in dollars (~$${f1(aiOf("Accenture"))} bn), but TCS and Infosys are the most AI-intensive (>10% of revenue) and over-index on their revenue share. Cognizant, Wipro and Tech Mahindra disclose nothing, so their bars are estimates.`;
+  table("tPool",["Company","Grade","AI $bn (low)","AI $bn (mid)","AI $bn (high)","AI % of revenue","Share of pool","AI share index"],rows.map(r=>[r.company,r.evidence_grade,f2(r.ai_runrate_low_usd_bn),f2(r.ai_runrate_mid_usd_bn),f2(r.ai_runrate_high_usd_bn),f1(aiOf(r.company)/MS[r.company].revenue_runrate_usd_bn*100)+"%",f1(aiOf(r.company)/pt*100)+"%",f2((aiOf(r.company)/pt)/(MS[r.company].revenue_runrate_usd_bn/revTot))]),[2,3,4,5,6,7]);
+}
+function renderTs(){
+  const T=D.ai_timeseries.filter(r=>r.ai_annualised_usd_m!=null && !(r.company==="HCLTech" && r.metric==="ai_revenue_annualised" && r.quarter_end==="2026-09-30"));
+  const cos=["Accenture","TCS","Infosys","HCLTech"];
+  const dates=T.map(r=>new Date(r.quarter_end).getTime()), d0=new Date("2024-07-01").getTime(), d1=new Date("2026-10-31").getTime();
+  const f=frame("cTs",560,270,{t:14,r:96,b:26,l:40});const yt=niceTicks(0,5,5);
+  const x=d=>f.m.l+(d-d0)/(d1-d0)*f.iw, y=v=>f.m.t+f.ih-v/yt[yt.length-1]*f.ih;
+  yt.forEach(t=>{el("line",{x1:f.m.l,x2:f.W-f.m.r,y1:y(t),y2:y(t),stroke:"var(--grid)"},f.svg);const tx=el("text",{x:f.m.l-6,y:y(t)+3.5,"text-anchor":"end"},f.svg);tx.textContent="$"+t;});
+  ["2024-09-30","2025-03-31","2025-09-30","2026-03-31","2026-09-30"].forEach(s=>{const tx=el("text",{x:x(new Date(s).getTime()),y:f.H-f.m.b+15,"text-anchor":"middle"},f.svg);tx.textContent=s.slice(0,7);});
+  el("line",{x1:f.m.l,x2:f.W-f.m.r,y1:f.m.t+f.ih,y2:f.m.t+f.ih,stroke:"var(--axis)"},f.svg);
+  const labs=[];
+  cos.forEach(c=>{const pts=T.filter(r=>r.company===c).sort((a,b)=>a.quarter_end<b.quarter_end?-1:1);let d="";
+    pts.forEach((p,i)=>{d+=(i?"L":"M")+x(new Date(p.quarter_end).getTime()).toFixed(1)+","+y(p.ai_annualised_usd_m/1000).toFixed(1);});
+    el("path",{d,fill:"none",stroke:COL[c],"stroke-width":2,"stroke-linejoin":"round"},f.svg);
+    pts.forEach(p=>{const cx=x(new Date(p.quarter_end).getTime()),cy=y(p.ai_annualised_usd_m/1000);el("circle",{cx,cy,r:4,fill:COL[c],stroke:"var(--surface-1)","stroke-width":2},f.svg);const hit=el("circle",{cx,cy,r:12,class:"hit"},f.svg);bindTip(hit,c+" · "+p.period_label,[{k:"Annualised AI revenue",v:"$"+f2(p.ai_annualised_usd_m/1000)+" bn",c:COL[c]},{k:"As reported",v:p.value+" "+p.unit},{k:"Grade",v:p.evidence_grade}]);});
+    const l=pts[pts.length-1];labs.push({y:y(l.ai_annualised_usd_m/1000),x:x(new Date(l.quarter_end).getTime()),t:c+" $"+f1(l.ai_annualised_usd_m/1000)});});
+  labs.sort((a,b)=>a.y-b.y);for(let i=1;i<labs.length;i++)if(labs[i].y-labs[i-1].y<13)labs[i].y=labs[i-1].y+13;
+  labs.forEach(l=>{const t=el("text",{x:l.x+8,y:l.y+4,class:"lbl"},f.svg);t.textContent=l.t;});
+  legend("lgTs",cos.map(c=>({k:c,c:COL[c]})));
+  document.getElementById("tkTs").textContent="TCS went from $1.8 bn to $3.1 bn annualised in three quarters (+72%); Infosys's AI share nearly doubled (5.5% → 10.5%); HCLTech +78% YoY. Accenture tripled AI revenue in FY25 but stopped quarterly disclosure after Q1 FY26.";
+  table("tTs",["Company","Period","Metric","As reported","Annualised $bn","Grade"],D.ai_timeseries.map(r=>[r.company,r.period_label,r.metric,r.value+" "+r.unit,r.ai_annualised_usd_m==null?"–":f2(r.ai_annualised_usd_m/1000),r.evidence_grade]),[3,4]);
+}
+function renderCore(){
+  const rows=["Infosys","TCS","HCLTech","Accenture"].map(c=>CORE[c]);
+  const ser=[{k:"Total revenue growth",f:"total_growth_annualised_pct",c:"var(--muted)"},{k:"Core (non-AI) growth",f:"core_growth_annualised_pct",c:"var(--neg)"}];
+  legend("lgCore",[...ser,{k:"AI growth (label, % p.a.)",c:"transparent"}],true);
+  const f=frame("cCore",1180,250,{t:22,r:20,b:30,l:40});const yt=niceTicks(-7,8,5),y0=yt[0],y1=yt[yt.length-1];const y=v=>f.m.t+f.ih-(v-y0)/(y1-y0)*f.ih;
+  yt.forEach(t=>{el("line",{x1:f.m.l,x2:f.W-f.m.r,y1:y(t),y2:y(t),stroke:"var(--grid)"},f.svg);const tx=el("text",{x:f.m.l-6,y:y(t)+3.5,"text-anchor":"end"},f.svg);tx.textContent=t+"%";});
+  const gw=f.iw/rows.length,bw=48;
+  rows.forEach((r,i)=>{const cx=f.m.l+i*gw+gw/2;
+    ser.forEach((s,j)=>{const v=r[s.f],x0=cx+(j-1)*(bw+6)+3,top=Math.min(y(v),y(0)),hg=Math.max(1,Math.abs(y(v)-y(0)));
+      const col=j===1?(v<0?"var(--neg)":"var(--pos)"):s.c;el("rect",{x:x0,y:top,width:bw,height:hg,rx:3,fill:col,class:"mark"},f.svg);
+      const t=el("text",{x:x0+bw/2,y:v>=0?y(v)-5:y(v)+13,"text-anchor":"middle",class:"lbl"},f.svg);t.textContent=pct(v);
+      const hit=el("rect",{x:x0-2,y:f.m.t,width:bw+4,height:f.ih,class:"hit"},f.svg);bindTip(hit,r.company+" · "+r.window,[{k:s.k,v:pct(v),c:col},{k:"AI growth p.a.",v:pct(r.ai_growth_annualised_pct)},{k:"AI share",v:f1(r.ai_share_start_pct)+"% → "+f1(r.ai_share_end_pct)+"%"},{k:"Core revenue",v:"$"+f0(r.core_start_usd_m)+" → $"+f0(r.core_end_usd_m)+" m"}]);});
+    const lt=el("text",{x:cx,y:f.H-f.m.b+15,"text-anchor":"middle",class:"lbl"},f.svg);lt.textContent=r.company;
+    const st=el("text",{x:cx,y:f.H-2,"text-anchor":"middle"},f.svg);st.textContent=r.window+" · AI "+pct(r.ai_growth_annualised_pct)+" p.a.";});
+  el("line",{x1:f.m.l,x2:f.W-f.m.r,y1:y(0),y2:y(0),stroke:"var(--axis)"},f.svg);
+  document.getElementById("tkCore").textContent=`Strip AI out and the core business is shrinking at Infosys (${pct(CORE.Infosys.core_growth_annualised_pct)}/yr), TCS (${pct(CORE.TCS.core_growth_annualised_pct)}/yr) and HCLTech (${pct(CORE.HCLTech.core_growth_annualised_pct)}/yr), even as AI grows 78–140% a year. At TCS and Infosys AI is replacing revenue, not adding to it — the "AI deflation" analysts describe (Kotak: 3–3.5%/yr). Accenture's core still grew ${pct(CORE.Accenture.core_growth_annualised_pct)} in FY25.`;
+  table("tCore",["Company","Window","Revenue start→end $m","AI start→end $m","Core start→end $m","Total p.a.","AI p.a.","Core p.a."],rows.map(r=>[r.company,r.window,f0(r.revenue_start_usd_m)+" → "+f0(r.revenue_end_usd_m),f0(r.ai_start_usd_m)+" → "+f0(r.ai_end_usd_m),f0(r.core_start_usd_m)+" → "+f0(r.core_end_usd_m),pct(r.total_growth_annualised_pct),pct(r.ai_growth_annualised_pct),pct(r.core_growth_annualised_pct)]),[5,6,7]);
+}
+function scatter(id,pts,xopt,yopt){
+  const f=frame(id,560,300,{t:16,r:24,b:36,l:44});const xt=niceTicks(xopt.min,xopt.max,xopt.n||6),yt=niceTicks(yopt.min,yopt.max,5);
+  const x=v=>f.m.l+(v-xt[0])/(xt[xt.length-1]-xt[0])*f.iw,y=v=>f.m.t+f.ih-(v-yt[0])/(yt[yt.length-1]-yt[0])*f.ih;
+  yt.forEach(t=>{el("line",{x1:f.m.l,x2:f.W-f.m.r,y1:y(t),y2:y(t),stroke:"var(--grid)"},f.svg);const tx=el("text",{x:f.m.l-6,y:y(t)+3.5,"text-anchor":"end"},f.svg);tx.textContent=t+"%";});
+  xt.forEach(t=>{const tx=el("text",{x:x(t),y:f.H-f.m.b+15,"text-anchor":"middle"},f.svg);tx.textContent=xopt.fmt(t);});
+  const xl=el("text",{x:f.m.l+f.iw/2,y:f.H-3,"text-anchor":"middle"},f.svg);xl.textContent=xopt.label;
+  el("line",{x1:f.m.l,x2:f.W-f.m.r,y1:f.m.t+f.ih,y2:f.m.t+f.ih,stroke:"var(--axis)"},f.svg);
+  const P=pts.map(p=>({...p,cx:x(p.x),cy:y(p.y)}));
+  P.sort((a,b)=>b.s-a.s).forEach(p=>{el("circle",{cx:p.cx,cy:p.cy,r:p.r,fill:p.hollow?"none":COL[p.c],"fill-opacity":.8,stroke:p.hollow?COL[p.c]:"var(--surface-1)","stroke-width":p.hollow?2.5:2,class:"mark"},f.svg);});
+  const boxes=[],ov=(a,b)=>a.x<b.x+b.w&&b.x<a.x+a.w&&a.y<b.y+b.h&&b.y<a.y+a.h;
+  const hitsCircle=(b,self)=>P.some(q=>q!==self&&q.cx+q.r>b.x&&q.cx-q.r<b.x+b.w&&q.cy+q.r>b.y&&q.cy-q.r<b.y+b.h);
+  [...P].sort((a,b)=>a.cx-b.cx).forEach(p=>{const w=p.c.length*6.6,hh=12,r=p.r;
+    const cands=[[r+4,-hh/2],[-r-4-w,-hh/2],[-w/2,-r-3-hh],[-w/2,r+3],[r+2,-r-hh],[r+2,r-2],[-r-2-w,-r-hh],[-r-2-w,r-2]];
+    let best=null;for(const [dx,dy] of cands){const b={x:p.cx+dx,y:p.cy+dy,w,h:hh};if(b.x<f.m.l||b.x+b.w>f.W-2||b.y<2||b.y+b.h>f.m.t+f.ih)continue;if(boxes.some(o=>ov(o,b))||hitsCircle(b,p))continue;best=b;break;}
+    if(!best){best={x:p.cx+r+4,y:p.cy-hh/2,w,h:hh};while(boxes.some(o=>ov(o,best)))best.y+=hh;}
+    boxes.push(best);const t=el("text",{x:best.x,y:best.y+hh-2,class:"lbl"},f.svg);t.textContent=p.c;
+    const hit=el("circle",{cx:p.cx,cy:p.cy,r:Math.max(r,12),class:"hit"},f.svg);bindTip(hit,p.c,p.tip);});
+}
+function renderPos(){
+  const pts=COS.map(c=>({c,x:aiOf(c)/MS[c].revenue_runrate_usd_bn*100,y:MS[c].yoy_cc_pct,s:MS[c].revenue_runrate_usd_bn,r:5+Math.sqrt(MS[c].revenue_runrate_usd_bn)*1.6,hollow:POOL[c].evidence_grade==="C",tip:[{k:"AI share of revenue",v:f1(aiOf(c)/MS[c].revenue_runrate_usd_bn*100)+"%",c:COL[c]},{k:"Growth YoY CC",v:pct(MS[c].yoy_cc_pct)},{k:"Revenue run-rate",v:"$"+f1(MS[c].revenue_runrate_usd_bn)+" bn"},{k:"AI grade",v:POOL[c].evidence_grade}]}));
+  scatter("cPos",pts,{min:0,max:12,n:6,fmt:t=>t+"%",label:"AI share of revenue →"},{min:0,max:12});
+  document.getElementById("tkPos").textContent=`The two most AI-intensive firms (Infosys, TCS) are among the slowest growers. Rank correlation between AI share and growth: ${ST.spearman_ai_intensity_vs_growth_all8>0?"+":""}${ST.spearman_ai_intensity_vs_growth_all8} across all eight, ${ST.spearman_ai_intensity_vs_growth_disclosers} across the four company-based disclosers. AI revenue is not yet a growth signal.`;
+}
+function renderMom(){
+  const pts=COS.map(c=>({c,x:MOM[c].p1_events,y:MS[c].yoy_cc_pct,s:MS[c].revenue_runrate_usd_bn,r:7,hollow:false,tip:[{k:"Project 1 verified events",v:String(MOM[c].p1_events),c:COL[c]},{k:"Frontier-lab ties",v:MOM[c].frontier_labs},{k:"Partnerships",v:String(MOM[c].partnerships)},{k:"Growth YoY CC",v:pct(MS[c].yoy_cc_pct)}]}));
+  scatter("cMom",pts,{min:6,max:11,n:5,fmt:t=>String(t),label:"Verified CI events in Project 1 →"},{min:0,max:12});
+  document.getElementById("tkMom").textContent=`Rank correlation between announcement count and growth is ${ST.spearman_p1_events_vs_growth}: the noisiest announcers (TCS, HCLTech, Wipro: 10 events each) grew slowest; Capgemini, with no frontier-lab tie, grew fastest. Verdict for H5: rejected — weight disclosed revenue above press releases.`;
+}
+function renderProd(){
+  const rows=COS.map(c=>PROD[c]).sort((a,b)=>b.decoupling_gap_pp-a.decoupling_gap_pp);
+  legend("lgProd",[{k:"Revenue growth YoY (USD)",c:"var(--c1)"},{k:"Headcount growth YoY",c:"var(--muted)"}],true);
+  const f=frame("cProd",560,300,{t:8,r:60,b:22,l:96});const x=v=>f.m.l+(v+2)/22*f.iw;
+  niceTicks(-2,20,5).forEach(t=>{el("line",{x1:x(t),x2:x(t),y1:f.m.t,y2:f.H-f.m.b,stroke:"var(--grid)"},f.svg);const tx=el("text",{x:x(t),y:f.H-f.m.b+13,"text-anchor":"middle"},f.svg);tx.textContent=t+"%";});
+  rows.forEach((r,i)=>{const yy=f.m.t+i*33+3;const t=el("text",{x:f.m.l-8,y:yy+13,"text-anchor":"end",class:"lbl"},f.svg);t.textContent=r.company;
+    [[r.revenue_yoy_usd_pct,"var(--c1)",0],[r.headcount_yoy_pct,"var(--muted)",11]].forEach(([v,c,off])=>{rbar(f.svg,x(0),yy+off,x(v)-x(0),9,c);});
+    const vt=el("text",{x:x(Math.max(r.revenue_yoy_usd_pct,r.headcount_yoy_pct,0))+6,y:yy+13},f.svg);vt.textContent=(r.decoupling_gap_pp>0?"+":"")+f1(r.decoupling_gap_pp)+"pp";
+    const hit=el("rect",{x:f.m.l,y:yy-3,width:f.iw,height:28,class:"hit"},f.svg);bindTip(hit,r.company,[{k:"Revenue YoY",v:pct(r.revenue_yoy_usd_pct),c:"var(--c1)"},{k:"Headcount YoY",v:pct(r.headcount_yoy_pct),c:"var(--muted)"},{k:"Net adds",v:f0(r.net_adds)},{k:"Rev/employee",v:"$"+f1(r.rev_per_employee_k_usd)+"k ("+pct(r.rev_per_employee_yoy_pct)+")"}]);});
+  el("line",{x1:x(0),x2:x(0),y1:f.m.t,y2:f.H-f.m.b,stroke:"var(--axis)"},f.svg);
+  document.getElementById("tkProd").textContent=`Median gap is only ${ST.median_decoupling_gap_pp>0?"+":""}${ST.median_decoupling_gap_pp}pp. Most firms still add people roughly in line with revenue; only Tech Mahindra clearly decouples (+${f1(PROD["Tech Mahindra"].rev_per_employee_yoy_pct)}% revenue per employee). AI productivity is being passed to clients as price, not banked as non-linear growth.`;
+  table("tProd",["Company","Revenue YoY","Headcount YoY","Gap pp","Headcount","Net adds","Rev/employee $k","Rev/employee YoY","Pattern"],rows.map(r=>[r.company,pct(r.revenue_yoy_usd_pct),pct(r.headcount_yoy_pct),f2(r.decoupling_gap_pp),f0(r.headcount),f0(r.net_adds),f1(r.rev_per_employee_k_usd),pct(r.rev_per_employee_yoy_pct),r.pattern]),[1,2,3,4,5,6,7]);
+}
+function renderScore(){
+  const S=D.scorecard;
+  table("tScore",["Company","Revenue $bn","Growth CC","AI $bn","AI %","Grade","Book-to-bill","Rev/emp $k","P1 events"],S.map(r=>[r.company,f1(r.revenue_runrate_usd_bn),pct(r.growth_cc_pct),f2(aiOf(r.company)),f1(aiOf(r.company)/MS[r.company].revenue_runrate_usd_bn*100)+"%",h("span",{class:"chip"},r.ai_grade),f2(r.book_to_bill),f1(r.rev_per_employee_k_usd),String(r.p1_events)]),[1,2,3,4,6,7,8]);
+  document.getElementById("tScore").appendChild(h("p",{class:"small"},"Book-to-bill uses each firm's own bookings basis (Infosys: large deals only; Cognizant: TTM ÷ 4). Use it within a firm over time, not as an exact cross-firm comparison."));
+}
+function renderScen(){
+  const yrs=[2026,2027,2028,2029,2030];
+  const f=frame("cScen",560,270,{t:14,r:118,b:26,l:46});const yt=niceTicks(190,270,4),y0=yt[0],y1=yt[yt.length-1];
+  const x=i=>f.m.l+i*f.iw/(yrs.length-1),y=v=>f.m.t+f.ih-(v-y0)/(y1-y0)*f.ih;
+  yt.forEach(t=>{el("line",{x1:f.m.l,x2:f.W-f.m.r,y1:y(t),y2:y(t),stroke:"var(--grid)"},f.svg);const tx=el("text",{x:f.m.l-6,y:y(t)+3.5,"text-anchor":"end"},f.svg);tx.textContent="$"+t;});
+  yrs.forEach((yy,i)=>{const tx=el("text",{x:x(i),y:f.H-f.m.b+15,"text-anchor":"middle"},f.svg);tx.textContent=yy===2026?"2026 (run-rate)":yy;});
+  const labs=[];
+  ["Bear","Base","Bull"].forEach(s=>{const pts=D.scenarios.filter(r=>r.scenario===s);let d="";pts.forEach((p,i)=>{d+=(i?"L":"M")+x(i)+","+y(p.total_usd_bn);});
+    el("path",{d,fill:"none",stroke:SCOL[s],"stroke-width":s===state.scen?2.5:2,"stroke-dasharray":s===state.scen?"":"5 4"},f.svg);
+    pts.forEach((p,i)=>{el("circle",{cx:x(i),cy:y(p.total_usd_bn),r:4,fill:SCOL[s],stroke:"var(--surface-1)","stroke-width":2},f.svg);const hit=el("circle",{cx:x(i),cy:y(p.total_usd_bn),r:12,class:"hit"},f.svg);bindTip(hit,s+" · "+p.year,[{k:"Total revenue",v:"$"+f1(p.total_usd_bn)+" bn",c:SCOL[s]},{k:"AI share",v:f1(p.ai_share_pct)+"%"},{k:"Growth",v:p.total_growth_pct==null?"–":pct(p.total_growth_pct)}]);});
+    const l=pts[pts.length-1];labs.push({y:y(l.total_usd_bn),t:s+" $"+f0(l.total_usd_bn)+"bn · "+pct(l.cagr_2026_2030_pct)});});
+  labs.forEach(l=>{const t=el("text",{x:x(4)+8,y:l.y+4,class:"lbl"},f.svg);t.textContent=l.t;});
+  legend("lgScen",["Bear","Base","Bull"].map(s=>({k:s+(s===state.scen?" (selected)":""),c:SCOL[s]})));
+  const s30=D.scenarios.find(r=>r.scenario===state.scen&&r.year===2030);
+  document.getElementById("tkScen").textContent=`${state.scen}: $${f0(s30.total_usd_bn)} bn by 2030 (${pct(s30.cagr_2026_2030_pct)} CAGR), with AI at ${f1(s30.ai_share_pct)}% of revenue. ${D.scenario_levers[state.scen].story} Even the Bull case grows slower than Gartner's IT services market (+8.7% in 2026), so the incumbents keep losing share.`;
+  const L=D.scenario_levers;document.getElementById("ftScen").textContent="Levers (2027→2030): "+["Bear","Base","Bull"].map(s=>`${s}: AI ${L[s].ai_growth.map(v=>Math.round(v*100)).join("/")}%, core ${L[s].core_growth.map(v=>(v*100).toFixed(1)).join("/")}%`).join(" · ")+". Start: $"+f1(D.scenario_calibration.start_ai_usd_bn)+" bn AI of $"+f1(D.scenario_calibration.start_total_usd_bn)+" bn total.";
+  table("tScen",["Scenario","Year","AI $bn","Core $bn","Total $bn","AI share","Growth","AI growth needed for flat total"],D.scenarios.map(r=>[r.scenario,r.year,f1(r.ai_usd_bn),f1(r.core_usd_bn),f1(r.total_usd_bn),f1(r.ai_share_pct)+"%",r.total_growth_pct==null?"–":pct(r.total_growth_pct),r.ai_growth_needed_for_flat_total_pct==null?"–":f1(r.ai_growth_needed_for_flat_total_pct)+"%"]),[2,3,4,5,6,7]);
+}
+function renderMix(){
+  document.getElementById("scName").textContent=state.scen;
+  const pts=D.scenarios.filter(r=>r.scenario===state.scen);
+  legend("lgMix",[{k:"Core (non-AI)",c:"var(--muted)"},{k:"AI",c:SCOL[state.scen]}],true);
+  const f=frame("cMix",560,270,{t:26,r:10,b:26,l:46});const yt=niceTicks(0,280,4),y=v=>f.m.t+f.ih-v/yt[yt.length-1]*f.ih;
+  yt.forEach(t=>{el("line",{x1:f.m.l,x2:f.W-f.m.r,y1:y(t),y2:y(t),stroke:"var(--grid)"},f.svg);const tx=el("text",{x:f.m.l-6,y:y(t)+3.5,"text-anchor":"end"},f.svg);tx.textContent="$"+t;});
+  const bw=f.iw/pts.length;
+  pts.forEach((p,i)=>{const x0=f.m.l+i*bw+bw*0.2,w=bw*0.6;
+    el("rect",{x:x0,y:y(p.core_usd_bn),width:w,height:y(0)-y(p.core_usd_bn),fill:"var(--muted)",class:"mark"},f.svg);
+    el("rect",{x:x0,y:y(p.total_usd_bn),width:w,height:Math.max(0,y(p.core_usd_bn)-y(p.total_usd_bn)-2),rx:3,fill:SCOL[state.scen],class:"mark"},f.svg);
+    const t=el("text",{x:x0+w/2,y:y(p.total_usd_bn)-6,"text-anchor":"middle",class:"lbl"},f.svg);t.textContent=p.ai_growth_needed_for_flat_total_pct==null?"start":(p.ai_growth_needed_for_flat_total_pct<=0.05?"core growing":"needs AI +"+f1(p.ai_growth_needed_for_flat_total_pct)+"%");
+    const tx=el("text",{x:x0+w/2,y:f.H-f.m.b+15,"text-anchor":"middle"},f.svg);tx.textContent=p.year;
+    const hit=el("rect",{x:x0,y:f.m.t,width:w,height:f.ih,class:"hit"},f.svg);bindTip(hit,state.scen+" · "+p.year,[{k:"AI",v:"$"+f1(p.ai_usd_bn)+" bn",c:SCOL[state.scen]},{k:"Core",v:"$"+f1(p.core_usd_bn)+" bn",c:"var(--muted)"},{k:"AI share",v:f1(p.ai_share_pct)+"%"}]);});
+  const p30=pts[pts.length-1];
+  document.getElementById("tkMix").textContent=`AI grows from $${f1(pts[0].ai_usd_bn)} bn to $${f1(p30.ai_usd_bn)} bn by 2030 while core moves from $${f0(pts[0].core_usd_bn)} bn to $${f0(p30.core_usd_bn)} bn. With a large shrinking core, AI must grow ~${f1(p30.ai_growth_needed_for_flat_total_pct||0)}% a year just to stand still.`;
+}
+function renderHyp(){table("tHyp",["#","Hypothesis","Test","Evidence","Verdict","So what"],D.hypotheses.map(r=>[r.id,r.hypothesis,r.test,r.evidence,h("span",{class:"chip"},r.verdict),r.so_what]));}
+function renderAssum(){table("tAssum",["Company","Grade","Method","Rationale"],D.ai_assumptions.map(r=>[r.company,r.evidence_grade,r.method,r.rationale]));}
+function renderSources(){const T=document.getElementById("tSources");T.replaceChildren();const ul=h("ul");D.sources.forEach(s=>{const li=h("li");li.appendChild(document.createTextNode(`[${s.source_id}] ${s.publisher} — ${s.title} (${s.release_date}, ${s.source_type}). `));li.appendChild(h("a",{href:s.url,target:"_blank",rel:"noopener"},"Link"));ul.appendChild(li);});T.appendChild(ul);}
+document.getElementById("themeBtn").addEventListener("click",()=>{const r=document.documentElement;const dark=r.dataset.theme?r.dataset.theme==="dark":matchMedia("(prefers-color-scheme: dark)").matches;r.dataset.theme=dark?"light":"dark";});
+function renderAll(){renderFilters();renderKpis();renderSizing();renderShare();renderPool();renderTs();renderCore();renderPos();renderMom();renderProd();renderScore();renderScen();renderMix();renderHyp();}
+renderAll();renderAssum();renderSources();
+</script>
+</body>
+</html>

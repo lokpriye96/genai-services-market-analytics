@@ -1,0 +1,26 @@
+company,period_label,quarter_end,metric,value,unit,company_definition,evidence_grade,source_id,note
+Accenture,FY24 (Sep-23 to Aug-24),2024-08-31,ai_revenue_fy,900,USD m,Advanced AI (GenAI + agentic + physical AI); excludes data and classical AI,B,ACN_Q4FY25_CALL,Derived: FY25 revenue of $2.7 bn 'tripled' over FY24
+Accenture,FY25 (Sep-24 to Aug-25),2025-08-31,ai_revenue_fy,2700,USD m,Advanced AI (GenAI + agentic + physical AI); excludes data and classical AI,A,ACN_Q4FY25_CALL,
+Accenture,FY25 (Sep-24 to Aug-25),2025-08-31,ai_bookings_fy,5900,USD m,Advanced AI bookings,A,ACN_Q4FY25_CALL,
+Accenture,Q4 FY25,2025-08-31,ai_bookings_quarter,1800,USD m,Advanced AI bookings,A,ACN_Q4FY25_CR,
+Accenture,Q1 FY26,2025-11-30,ai_bookings_quarter,2200,USD m,Advanced AI bookings,A,ACN_Q1FY26_CALL,
+Accenture,Q1 FY26,2025-11-30,ai_revenue_quarter,1100,USD m,Advanced AI revenue (approximately),A,ACN_Q1FY26_CALL,Last quarterly AI revenue figure found; not located in Q2-Q4 FY26 materials
+Accenture,FY26,2026-08-31,ai_people,110000,people,AI and data professionals,A,ACN_AR2026,
+TCS,Q3 FY26,2025-12-31,ai_revenue_annualised,1800,USD m,Annualised AI services revenue,A,TCS_Q3FY26_PR,~5.8% of revenue (Nearshore Americas)
+TCS,Q4 FY26,2026-03-31,ai_revenue_annualised,2300,USD m,Annualised AI services revenue,A,TCS_Q4FY26_DH,'crossed $2.3 billion'
+TCS,Q1 FY27,2026-06-30,ai_revenue_annualised,2600,USD m,Annualised AI services revenue,A,TCS_Q1FY27_PR,+13.6% QoQ
+TCS,Q2 FY27,2026-09-30,ai_revenue_annualised,3100,USD m,Annualised AI services revenue,A,TCS_Q2FY27_QUARTR,'>10% of revenue'
+Infosys,Q3 FY26,2025-12-31,ai_share_of_revenue,5.5,%,AI-first / AI services revenue share,A,INFY_Q3FY26_AI,
+Infosys,Q1 FY27,2026-06-30,ai_share_of_revenue,8.2,%,AI-first / AI services revenue share,A,INFY_Q2FY27_CALL,
+Infosys,Q2 FY27,2026-09-30,ai_share_of_revenue,10.5,%,AI-first / AI services revenue share,A,INFY_Q2FY27_CALL,AI revenue +29% QoQ
+HCLTech,Q2 FY26,2025-09-30,ai_revenue_quarter,123,USD m,Advanced AI revenue (GenAI + agentic + related data services),B,HCL_Q2FY26_OB;HCL_Q2FY27_PRN,Printed as '>$100 mn'; 123 derived from 219 / 1.78 (+78% YoY CC)
+HCLTech,Q4 FY26,2026-03-31,ai_revenue_annualised,620,USD m,Annualised advanced AI revenue,A,P1_CI_TRACKER,Project 1 event HCL financial disclosure (20-Apr-2026)
+HCLTech,Q1 FY27,2026-06-30,ai_revenue_quarter,170.6,USD m,Advanced AI revenue,B,HCL_Q2FY27_PRN,Derived: 219 / 1.284 (+28.4% QoQ)
+HCLTech,Q2 FY27,2026-09-30,ai_revenue_quarter,219,USD m,Advanced AI revenue,A,HCL_Q2FY27_PR,Annualised $876 mn
+HCLTech,Q2 FY27,2026-09-30,ai_revenue_annualised,876,USD m,Annualised advanced AI revenue,A,HCL_Q2FY27_PR,
+Capgemini,early 2025,2025-06-30,ai_share_of_bookings,5,%,Generative and agentic AI share of Group bookings,B,CAP_FY25_REUTERS,'around 5% earlier in the year'
+Capgemini,Q4 2025,2025-12-31,ai_share_of_bookings,10,%,Generative and agentic AI share of Group bookings,A,CAP_FY25_REUTERS,'more than 10%'
+Capgemini,Q1 2026,2026-03-31,ai_share_of_bookings,11,%,Generative and agentic AI share of Group bookings,A,CAP_Q1_PR,'more than 11%'
+Cognizant,Q3 2026,2026-09-30,ai_engagements,8500,count,AI engagements,A,CTSH_AI_CRN,No AI revenue disclosed
+Cognizant,Q3 2026,2026-09-30,ai_assisted_code_share,50,%,Share of software development that is AI-assisted,A,CTSH_AI_CRN,'over 50%'
+Wipro,Q2 FY27,2026-09-30,ai_people,2000,people,Engineers in AI-native unit,A,WIT_AI_CRN,No AI revenue disclosed

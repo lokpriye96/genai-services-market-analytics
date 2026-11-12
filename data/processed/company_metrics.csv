@@ -1,0 +1,9 @@
+company,hq_group,latest_period,revenue_q_usd_m,revenue_q_prior_usd_m,revenue_runrate_usd_m,revenue_yoy_usd_pct,revenue_yoy_cc_pct,headcount,headcount_prior,headcount_yoy_pct,rev_per_employee_k_usd,rev_per_employee_prior_k_usd,rev_per_employee_yoy_pct,bookings_q_usd_m,bookings_basis,book_to_bill,source_id
+Accenture,Global,Q4 FY26 (Jun-Aug 2026),18680.0,17600.0,74720.0,6.136,7.0,814000,779000,4.493,91.794,90.372,1.573,22170.0,new bookings (quarter),1.187,ACN_Q4FY26_PULSE;ACN_Q4FY26_8K;ACN_FACTSHEET
+TCS,India-heritage,Q2 FY27 (Jul-Sep 2026),7642.0,7463.0,30568.0,2.398,2.8,598056,593314,0.799,51.112,50.314,1.587,9600.0,TCV (quarter),1.256,TCS_Q2FY27_QUARTR;TCS_Q2FY27_OUTLOOK
+Infosys,India-heritage,Q2 FY27 (Jul-Sep 2026),5145.0,5076.0,20580.0,1.359,1.5,332542,331991,0.166,61.887,61.158,1.191,5200.0,large-deal TCV (quarter),1.011,INFY_Q2FY27_SIA;HC_INDIA_Q2FY27
+HCLTech,India-heritage,Q2 FY27 (Jul-Sep 2026),3724.0,3644.0,14896.0,2.195,2.6,230339,226640,1.632,64.67,64.313,0.554,3260.0,new bookings (quarter),0.875,HCL_Q2FY27_PR;HCL_Q2FY27_TICKER;HC_INDIA_Q2FY27
+Cognizant,Global,Q3 2026 (Jul-Sep 2026),5664.0,5415.0,22656.0,4.598,4.8,359900,349800,2.887,62.951,61.921,1.663,7175.0,derived: trailing-12-month bookings 28700 / 4,1.267,CTSH_Q3_FINVIZ;CTSH_Q3_8K;CTSH_HC
+Capgemini,Global,Q3 2026 (Jul-Sep 2026),6780.0,6021.0,27120.0,12.606,11.7,417500,354700,17.705,64.958,67.9,-4.332,6030.0,converted: EUR 5401 / 0.8957,0.889,CAP_Q3_PR;CAP_Q3_REUTERS;CAP_Q3_HC
+Wipro,India-heritage,Q2 FY27 (Jul-Sep 2026),2611.5,2603.7,10446.0,0.3,0.6,236328,235492,0.355,44.201,44.226,-0.055,2595.0,total bookings (quarter),0.994,WIT_Q2FY27_TMM;WIT_Q2FY27_JM;WIT_Q2FY27_8K;HC_INDIA_Q2FY27
+Tech Mahindra,India-heritage,Q2 FY27 (Jul-Sep 2026),1693.0,1589.0,6772.0,6.545,7.2,152206,152714,-0.333,44.492,41.62,6.901,1023.0,TCV (quarter),0.604,TECHM_Q2FY27;TECHM_Q2FY27_HC

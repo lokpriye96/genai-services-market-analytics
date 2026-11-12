@@ -1,0 +1,5 @@
+company,window,revenue_start_usd_m,ai_start_usd_m,core_start_usd_m,revenue_end_usd_m,ai_end_usd_m,core_end_usd_m,ai_share_start_pct,ai_share_end_pct,total_growth_annualised_pct,ai_growth_annualised_pct,core_growth_annualised_pct,core_contribution_to_change_pct
+Infosys,Q3 FY26 -> Q2 FY27,5099.0,280.0,4819.0,5145.0,540.0,4605.0,5.5,10.5,1.2,139.7,-5.9,-465.0
+TCS,Q3 FY26 -> Q2 FY27,7509.0,450.0,7059.0,7642.0,775.0,6867.0,6.0,10.1,2.4,106.4,-3.6,-144.0
+HCLTech,Q2 FY26 -> Q2 FY27,3644.0,123.0,3521.0,3724.0,219.0,3505.0,3.4,5.9,2.2,78.0,-0.5,-20.0
+Accenture,FY24 -> FY25,64900.0,900.0,64000.0,69700.0,2700.0,67000.0,1.4,3.9,7.4,200.0,4.7,63.0

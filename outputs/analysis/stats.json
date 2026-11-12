@@ -1,0 +1,23 @@
+{
+  "spearman_ai_intensity_vs_growth_all8": -0.05,
+  "spearman_ai_intensity_vs_growth_disclosers": -0.4,
+  "spearman_p1_events_vs_ai_intensity": -0.05,
+  "spearman_p1_events_vs_growth": -0.65,
+  "median_decoupling_gap_pp": 1.4,
+  "eight_firm_yoy_usd_pct": 5.12,
+  "gartner_it_services_growth_2026_pct": 8.69,
+  "eight_firm_revenue_runrate_usd_bn": 207.8,
+  "eight_firm_share_of_gartner_it_services_pct": 11.1,
+  "eight_firm_ai_intensity_pct": 7.6,
+  "gartner_to_vendor_labelled_ratio": 4.1,
+  "eight_firm_share_of_gartner_ai_services_pct": 2.7,
+  "scenario_calibration": {
+    "start_ai_usd_bn": 15.8,
+    "start_total_usd_bn": 207.8,
+    "start_core_usd_bn": 192.0,
+    "observed_ai_growth": "TCS +72% in three quarters; HCLTech +78% YoY CC; Accenture tripled in FY25",
+    "observed_core_growth": "Infosys -5.9%/yr, TCS -3.6%/yr, HCLTech -0.5%/yr (2025-26); Accenture +4.7% (FY25)",
+    "deflation_benchmarks": "Kotak 3-3.5%/yr through FY29; HCLTech 2-3%; analysts 10-15% cumulative over 3-5 years",
+    "gartner_it_services_growth_2026_pct": 8.69
+  }
+}
