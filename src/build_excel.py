@@ -74,6 +74,9 @@ def main() -> None:
     ai = pd.read_csv(RAW / "ai_disclosures.csv")
     src = pd.read_csv(RAW / "sources.csv")
     wb = Workbook()
+    wb.properties.creator = "Utkarsh Saxena"
+    wb.properties.lastModifiedBy = "Utkarsh Saxena"
+    wb.properties.title = "GenAI Services Market Model"
 
     # ------------------------------------------------------------- README
     ws = wb.active

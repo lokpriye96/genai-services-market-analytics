@@ -6,14 +6,14 @@ Accenture,Q4 FY25,2025-08-31,ai_bookings_quarter,1800.0,USD m,Advanced AI bookin
 Accenture,Q1 FY26,2025-11-30,ai_bookings_quarter,2200.0,USD m,Advanced AI bookings,A,ACN_Q1FY26_CALL,,
 Accenture,Q1 FY26,2025-11-30,ai_revenue_quarter,1100.0,USD m,Advanced AI revenue (approximately),A,ACN_Q1FY26_CALL,Last quarterly AI revenue figure found; not located in Q2-Q4 FY26 materials,4400.0
 Accenture,FY26,2026-08-31,ai_people,110000.0,people,AI and data professionals,A,ACN_AR2026,,
-TCS,Q3 FY26,2025-12-31,ai_revenue_annualised,1800.0,USD m,Annualised AI services revenue,A,TCS_Q3FY26_PR,~5.8% of revenue (Nearshore Americas),1800.0
+TCS,Q3 FY26,2025-12-31,ai_revenue_annualised,1800.0,USD m,Annualised AI services revenue,A,TCS_Q3FY26_PR,"~6.0% of revenue ($1,800 mn vs $7,509 mn x 4); verified against TCS press release",1800.0
 TCS,Q4 FY26,2026-03-31,ai_revenue_annualised,2300.0,USD m,Annualised AI services revenue,A,TCS_Q4FY26_DH,'crossed $2.3 billion',2300.0
 TCS,Q1 FY27,2026-06-30,ai_revenue_annualised,2600.0,USD m,Annualised AI services revenue,A,TCS_Q1FY27_PR,+13.6% QoQ,2600.0
 TCS,Q2 FY27,2026-09-30,ai_revenue_annualised,3100.0,USD m,Annualised AI services revenue,A,TCS_Q2FY27_QUARTR,'>10% of revenue',3100.0
 Infosys,Q3 FY26,2025-12-31,ai_share_of_revenue,5.5,%,AI-first / AI services revenue share,A,INFY_Q3FY26_AI,,1121.8
 Infosys,Q1 FY27,2026-06-30,ai_share_of_revenue,8.2,%,AI-first / AI services revenue share,A,INFY_Q2FY27_CALL,,
 Infosys,Q2 FY27,2026-09-30,ai_share_of_revenue,10.5,%,AI-first / AI services revenue share,A,INFY_Q2FY27_CALL,AI revenue +29% QoQ,2160.9
-HCLTech,Q2 FY26,2025-09-30,ai_revenue_quarter,123.0,USD m,Advanced AI revenue (GenAI + agentic + related data services),B,HCL_Q2FY26_OB;HCL_Q2FY27_PRN,Printed as '>$100 mn'; 123 derived from 219 / 1.78 (+78% YoY CC),492.0
+HCLTech,Q2 FY26,2025-09-30,ai_revenue_quarter,123.0,USD m,Advanced AI revenue (GenAI + agentic + related data services),B,HCL_Q2FY26_OB;HCL_Q2FY27_PRN,Printed as '>$100 mn'; 123 = 219 / 1.78 (company-reported +78% YoY CC); consistent with Q3 FY26 $146 mn being up ~20% QoQ,492.0
 HCLTech,Q4 FY26,2026-03-31,ai_revenue_annualised,620.0,USD m,Annualised advanced AI revenue,A,P1_CI_TRACKER,Project 1 event HCL financial disclosure (20-Apr-2026),620.0
 HCLTech,Q1 FY27,2026-06-30,ai_revenue_quarter,170.6,USD m,Advanced AI revenue,B,HCL_Q2FY27_PRN,Derived: 219 / 1.284 (+28.4% QoQ),682.4
 HCLTech,Q2 FY27,2026-09-30,ai_revenue_quarter,219.0,USD m,Advanced AI revenue,A,HCL_Q2FY27_PR,Annualised $876 mn,876.0

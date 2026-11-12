@@ -48,7 +48,7 @@ Project 1 tracked *what* eight IT services leaders announced about GenAI: partne
 | Lens | Measure | USD bn | Reading |
 |---|---|---|---|
 | A. Analyst top-down | Gartner AI services spending, 2026 | 576.5 | Broadest definition: includes AI embedded in ordinary projects |
-| B. Management view | Infosys: "AI services market" | 300–400 | No year or definition given |
+| B. Management view | Infosys: "AI services market" | 300–400 | Management view (Investor AI Day, Feb-2026); definition not given |
 | C. Bottom-up | Eight firms' AI revenue run-rate | 15.8 (13.2–18.9) | Disclosed, derived and estimated, graded A/B/C |
 | C. Bottom-up | Implied vendor-labelled market | 142 (119–170) | Eight-firm pool ÷ their 11.1% share of Gartner's $1.87 tn IT services market |
 
@@ -155,7 +155,7 @@ npm install pptxgenjs              # only for the slide
 - **Bookings bases differ.** Infosys reports large deals only; Cognizant reports trailing twelve months only. Book-to-bill is comparable within a firm, not across firms.
 - **Small sample.** The correlations rest on 8 firms (4 for the disclosers). They are directional, not statistical proof.
 - **Sources.**
-  - 21 of 51 sources are primary (filings, releases, Gartner); 30 are press reports of company figures.
+  - 22 of 51 sources are primary (filings, releases, Gartner); 29 are press reports of company figures.
   - Headline figures are listed for manual checking in `guides/VERIFICATION_CHECKLIST.md`.
 - **Scenarios are assumptions, not forecasts.**
 
@@ -180,7 +180,7 @@ npm install pptxgenjs              # only for the slide
   2. 22 SQL data-quality checks run on every build, which stops if any check fails. They test that printed growth recomputes, AI ranges are ordered, disclosed AI series never fall, and every row is sourced.
   3. `tests/test_data.py` pins every headline number.
   4. The Excel model recomputes the core figures independently with live formulas; its `Checks` sheet ties them back.
-  5. A manual verification checklist covers the headline figures. **Status: not yet completed.**
+  5. A verification checklist covers the headline figures. The starred figures that carry the main finding were checked against company documents on 12 Nov 2026 (AI-assisted); the remaining rows are open.
 - **Independence.** This is an independent portfolio project on public data. It is not affiliated with any of the companies named, and it is not investment advice.
 
 ## Repository layout

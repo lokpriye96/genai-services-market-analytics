@@ -730,7 +730,7 @@
    "company_definition": "Annualised AI services revenue",
    "evidence_grade": "A",
    "source_id": "TCS_Q3FY26_PR",
-   "note": "~5.8% of revenue (Nearshore Americas)",
+   "note": "~6.0% of revenue ($1,800 mn vs $7,509 mn x 4); verified against TCS press release",
    "ai_annualised_usd_m": 1800.0
   },
   {
@@ -821,7 +821,7 @@
    "company_definition": "Advanced AI revenue (GenAI + agentic + related data services)",
    "evidence_grade": "B",
    "source_id": "HCL_Q2FY26_OB;HCL_Q2FY27_PRN",
-   "note": "Printed as '>$100 mn'; 123 derived from 219 / 1.78 (+78% YoY CC)",
+   "note": "Printed as '>$100 mn'; 123 = 219 / 1.78 (company-reported +78% YoY CC); consistent with Q3 FY26 $146 mn being up ~20% QoQ",
    "ai_annualised_usd_m": 492.0
   },
   {
@@ -2085,11 +2085,11 @@
   },
   {
    "source_id": "TCS_Q2FY27_QUARTR",
-   "publisher": "Quartr",
-   "title": "Tata Consultancy Services Q2 FY27 earnings summary",
+   "publisher": "TCS (IFRS USD press release)",
+   "title": "TCS Q2 FY27 press release: revenue $7,642 mn (+2.4% YoY USD); annualized AI revenue $3.1 bn; TCV $9.6 bn; workforce 598,056",
    "release_date": "2026-10-08",
-   "url": "https://quartr.com/events/tata-consultancy-services-limited-tcs-q2-26-27_3suYK3xn",
-   "source_type": "secondary (summarises company release)"
+   "url": "https://www.tcs.com/content/dam/tcs/investor-relations/financial-statements/2026-27/q2/IFRS/Press%20Release%20-%20USD.pdf",
+   "source_type": "primary"
   },
   {
    "source_id": "TCS_Q2FY27_OUTLOOK",
@@ -2117,10 +2117,10 @@
   },
   {
    "source_id": "TCS_Q3FY26_PR",
-   "publisher": "Tata Group (TCS release)",
-   "title": "AI-led growth and strong order book highlight TCS' Q3 (revenue $7,509 mn; AI $1.8 bn)",
+   "publisher": "TCS (IFRS USD press release)",
+   "title": "TCS Q3 FY26 press release: revenue $7,509 mn; annualized AI services revenue $1.8 bn; TCV $9.3 bn",
    "release_date": "2026-01-12",
-   "url": "https://www.tataworld.com/news/openinside/ai-led-growth-strong-order-book-tcs-q3",
+   "url": "https://www.tcs.com/content/dam/tcs/investor-relations/financial-statements/2025-26/q3/IFRS/Press%20Release%20-%20USD.pdf",
    "source_type": "primary"
   },
   {
@@ -2165,19 +2165,19 @@
   },
   {
    "source_id": "INFY_Q3FY26_PR",
-   "publisher": "Infosys (PR Newswire)",
+   "publisher": "Infosys (SEC 6-K IFRS USD press release)",
    "title": "Strong Q3 performance: $5,099 million Q3 revenues",
    "release_date": "2026-01-14",
-   "url": "https://kyodonewsprwire.jp/index.php/release/202601142470",
+   "url": "https://www.sec.gov/Archives/edgar/data/1067491/000106749126000004/exv99w01.htm",
    "source_type": "primary"
   },
   {
    "source_id": "INFY_Q3FY26_AI",
-   "publisher": "domain-B",
-   "title": "Infosys reports 5.5% of quarterly revenue from AI services",
+   "publisher": "Reuters",
+   "title": "Infosys reveals AI revenue share: AI services 5.5% of December-quarter revenue (CEO, Infosys Investor AI Day)",
    "release_date": "2026-02-17",
-   "url": "https://www.domain-b.com/technology/artificial-intelligence/infosys-ai-revenue-share-q3-2026",
-   "source_type": "secondary (reports CEO statement)"
+   "url": "https://www.dzrh.com.ph/post/infosys-reveals-ai-revenue-share-as-sector-faces-growing-disruption-fears",
+   "source_type": "secondary (Reuters report of CEO statement)"
   },
   {
    "source_id": "INFY_MKT",
@@ -2222,7 +2222,7 @@
   {
    "source_id": "HCL_Q2FY26_OB",
    "publisher": "Outlook Business",
-   "title": "HCLTech Q2 FY26: revenue $3,644 mn; advanced AI revenue crossed $100 mn",
+   "title": "HCLTech Q2 FY26: revenue $3,644 mn; advanced AI revenue crossed $100 mn (exact value derived from Q2 FY27 +78% YoY)",
    "release_date": "2025-10-13",
    "url": "https://www.outlookbusiness.com/corporate/hcltech-q2-profit-remains-flat-at-4235-crore-declares-12-per-share-dividend",
    "source_type": "secondary (reports company release)"
