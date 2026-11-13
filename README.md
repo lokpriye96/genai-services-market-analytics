@@ -197,4 +197,9 @@ guides/              Power BI guide, data dictionary, verification checklist
 tests/               data and analysis tests
 ```
 
-Licence: MIT · Author: Utkarsh Saxena
+## Licence
+
+- **Analysis, data outputs, dashboard and write-up:** © 2026 Utkarsh Saxena, licensed [CC BY-NC-ND 4.0](LICENSE-CONTENT.md). You may share them unchanged with credit, but not change them or use them commercially without permission.
+- **Code** (`src/`, `sql/`, `tests/`, `run_all.sh`): [MIT](LICENSE-CODE).
+
+Author: Utkarsh Saxena
