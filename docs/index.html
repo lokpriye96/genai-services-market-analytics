@@ -2874,7 +2874,7 @@ function renderPos(){
 }
 function renderMom(){
   const pts=COS.map(c=>({c,x:MOM[c].p1_events,y:MS[c].yoy_cc_pct,s:MS[c].revenue_runrate_usd_bn,r:7,hollow:false,tip:[{k:"Project 1 verified events",v:String(MOM[c].p1_events),c:COL[c]},{k:"Frontier-lab ties",v:MOM[c].frontier_labs},{k:"Partnerships",v:String(MOM[c].partnerships)},{k:"Growth YoY CC",v:pct(MS[c].yoy_cc_pct)}]}));
-  scatter("cMom",pts,{min:6,max:11,n:5,fmt:t=>String(t),label:"Verified CI events in Project 1 →"},{min:0,max:12});
+  scatter("cMom",pts,{min:6,max:13,n:7,fmt:t=>String(t),label:"Verified CI events in Project 1 →"},{min:0,max:12});
   document.getElementById("tkMom").textContent=`Rank correlation between announcement count and growth is ${ST.spearman_p1_events_vs_growth}: the noisiest announcers (HCLTech 12 events; TCS and Wipro 11 each) are among the slowest growers; Capgemini, with no frontier-lab tie, grew fastest. Verdict for H5: rejected — weight disclosed revenue above press releases.`;
 }
 function renderProd(){
