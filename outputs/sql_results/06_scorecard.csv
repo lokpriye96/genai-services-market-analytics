@@ -1,9 +1,9 @@
 company,hq_group,revenue_runrate_usd_bn,growth_cc_pct,ai_runrate_usd_bn,ai_share_pct,ai_grade,book_to_bill,bookings_basis,rev_per_employee_k_usd,headcount_yoy_pct,p1_events,p1_frontier_lab_events
 Accenture,Global,74.7,7.0,5.5,7.4,B,1.19,new bookings (quarter),91.8,4.5,8,2
-TCS,India-heritage,30.6,2.8,3.1,10.1,A,1.26,TCV (quarter),51.1,0.8,10,3
-Capgemini,Global,27.1,11.7,2.17,8.0,C,0.89,converted: EUR 5401 / 0.8957,65.0,17.7,8,0
-Cognizant,Global,22.7,4.8,1.13,5.0,C,1.27,derived: trailing-12-month bookings 28700 / 4,63.0,2.9,9,1
-Infosys,India-heritage,20.6,1.5,2.16,10.5,B,1.01,large-deal TCV (quarter),61.9,0.2,8,1
-HCLTech,India-heritage,14.9,2.6,0.88,5.9,A,0.88,new bookings (quarter),64.7,1.6,10,1
-Wipro,India-heritage,10.4,0.6,0.52,5.0,C,0.99,total bookings (quarter),44.2,0.4,10,0
+TCS,India-heritage,30.6,2.8,3.1,10.1,A,1.26,TCV (quarter),51.1,0.8,11,3
+Capgemini,Global,27.1,11.7,2.17,8.0,C,0.89,converted: EUR 5401 / 0.8957,65.0,17.7,9,0
+Cognizant,Global,22.7,4.8,1.13,5.0,C,1.27,derived: trailing-12-month bookings 28700 / 4,63.0,2.9,11,2
+Infosys,India-heritage,20.6,1.5,2.16,10.5,B,1.01,large-deal TCV (quarter),61.9,0.2,10,2
+HCLTech,India-heritage,14.9,2.6,0.88,5.9,A,0.88,new bookings (quarter),64.7,1.6,12,2
+Wipro,India-heritage,10.4,0.6,0.52,5.0,C,0.99,total bookings (quarter),44.2,0.4,11,0
 Tech Mahindra,India-heritage,6.8,7.2,0.34,5.0,C,0.6,TCV (quarter),44.5,-0.3,7,0

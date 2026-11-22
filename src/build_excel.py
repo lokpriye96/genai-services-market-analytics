@@ -370,7 +370,7 @@ def main() -> None:
         ("AI pool shares sum to 100%", f"=ABS(SUM(AI_Pool!J5:J{PT - 1})-1)<0.0001"),
         ("Low <= Mid <= High for every AI estimate", f"=SUMPRODUCT(--(AI_Pool!D5:D{PT - 1}<=AI_Pool!E5:E{PT - 1}),--(AI_Pool!E5:E{PT - 1}<=AI_Pool!F5:F{PT - 1}))={len(COS)}"),
         ("TCS AI share > 10% (company says '>10% of revenue')", "=AI_Pool!I6>0.1"),
-        ("Project 1 verified events = 70", f'=SUM(P1_Momentum!B4:B{3 + len(COS)})=70'),
+        ("Project 1 verified events = 79", f"=SUM(P1_Momentum!B4:B{3 + len(COS)})=79"),
         ("Bear <= Base <= Bull total revenue in 2030", f"=AND(Scenarios!G{SC_OUT['Bear']}<=Scenarios!G{SC_OUT['Base']},Scenarios!G{SC_OUT['Base']}<=Scenarios!G{SC_OUT['Bull']})"),
         ("Core shrinks at Infosys and TCS (H2)", "=AND(Core_vs_AI!L4<0,Core_vs_AI!L5<0)"),
     ]

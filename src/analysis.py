@@ -130,7 +130,7 @@ def hypotheses(con) -> tuple[pd.DataFrame, dict]:
          "so_what": "Productivity gains are being passed to clients as price, not kept as margin or non-linear growth. That is the deflation mechanism in H2 seen from the people side."},
         {"id": "H5", "hypothesis": "Announcement momentum (Project 1's CI events) predicts AI monetisation.",
          "test": "Spearman rank correlation of verified Project 1 events per firm against AI share of revenue and against growth.",
-         "evidence": (f"Rank correlations: events vs AI share {rho_mom_ai:+.2f}; events vs growth {rho_mom_growth:+.2f}. Wipro and HCLTech tie TCS on event count (10 each). "
+         "evidence": (f"Rank correlations: events vs AI share {rho_mom_ai:+.2f}; events vs growth {rho_mom_growth:+.2f}. HCLTech leads on event count (12), with TCS, Wipro and Cognizant on 11 each. "
                       f"Wipro's revenue is flat and it discloses no AI revenue; Capgemini has the fewest frontier-lab ties and the fastest growth."),
          "verdict": "Rejected",
          "so_what": "Partnership press releases are a weak lead indicator. A CI programme should weight disclosed AI revenue, core growth and bookings above announcement counts - the main design lesson carried back to Project 1."},

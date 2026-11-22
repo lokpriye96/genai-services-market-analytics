@@ -33,7 +33,7 @@ Project 1 tracked *what* eight IT services leaders announced about GenAI: partne
 | 3 | **"AI market size" is a definition choice.** Gartner's $576.5 bn AI services market is ~4.1× the ~$142 bn that vendors actually label as AI. The eight firms hold only 2.7% of Gartner's figure. | `outputs/analysis/market_sizing.csv` |
 | 4 | **More AI revenue is not (yet) more growth.** The most AI-intensive firms (Infosys, TCS) are among the slowest growers. Spearman ρ = −0.05 across all eight, −0.40 across the four disclosers. | Positioning chart |
 | 5 | **The incumbents are losing share.** The eight grew +5.1% YoY in USD vs Gartner IT services +8.7% (2026), despite Capgemini's WNS acquisition. | `sql/01_market_share.sql` |
-| 6 | **Announcements do not predict money.** Project 1 event counts correlate −0.65 with growth. The noisiest announcers (TCS, HCLTech, Wipro) grew slowest. | `sql/05_momentum_vs_money.sql` |
+| 6 | **Announcements do not predict money.** Project 1 event counts correlate −0.66 with growth. The noisiest announcers (HCLTech, TCS, Wipro) are among the slowest growers. | `sql/05_momentum_vs_money.sql` |
 | 7 | **Little sign yet of non-linear growth.** The median gap between revenue growth and headcount growth is only +1.4pp. Tech Mahindra is the exception (+6.9% revenue per employee). | `sql/04_productivity.sql` |
 
 **So what:** judge AI by core growth and book-to-bill, not by the AI revenue line or partnership headlines. With a ~$190 bn core that is shrinking, AI must grow ~7–9% a year just to hold total revenue flat.
@@ -112,7 +112,7 @@ data/raw/*.csv  ──clean.py──▶  data/processed  ──build_db.py──
   - **C:** estimate with a low/mid/high range (Capgemini, Cognizant, Wipro, Tech Mahindra).
 - **Python** (pandas) cleans the inputs, derives values, builds the AI pool and runs the scenarios; Spearman rank correlations are computed in pandas.
 - **SQL** does the analysis itself. Examples: share and growth, AI-pool ranges, core-vs-AI growth annualised with `POWER()`, ranking with `RANK()`, the join to Project 1, and a data-quality suite that stops the build if any check fails.
-- **Join to Project 1.** The 70 verified CI events from [ai-ci-tracker](https://github.com/lokpriye96/ai-ci-tracker) are loaded as a table and joined by company (H5).
+- **Join to Project 1.** The 79 verified CI events from [ai-ci-tracker](https://github.com/lokpriye96/ai-ci-tracker) are loaded as a table and joined by company (H5).
 
 **SQL highlight.** Splitting AI and core revenue and annualising each (from `sql/03_core_vs_ai.sql`):
 

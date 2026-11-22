@@ -42,9 +42,9 @@ SELECT 'HCLTech annualised = 4 x quarter',
 FROM fact_ai_timeseries WHERE company = 'HCLTech' AND quarter_end = '2026-09-30'
 
 UNION ALL
--- (f) Project 1 join is complete: every tracked company has events and the verified total is 70
-SELECT 'Project 1 join: 70 verified events across 8 firms',
-       CASE WHEN COUNT(*) = 70 AND COUNT(DISTINCT company) = 8 THEN 'PASS' ELSE 'FAIL' END
+-- (f) Project 1 join is complete: every tracked company has events and the verified total is 79
+SELECT 'Project 1 join: 79 verified events across 8 firms',
+       CASE WHEN COUNT(*) = 79 AND COUNT(DISTINCT company) = 8 THEN 'PASS' ELSE 'FAIL' END
 FROM p1_ci_events WHERE validation_status = 'Verified'
 
 UNION ALL

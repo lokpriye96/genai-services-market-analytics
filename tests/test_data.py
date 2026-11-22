@@ -74,7 +74,7 @@ def test_core_shrinks_at_indian_disclosers():
 def test_project1_join():
     e = pd.read_csv(P / "p1_ci_events.csv")
     v = e[e.validation_status == "Verified"]
-    assert len(v) == 70 and set(v.company) == COS
+    assert len(v) == 79 and set(v.company) == COS
 
 
 def test_scenarios():
