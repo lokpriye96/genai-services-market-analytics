@@ -168,13 +168,13 @@ npm install pptxgenjs              # only for the slide
 
 ## How this was built
 
-- **AI assistance, disclosed.** I built this project with Claude (Anthropic) as an AI assistant, as I did for Project 1.
+- **AI assistance, disclosed.** I built this project with an AI assistant, as I did for Project 1.
 - **My role:**
   - choosing the topic and the business question;
   - setting the standards: public data only, every number sourced, limitations stated;
   - reviewing the findings and the method;
   - owning every decision, the published result and the commit history.
-- **Claude's role:** finding sources, transcribing figures, and drafting the code, SQL, Excel model, dashboard and documentation, under my direction.
+- **The AI assistant's role:** finding sources, transcribing figures, and drafting the code, SQL, Excel model, dashboard and documentation, under my direction.
 - **Controls, so that the numbers do not depend on trusting the AI:**
   1. Every row in `data/raw/` carries a `source_id` that links to a URL in `sources.csv`.
   2. 22 SQL data-quality checks run on every build, which stops if any check fails. They test that printed growth recomputes, AI ranges are ordered, disclosed AI series never fall, and every row is sourced.
