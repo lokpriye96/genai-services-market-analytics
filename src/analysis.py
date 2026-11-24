@@ -89,11 +89,18 @@ def hypotheses(con) -> tuple[pd.DataFrame, dict]:
     rho_mom_growth = spearman(mom.p1_events, mom.revenue_yoy_cc_pct)
     disclosed = mom[mom.ai_disclosure_grade.isin(["A", "B"])]
     rho_ai_growth_disclosed = spearman(disclosed.ai_share_of_revenue_pct, disclosed.revenue_yoy_cc_pct)
+    from scipy.stats import spearmanr
+    p_ai_growth = spearmanr(mom.ai_share_of_revenue_pct, mom.revenue_yoy_cc_pct).pvalue
+    p_mom_ai = spearmanr(mom.p1_events, mom.ai_share_of_revenue_pct).pvalue
+    p_mom_growth = spearmanr(mom.p1_events, mom.revenue_yoy_cc_pct).pvalue
     stats = {
         "spearman_ai_intensity_vs_growth_all8": rho_ai_growth,
         "spearman_ai_intensity_vs_growth_disclosers": rho_ai_growth_disclosed,
         "spearman_p1_events_vs_ai_intensity": rho_mom_ai,
         "spearman_p1_events_vs_growth": rho_mom_growth,
+        "p_value_ai_intensity_vs_growth_all8": round(p_ai_growth, 2),
+        "p_value_p1_events_vs_ai_intensity": round(p_mom_ai, 2),
+        "p_value_p1_events_vs_growth": round(p_mom_growth, 2),
         "median_decoupling_gap_pp": round(prod.decoupling_gap_pp.median(), 2),
         "eight_firm_yoy_usd_pct": share.eight_firm_yoy_usd_pct.iloc[0],
         "gartner_it_services_growth_2026_pct": share.gartner_it_services_growth_2026_pct.iloc[0],
@@ -113,13 +120,14 @@ def hypotheses(con) -> tuple[pd.DataFrame, dict]:
                       f"TCS {core.loc['TCS','core_growth_annualised_pct']:+.1f}%/yr, HCLTech {core.loc['HCLTech','core_growth_annualised_pct']:+.1f}%/yr, "
                       f"while total revenue grew only {core.loc['HCLTech','total_growth_annualised_pct']:.1f}-{core.loc['TCS','total_growth_annualised_pct']:.1f}%. "
                       f"Accenture's core still grew {core.loc['Accenture','core_growth_annualised_pct']:+.1f}% (FY24-FY25)."),
-         "verdict": "Supported for Indian-heritage firms; not for Accenture",
+         "verdict": "Directionally supported for TCS and Infosys (upper bound; TCS core rests on two data points); weaker for HCLTech; not for Accenture",
          "so_what": "At TCS and Infosys, AI growth is so far replacing core revenue, not adding to it. That fits the 2-3.5%/yr deflation analysts cite. Part of the shift may be existing work relabelled as AI, which no firm discloses."},
         {"id": "H3", "hypothesis": "The firms with the most AI revenue are not the ones growing fastest.",
          "test": "Spearman rank correlation between AI share of revenue and constant-currency revenue growth (8 firms; and the 4 company-based disclosers).",
-         "evidence": (f"Rank correlation {rho_ai_growth:+.2f} across all eight and {rho_ai_growth_disclosed:+.2f} across the four disclosers. Infosys (10.5% AI) grew 1.5%; "
+         "evidence": (f"Rank correlation {rho_ai_growth:+.2f} across all eight (p={p_ai_growth:.2f}) and {rho_ai_growth_disclosed:+.2f} across the four disclosers (n=4, not testable). "
+                      f"Five of the eight AI shares are estimates or peer benchmarks. Infosys (10.5% AI) grew 1.5%; "
                       f"TCS (10.1%) 2.8%; Capgemini (est. 8%) 11.7% incl. WNS; Tech Mahindra (est. 5%) 7.2%."),
-         "verdict": "Supported",
+         "verdict": "Weak: no positive link in this sample (n=8, not significant)",
          "so_what": "'AI revenue' is not yet a growth KPI. For CI and investor work, track core growth and book-to-bill next to the AI number."},
         {"id": "H4", "hypothesis": "AI has decoupled revenue from headcount.",
          "test": "Revenue growth minus headcount growth (YoY), and revenue per employee.",
@@ -130,9 +138,10 @@ def hypotheses(con) -> tuple[pd.DataFrame, dict]:
          "so_what": "Productivity gains are being passed to clients as price, not kept as margin or non-linear growth. That is the deflation mechanism in H2 seen from the people side."},
         {"id": "H5", "hypothesis": "Announcement momentum (Project 1's CI events) predicts AI monetisation.",
          "test": "Spearman rank correlation of verified Project 1 events per firm against AI share of revenue and against growth.",
-         "evidence": (f"Rank correlations: events vs AI share {rho_mom_ai:+.2f}; events vs growth {rho_mom_growth:+.2f}. HCLTech leads on event count (12), with TCS, Wipro and Cognizant on 11 each. "
-                      f"Wipro's revenue is flat and it discloses no AI revenue; Capgemini has the fewest frontier-lab ties and the fastest growth."),
-         "verdict": "Rejected",
+         "evidence": (f"Rank correlations (n=8): events vs AI share {rho_mom_ai:+.2f} (p={p_mom_ai:.2f}); events vs growth {rho_mom_growth:+.2f} (p={p_mom_growth:.2f}, not significant). "
+                      f"HCLTech and Cognizant lead on event count (12 each), with TCS and Wipro on 11. "
+                      f"Wipro's revenue is flat and it discloses no AI revenue; Capgemini has no frontier-lab ties and the fastest growth (11.7% incl. WNS)."),
+         "verdict": "No evidence of a link (n=8, not significant)",
          "so_what": "Partnership press releases are a weak lead indicator. A CI programme should weight disclosed AI revenue, core growth and bookings above announcement counts - the main design lesson carried back to Project 1."},
     ]
     return pd.DataFrame(rows), stats

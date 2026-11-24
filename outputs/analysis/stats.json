@@ -1,8 +1,11 @@
 {
   "spearman_ai_intensity_vs_growth_all8": -0.05,
   "spearman_ai_intensity_vs_growth_disclosers": -0.4,
-  "spearman_p1_events_vs_ai_intensity": -0.05,
-  "spearman_p1_events_vs_growth": -0.66,
+  "spearman_p1_events_vs_ai_intensity": -0.14,
+  "spearman_p1_events_vs_growth": -0.57,
+  "p_value_ai_intensity_vs_growth_all8": 0.91,
+  "p_value_p1_events_vs_ai_intensity": 0.75,
+  "p_value_p1_events_vs_growth": 0.14,
   "median_decoupling_gap_pp": 1.4,
   "eight_firm_yoy_usd_pct": 5.12,
   "gartner_it_services_growth_2026_pct": 8.69,

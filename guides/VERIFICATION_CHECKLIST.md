@@ -7,7 +7,7 @@
 - disclosed AI series never fall;
 - annualised figures equal 4× the quarter;
 - every row has a source;
-- Project 1 joins with 79 verified events across the 8 firms.
+- Project 1 joins with 80 verified events across the 8 firms.
 
 **What they cannot catch.** A figure copied wrong *consistently* from its source. This list covers the headline figures: open each source, find the number, and tick the box. **Priority:** the rows marked ★ feed the headline finding (H2, core shrinking).
 

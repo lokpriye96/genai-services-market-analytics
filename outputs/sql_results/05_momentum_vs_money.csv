@@ -1,8 +1,8 @@
 company,p1_events,partnerships,frontier_lab_events,acquisitions,deals_gcc,frontier_labs,ai_disclosure_grade,ai_share_of_revenue_pct,revenue_yoy_cc_pct,rank_momentum,rank_ai_intensity,rank_growth
+Cognizant,12,3,2,3,0,"OpenAI,Anthropic",C,5.0,4.8,1,6,4
 HCLTech,12,2,2,2,2,"OpenAI,Anthropic",A,5.9,2.6,1,5,6
-Cognizant,11,3,2,3,0,"OpenAI,Anthropic",C,5.0,4.8,2,6,4
-TCS,11,6,3,2,1,"OpenAI,Mistral,Anthropic",A,10.1,2.8,2,2,5
-Wipro,11,3,0,3,0,-,C,5.0,0.6,2,6,8
+TCS,11,6,3,2,1,"OpenAI,Mistral,Anthropic",A,10.1,2.8,3,2,5
+Wipro,11,3,0,3,0,-,C,5.0,0.6,3,6,8
 Infosys,10,4,2,2,1,"Anthropic,OpenAI",B,10.5,1.5,5,1,7
 Capgemini,9,2,0,2,1,-,C,8.0,11.7,6,3,1
 Accenture,8,2,2,4,1,"OpenAI,Anthropic",B,7.4,7.0,7,4,3

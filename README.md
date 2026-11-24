@@ -31,9 +31,9 @@ Project 1 tracked *what* eight IT services leaders announced about GenAI: partne
 | 1 | **AI is a ~$15.8 bn business for the eight** (range $13.2–18.9 bn), 7.6% of their $207.8 bn revenue run-rate. 74% of that figure rests on company-reported numbers. | TCS $3.1 bn annualised (10.1% of revenue); Infosys 10.5% of revenue; HCLTech $0.9 bn |
 | 2 | **At the Indian-heritage disclosers, AI is replacing core revenue, not adding to it.** Core (non-AI) revenue shrank −5.9%/yr at Infosys, −3.6%/yr at TCS and −0.5%/yr at HCLTech, while AI grew 78–140% a year. Accenture's core still grew +4.7% (FY25). | `sql/03_core_vs_ai.sql` |
 | 3 | **"AI market size" is a definition choice.** Gartner's $576.5 bn AI services market is ~4.1× the ~$142 bn that vendors actually label as AI. The eight firms hold only 2.7% of Gartner's figure. | `outputs/analysis/market_sizing.csv` |
-| 4 | **More AI revenue is not (yet) more growth.** The most AI-intensive firms (Infosys, TCS) are among the slowest growers. Spearman ρ = −0.05 across all eight, −0.40 across the four disclosers. | Positioning chart |
-| 5 | **The incumbents are losing share.** The eight grew +5.1% YoY in USD vs Gartner IT services +8.7% (2026), despite Capgemini's WNS acquisition. | `sql/01_market_share.sql` |
-| 6 | **Announcements do not predict money.** Project 1 event counts correlate −0.66 with growth. The noisiest announcers (HCLTech, TCS, Wipro) are among the slowest growers. | `sql/05_momentum_vs_money.sql` |
+| 4 | **More AI revenue is not (yet) more growth.** The most AI-intensive firms (Infosys, TCS) are among the slowest growers. Spearman ρ = −0.05 across all eight (p≈0.9); the four disclosers cannot be tested for significance. | Positioning chart |
+| 5 | **Growth trails the market forecast.** The eight grew +5.1% YoY in USD against Gartner's +8.7% 2026 IT services forecast. The periods differ (fiscal quarters vs a calendar-year forecast), and Capgemini's growth includes WNS. | `sql/01_market_share.sql` |
+| 6 | **Announcements do not predict money.** Project 1 event counts correlate −0.57 with growth (n=8, p≈0.14, not significant). The most active announcers include HCLTech, TCS and Wipro, all growing under 3%. | `sql/05_momentum_vs_money.sql` |
 | 7 | **Little sign yet of non-linear growth.** The median gap between revenue growth and headcount growth is only +1.4pp. Tech Mahindra is the exception (+6.9% revenue per employee). | `sql/04_productivity.sql` |
 
 **So what:** judge AI by core growth and book-to-bill, not by the AI revenue line or partnership headlines. With a ~$190 bn core that is shrinking, AI must grow ~7–9% a year just to hold total revenue flat.
@@ -56,7 +56,7 @@ Project 1 tracked *what* eight IT services leaders announced about GenAI: partne
 
 | Firm | Method | Low / mid / high |
 |---|---|---|
-| Accenture (B) | Last quarterly AI revenue found (~$1.1 bn, Q1 FY26) × 4 × uplift | $4.4 / 5.5 / 6.6 bn |
+| Accenture (B) | Last quarterly AI revenue found (~$1.1 bn, Q1 FY26) × 4 × uplift (×1.00 low, ×1.25 mid, ×1.50 high) | $4.4 / 5.5 / 6.6 bn |
 | Capgemini (C) | Share of bookings that is AI (>11%) × conversion to revenue | 5.5 / 8 / 11% of revenue |
 | Cognizant, Wipro, Tech Mahindra (C) | Peer benchmark: AI share at peers' first disclosure | 3 / 5 / 8% of revenue |
 
@@ -77,10 +77,10 @@ Project 1 tracked *what* eight IT services leaders announced about GenAI: partne
 | # | Hypothesis | Verdict |
 |---|---|---|
 | H1 | GenAI is now material revenue, not a pilot-stage side line | **Supported** |
-| H2 | AI growth is arriving alongside a shrinking core business (AI deflation) | **Supported** for the Indian-heritage firms; **not** for Accenture |
-| H3 | The firms with the most AI revenue are not the ones growing fastest | **Supported** |
+| H2 | AI growth is arriving alongside a shrinking core business (AI deflation) | **Directionally supported** for TCS and Infosys (an upper bound; TCS rests on two data points); weaker for HCLTech; **not** for Accenture |
+| H3 | The firms with the most AI revenue are not the ones growing fastest | **Weak**: no positive link in this sample (n=8, not significant) |
 | H4 | AI has decoupled revenue from headcount | **Weak**: mostly not yet |
-| H5 | Announcement momentum (Project 1) predicts AI monetisation | **Rejected** |
+| H5 | Announcement momentum (Project 1) predicts AI monetisation | **No evidence of a link** (n=8, not significant) |
 
 The test and evidence for each are in `outputs/analysis/hypotheses.csv` and on the dashboard.
 
@@ -112,7 +112,7 @@ data/raw/*.csv  ──clean.py──▶  data/processed  ──build_db.py──
   - **C:** estimate with a low/mid/high range (Capgemini, Cognizant, Wipro, Tech Mahindra).
 - **Python** (pandas) cleans the inputs, derives values, builds the AI pool and runs the scenarios; Spearman rank correlations are computed in pandas.
 - **SQL** does the analysis itself. Examples: share and growth, AI-pool ranges, core-vs-AI growth annualised with `POWER()`, ranking with `RANK()`, the join to Project 1, and a data-quality suite that stops the build if any check fails.
-- **Join to Project 1.** The 79 verified CI events from [ai-ci-tracker](https://github.com/lokpriye96/ai-ci-tracker) are loaded as a table and joined by company (H5).
+- **Join to Project 1.** The 80 verified CI events from [ai-ci-tracker](https://github.com/lokpriye96/ai-ci-tracker) are loaded as a table and joined by company (H5).
 
 **SQL highlight.** Splitting AI and core revenue and annualising each (from `sql/03_core_vs_ai.sql`):
 
@@ -153,7 +153,7 @@ npm install pptxgenjs              # only for the slide
   - Accenture's quarter ends in August; the others end in September.
 - **M&A.** Capgemini's growth (+11.7%) and headcount include the WNS acquisition.
 - **Bookings bases differ.** Infosys reports large deals only; Cognizant reports trailing twelve months only. Book-to-bill is comparable within a firm, not across firms.
-- **Small sample.** The correlations rest on 8 firms (4 for the disclosers). They are directional, not statistical proof.
+- **Small sample.** The correlations rest on 8 firms (4 for the disclosers). p-values for the three all-eight correlations are ≈0.14 (−0.57), ≈0.75 (−0.14) and ≈0.91 (−0.05). None is significant, so they are directional, not statistical proof.
 - **Sources.**
   - 22 of 51 sources are primary (filings, releases, Gartner); 29 are press reports of company figures.
   - Headline figures are listed for manual checking in `guides/VERIFICATION_CHECKLIST.md`.
@@ -180,7 +180,7 @@ npm install pptxgenjs              # only for the slide
   2. 22 SQL data-quality checks run on every build, which stops if any check fails. They test that printed growth recomputes, AI ranges are ordered, disclosed AI series never fall, and every row is sourced.
   3. `tests/test_data.py` pins every headline number.
   4. The Excel model recomputes the core figures independently with live formulas; its `Checks` sheet ties them back.
-  5. A verification checklist covers the headline figures. The starred figures that carry the main finding were checked against company documents on 12 Nov 2026 (AI-assisted); the remaining rows are open.
+  5. A verification checklist covers the headline figures. The starred figures that carry the main finding were checked against company documents on 12 Nov 2026 with an AI assistant; an owner spot-check is still pending. 10 of the 18 checklist rows are still open.
 - **Independence.** This is an independent portfolio project on public data. It is not affiliated with any of the companies named, and it is not investment advice.
 
 ## Repository layout
