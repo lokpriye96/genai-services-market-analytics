@@ -1854,9 +1854,9 @@
    "event_date": "2026-04-05",
    "event_type": "Acquisition",
    "counterparty": "Mindsprint (Olam Group)",
-   "counterparty_type": "Captive / GCC",
+   "counterparty_type": "Managed services firm",
    "headline": "Wipro buys Olam's IT arm Mindsprint and wins $1B+ 8-year deal",
-   "source_url": "https://www.freepressjournal.in/business/wipro-acquires-100-stake-in-mindsprint-for-375-million-to-expand-ai-led-transformation-play"
+   "source_url": "https://finance.yahoo.com/markets/stocks/articles/indias-wipro-rises-deal-acquire-042313674.html"
   },
   {
    "event_id": "WIP-003",
@@ -2105,7 +2105,7 @@
    "event_type": "Acquisition",
    "counterparty": "HARMAN DTS",
    "counterparty_type": "Engineering services firm",
-   "headline": "Wipro to acquire HARMAN's DTS unit for up to $375M",
+   "headline": "Wipro to acquire HARMAN's DTS unit for $375M",
    "source_url": "https://www.outlookbusiness.com/corporate/wipro-to-acquire-harmans-dts-business-unit-for-usd-375-million"
   },
   {
