@@ -35,9 +35,9 @@ header h1{font-size:clamp(22px,2.6vw,30px);margin:0 0 6px;letter-spacing:-.01em}
 .question{font-size:16px;color:var(--text-secondary);margin:0 0 4px;text-wrap:pretty}
 .meta{font-size:12px;color:var(--muted);margin-top:8px}.meta a{color:inherit}
 .theme-btn{float:right;border:1px solid var(--border);background:var(--surface-1);color:var(--text-primary);border-radius:8px;padding:6px 10px;font:inherit;font-size:13px;cursor:pointer}
-.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin:22px 0 18px}
+.kpis{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px;margin:22px 0 18px}@media (max-width:1180px){.kpis{grid-template-columns:repeat(3,minmax(0,1fr))}}@media (max-width:600px){.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .tile{background:var(--surface-1);border:1px solid var(--border);border-radius:12px;padding:14px 16px}
-.tile .lab{font-size:12px;color:var(--text-secondary);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.tile .val{font-size:27px;font-weight:650;margin:4px 0 2px;letter-spacing:-.01em}.tile .sub{font-size:12px;color:var(--muted)}
+.tile .lab{font-size:12px;color:var(--text-secondary);line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.tile .val{font-size:25px;font-weight:650;margin:4px 0 2px;letter-spacing:-.01em}.tile .sub{font-size:12px;color:var(--muted);line-height:1.45}
 .filters{display:flex;flex-wrap:wrap;gap:18px;align-items:center;background:var(--surface-1);border:1px solid var(--border);border-radius:12px;padding:10px 14px;margin-bottom:18px;position:sticky;top:0;z-index:5}
 .filters .grp{display:flex;gap:6px;align-items:center;flex-wrap:wrap}.filters .gl{font-size:12px;color:var(--text-secondary);margin-right:4px}
 .pill{border:1px solid var(--border);background:transparent;color:var(--text-primary);border-radius:999px;padding:5px 11px;font:inherit;font-size:13px;cursor:pointer}
@@ -96,7 +96,7 @@ a.step:hover{background:var(--chip)}
 [data-co]{transition:opacity .15s}
 .foot-meta{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;justify-content:space-between;margin-top:18px;padding-top:14px;border-top:1px solid var(--grid)}
 .foot-meta p{margin:0}
-@media (max-width:600px){svg text{font-size:11.5px}svg .lbl{font-size:12px}.tile .val{font-size:24px}.filters{position:static}}
+@media (max-width:600px){.tile .lab{white-space:normal;min-height:2.8em}svg text{font-size:11.5px}svg .lbl{font-size:12px}.tile .val{font-size:24px}.filters{position:static}}
 @media print{section.sec,.card h2{break-after:avoid}.viz-root{background:#fff;padding:0}.theme-btn,.filters,.tools,.more,.byline .btn,.tip{display:none!important}.tk-rest[hidden]{display:inline!important}.card,.tile,.key,details,.step{break-inside:avoid;box-shadow:none}details{display:block}details>*{display:block}.grid{display:block}.card{margin-bottom:12px}a{color:inherit}}
 .chip{display:inline-block;border:1px solid var(--border);border-radius:999px;padding:1px 8px;font-size:11.5px;white-space:nowrap;background:var(--chip)}
 .tip{position:fixed;pointer-events:none;background:var(--surface-1);color:var(--text-primary);border:1px solid var(--border);border-radius:8px;padding:8px 10px;font-size:12px;box-shadow:0 4px 18px rgba(0,0,0,.12);z-index:50;display:none;min-width:150px;max-width:300px}
@@ -2857,11 +2857,12 @@ function renderFilters(){
 function renderKpis(){
   const pt=poolTot(), sc=D.scenarios.filter(r=>r.scenario===state.scen), s30=sc.find(r=>r.year===2030);
   const tiles=[
-    {lab:"AI revenue run-rate ("+state.case+" case)",val:"$"+pt.toFixed(1)+" bn",sub:"range $"+f1(POOL.TCS.pool_low_usd_bn)+"–"+f1(POOL.TCS.pool_high_usd_bn)+" bn · "+f1(POOL.TCS.pool_pct_company_based)+"% on company figures"},
+    {lab:"AI revenue run-rate ("+state.case+")",val:"$"+pt.toFixed(1)+" bn",sub:"range $"+f1(POOL.TCS.pool_low_usd_bn)+"–"+f1(POOL.TCS.pool_high_usd_bn)+" bn · "+f1(POOL.TCS.pool_pct_company_based)+"% on company figures"},
     {lab:"AI share of revenue",val:(pt/revTot*100).toFixed(1)+"%",sub:"TCS 10.1% · Infosys 10.5% (disclosed)"},
-    {lab:"Infosys core (non-AI) growth p.a.",val:pct(CORE.Infosys.core_growth_annualised_pct),sub:"TCS "+pct(CORE.TCS.core_growth_annualised_pct)+" · HCLTech "+pct(CORE.HCLTech.core_growth_annualised_pct)+" · Accenture "+pct(CORE.Accenture.core_growth_annualised_pct)},
-    {lab:"Eight-firm growth (USD, YoY)",val:pct(ST.eight_firm_yoy_usd_pct),sub:"vs Gartner IT services "+pct(ST.gartner_it_services_growth_2026_pct)+" (2026)"},
-    {lab:"2030 revenue ("+state.scen+" scenario)",val:"$"+f0(s30.total_usd_bn)+" bn",sub:"CAGR "+pct(s30.cagr_2026_2030_pct)+" · AI "+f1(s30.ai_share_pct)+"% of total"},
+    {lab:"Infosys core growth p.a.",val:pct(CORE.Infosys.core_growth_annualised_pct),sub:"TCS "+pct(CORE.TCS.core_growth_annualised_pct)+" · HCLTech "+pct(CORE.HCLTech.core_growth_annualised_pct)+" · Accenture "+pct(CORE.Accenture.core_growth_annualised_pct)},
+    {lab:"Eight-firm growth (YoY)",val:pct(ST.eight_firm_yoy_usd_pct),sub:"vs Gartner IT services "+pct(ST.gartner_it_services_growth_2026_pct)+" (2026)"},
+    {lab:"Gartner AI services 2026",val:"$"+f0(D.sizing[0].value_usd_bn)+" bn",sub:SN.gartner_to_vendor_labelled_ratio+"× vendor-reported AI"},
+    {lab:"2030 revenue ("+state.scen+")",val:"$"+f0(s30.total_usd_bn)+" bn",sub:"CAGR "+pct(s30.cagr_2026_2030_pct)+" · AI "+f1(s30.ai_share_pct)+"% of total"},
   ];
   const K=document.getElementById("kpis");K.replaceChildren();tiles.forEach(t=>{const d=h("div",{class:"tile"});d.appendChild(h("div",{class:"lab"},t.lab));d.appendChild(h("div",{class:"val"},t.val));d.appendChild(h("div",{class:"sub"},t.sub));K.appendChild(d);});
 }
