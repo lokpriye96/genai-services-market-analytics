@@ -2,7 +2,15 @@
 
 **Market analytics and competitive dashboard: analysing market size, company revenue, share, growth and competitive positioning on public data (Python, SQL, Excel, Power BI).**
 
-**Live dashboard:** https://lokpriye96.github.io/genai-services-market-analytics/ · **Companion project:** [AI-Powered Competitive Intelligence Tracker](https://github.com/lokpriye96/ai-ci-tracker) (Project 1)
+**Live dashboard:** https://lokpriye96.github.io/genai-services-market-analytics/
+
+**Part of a three-project series** on GenAI in IT services, following the same eight firms:
+
+| Project | Question | Link |
+|---|---|---|
+| 1. AI-Powered CI Tracker | What do firms announce? | [Dashboard](https://lokpriye96.github.io/ai-ci-tracker/) · [Repo](https://github.com/lokpriye96/ai-ci-tracker) |
+| **2. Market Analytics & Competitive Dashboard** (this repo) | What shows up as revenue? | [Dashboard](https://lokpriye96.github.io/genai-services-market-analytics/) |
+| 3. AI-Assisted Consulting Report | What should a leader do? | [Report](https://lokpriye96.github.io/ai-consulting-report-genai-services/) · [Repo](https://github.com/lokpriye96/ai-consulting-report-genai-services) |
 
 ![Executive summary](outputs/Executive_Summary.png)
 

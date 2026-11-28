@@ -1089,7 +1089,7 @@
    "test": "Spearman rank correlation of verified Project 1 events per firm against AI share of revenue and against growth.",
    "evidence": "Rank correlations (n=8): events vs AI share -0.14 (p=0.75); events vs growth -0.57 (p=0.14, not significant). HCLTech and Cognizant lead on event count (12 each), with TCS and Wipro on 11. Wipro's revenue is flat and it discloses no AI revenue; Capgemini has no frontier-lab ties and the fastest growth (11.7% incl. WNS).",
    "verdict": "Not supported: announcement counts do not predict AI revenue or growth (n=8, not significant)",
-   "so_what": "Partnership press releases are a weak lead indicator. A CI programme should weight disclosed AI revenue, core growth and bookings above announcement counts - the main design lesson carried back to Project 1."
+   "so_what": "Partnership press releases are a weak lead indicator. A CI programme should weight disclosed AI revenue, core growth and bookings above announcement counts. That is the main design lesson carried back to Project 1."
   }
  ],
  "stats": {

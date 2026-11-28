@@ -142,7 +142,7 @@ def hypotheses(con) -> tuple[pd.DataFrame, dict]:
                       f"HCLTech and Cognizant lead on event count (12 each), with TCS and Wipro on 11. "
                       f"Wipro's revenue is flat and it discloses no AI revenue; Capgemini has no frontier-lab ties and the fastest growth (11.7% incl. WNS)."),
          "verdict": "Not supported: announcement counts do not predict AI revenue or growth (n=8, not significant)",
-         "so_what": "Partnership press releases are a weak lead indicator. A CI programme should weight disclosed AI revenue, core growth and bookings above announcement counts - the main design lesson carried back to Project 1."},
+         "so_what": "Partnership press releases are a weak lead indicator. A CI programme should weight disclosed AI revenue, core growth and bookings above announcement counts. That is the main design lesson carried back to Project 1."},
     ]
     return pd.DataFrame(rows), stats
 
