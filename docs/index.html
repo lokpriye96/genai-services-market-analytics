@@ -42,6 +42,18 @@ svg .lbl{fill:var(--text-primary);font-size:11.5px;font-weight:600}
 table{border-collapse:collapse;width:100%;font-size:12.5px}th,td{text-align:left;padding:6px 8px;border-bottom:1px solid var(--grid);vertical-align:top}th{color:var(--text-secondary);font-weight:600}
 td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
 .tableview{display:none;max-height:320px;overflow:auto;margin-top:8px}.tableview.on{display:block}
+.hyp table{table-layout:fixed}
+.hyp col.c1{width:44px}.hyp col.c2{width:17%}.hyp col.c3{width:17%}.hyp col.c5{width:15%}.hyp col.c6{width:19%}
+.hyp td{line-height:1.5}.hyp td:first-child{font-weight:650;color:var(--text-primary)}
+.verdict{display:inline-block;border-radius:6px;padding:2px 8px;font-size:12px;font-weight:650;white-space:normal;border:1px solid var(--border);background:var(--chip);color:var(--text-primary)}
+.verdict.v-yes{background:color-mix(in srgb,var(--c3) 16%,transparent);border-color:color-mix(in srgb,var(--c3) 45%,transparent)}
+.verdict.v-part{background:color-mix(in srgb,var(--c4) 18%,transparent);border-color:color-mix(in srgb,var(--c4) 50%,transparent)}
+.verdict.v-no{background:var(--chip)}
+.vnote{display:block;font-size:11.5px;color:var(--text-secondary);margin-top:5px;line-height:1.45}
+@media (max-width:760px){.hyp table,.hyp tbody,.hyp tr,.hyp td{display:block;width:auto}.hyp colgroup,.hyp thead{display:none}
+.hyp tr{border:1px solid var(--grid);border-radius:10px;padding:10px 12px;margin-bottom:10px}.hyp td{border:none;padding:3px 0}
+.hyp td::before{content:attr(data-label);display:block;font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-top:4px}
+.hyp td:first-child::before{display:none}}
 .chip{display:inline-block;border:1px solid var(--border);border-radius:999px;padding:1px 8px;font-size:11.5px;white-space:nowrap;background:var(--chip)}
 .tip{position:fixed;pointer-events:none;background:var(--surface-1);color:var(--text-primary);border:1px solid var(--border);border-radius:8px;padding:8px 10px;font-size:12px;box-shadow:0 4px 18px rgba(0,0,0,.12);z-index:50;display:none;min-width:150px;max-width:300px}
 .tip .t{color:var(--text-secondary);margin-bottom:4px}.tip .r{display:flex;align-items:center;gap:8px;justify-content:space-between}.tip .r i{display:inline-block;width:12px;height:3px;border-radius:2px;margin-right:6px}.tip .r b{font-variant-numeric:tabular-nums}
@@ -2847,7 +2859,7 @@ function renderTs(){
 function renderCore(){
   const rows=["Infosys","TCS","HCLTech","Accenture"].map(c=>CORE[c]);
   const ser=[{k:"Total revenue growth",f:"total_growth_annualised_pct",c:"var(--muted)"},{k:"Core (non-AI) growth",f:"core_growth_annualised_pct",c:"var(--neg)"}];
-  legend("lgCore",[...ser,{k:"AI growth (label, % p.a.)",c:"transparent"}],true);
+  legend("lgCore",[{k:"Total revenue growth",c:"var(--muted)"},{k:"Core (non-AI) growth: shrinking",c:"var(--neg)"},{k:"Core (non-AI) growth: growing",c:"var(--pos)"}],true);
   const f=frame("cCore",1180,250,{t:22,r:20,b:30,l:40});const yt=niceTicks(-7,8,5),y0=yt[0],y1=yt[yt.length-1];const y=v=>f.m.t+f.ih-(v-y0)/(y1-y0)*f.ih;
   yt.forEach(t=>{el("line",{x1:f.m.l,x2:f.W-f.m.r,y1:y(t),y2:y(t),stroke:"var(--grid)"},f.svg);const tx=el("text",{x:f.m.l-6,y:y(t)+3.5,"text-anchor":"end"},f.svg);tx.textContent=t+"%";});
   const gw=f.iw/rows.length,bw=48;
@@ -2883,7 +2895,7 @@ function scatter(id,pts,xopt,yopt){
 function renderPos(){
   const pts=COS.map(c=>({c,x:aiOf(c)/MS[c].revenue_runrate_usd_bn*100,y:MS[c].yoy_cc_pct,s:MS[c].revenue_runrate_usd_bn,r:5+Math.sqrt(MS[c].revenue_runrate_usd_bn)*1.6,hollow:POOL[c].evidence_grade==="C",tip:[{k:"AI share of revenue",v:f1(aiOf(c)/MS[c].revenue_runrate_usd_bn*100)+"%",c:COL[c]},{k:"Growth YoY CC",v:pct(MS[c].yoy_cc_pct)},{k:"Revenue run-rate",v:"$"+f1(MS[c].revenue_runrate_usd_bn)+" bn"},{k:"AI grade",v:POOL[c].evidence_grade}]}));
   scatter("cPos",pts,{min:0,max:12,n:6,fmt:t=>t+"%",label:"AI share of revenue →"},{min:0,max:12});
-  document.getElementById("tkPos").textContent=`The two most AI-intensive firms (Infosys, TCS) are among the slowest growers. Rank correlation between AI share and growth: ${ST.spearman_ai_intensity_vs_growth_all8>0?"+":""}${ST.spearman_ai_intensity_vs_growth_all8} across all eight, ${ST.spearman_ai_intensity_vs_growth_disclosers} across the four company-based disclosers. AI revenue is not yet a growth signal.`;
+  document.getElementById("tkPos").textContent=`The two most AI-intensive firms (Infosys, TCS) are among the slowest growers. Rank correlation between AI share and growth: ${ST.spearman_ai_intensity_vs_growth_all8>0?"+":""}${(+ST.spearman_ai_intensity_vs_growth_all8).toFixed(2)} across all eight, ${(+ST.spearman_ai_intensity_vs_growth_disclosers).toFixed(2)} across the four company-based disclosers. AI revenue is not yet a growth signal.`;
 }
 function renderMom(){
   const pts=COS.map(c=>({c,x:MOM[c].p1_events,y:MS[c].yoy_cc_pct,s:MS[c].revenue_runrate_usd_bn,r:7,hollow:false,tip:[{k:"Project 1 verified events",v:String(MOM[c].p1_events),c:COL[c]},{k:"Frontier-lab ties",v:MOM[c].frontier_labs},{k:"Partnerships",v:String(MOM[c].partnerships)},{k:"Growth YoY CC",v:pct(MS[c].yoy_cc_pct)}]}));
@@ -2910,10 +2922,10 @@ function renderScore(){
 }
 function renderScen(){
   const yrs=[2026,2027,2028,2029,2030];
-  const f=frame("cScen",560,270,{t:14,r:118,b:26,l:46});const yt=niceTicks(190,270,4),y0=yt[0],y1=yt[yt.length-1];
+  const f=frame("cScen",560,284,{t:14,r:118,b:40,l:46});const yt=niceTicks(190,270,4),y0=yt[0],y1=yt[yt.length-1];
   const x=i=>f.m.l+i*f.iw/(yrs.length-1),y=v=>f.m.t+f.ih-(v-y0)/(y1-y0)*f.ih;
   yt.forEach(t=>{el("line",{x1:f.m.l,x2:f.W-f.m.r,y1:y(t),y2:y(t),stroke:"var(--grid)"},f.svg);const tx=el("text",{x:f.m.l-6,y:y(t)+3.5,"text-anchor":"end"},f.svg);tx.textContent="$"+t;});
-  yrs.forEach((yy,i)=>{const tx=el("text",{x:x(i),y:f.H-f.m.b+15,"text-anchor":"middle"},f.svg);tx.textContent=yy===2026?"2026 (run-rate)":yy;});
+  yrs.forEach((yy,i)=>{const tx=el("text",{x:x(i),y:f.H-f.m.b+18,"text-anchor":"middle"},f.svg);tx.textContent=yy;if(yy===2026){const t2=el("text",{x:x(i),y:f.H-f.m.b+31,"text-anchor":"middle"},f.svg);t2.textContent="(run-rate)";}});
   const labs=[];
   ["Bear","Base","Bull"].forEach(s=>{const pts=D.scenarios.filter(r=>r.scenario===s);let d="";pts.forEach((p,i)=>{d+=(i?"L":"M")+x(i)+","+y(p.total_usd_bn);});
     el("path",{d,fill:"none",stroke:SCOL[s],"stroke-width":s===state.scen?2.5:2,"stroke-dasharray":s===state.scen?"":"5 4"},f.svg);
@@ -2942,7 +2954,22 @@ function renderMix(){
   const p30=pts[pts.length-1];
   document.getElementById("tkMix").textContent=`AI grows from $${f1(pts[0].ai_usd_bn)} bn to $${f1(p30.ai_usd_bn)} bn by 2030 while core moves from $${f0(pts[0].core_usd_bn)} bn to $${f0(p30.core_usd_bn)} bn. With a large shrinking core, AI must grow ~${f1(p30.ai_growth_needed_for_flat_total_pct||0)}% a year just to stand still.`;
 }
-function renderHyp(){table("tHyp",["#","Hypothesis","Test","Evidence","Verdict","So what"],D.hypotheses.map(r=>[r.id,r.hypothesis,r.test,r.evidence,h("span",{class:"chip"},r.verdict),r.so_what]));}
+function renderHyp(){
+  const T=document.getElementById("tHyp");T.replaceChildren();T.classList.add("hyp");
+  const heads=["#","Hypothesis","Test","Evidence","Verdict","So what"];
+  const t=h("table"),cg=h("colgroup");heads.forEach((_,i)=>cg.appendChild(h("col",{class:"c"+(i+1)})));t.appendChild(cg);
+  const th=h("thead"),hr=h("tr");heads.forEach(x=>hr.appendChild(h("th",{},x)));th.appendChild(hr);t.appendChild(th);
+  const tb=h("tbody");
+  D.hypotheses.forEach(r=>{
+    const m=r.verdict.match(/^(Supported|Directionally supported|Weak|No evidence of a link)\s*(?:[:\-\u2013]\s*)?(.*)$/i);
+    const tag=m?m[1]:r.verdict, note=m?m[2]:"";
+    const cls=/^supported$/i.test(tag)?"v-yes":/^directionally/i.test(tag)?"v-part":/^weak/i.test(tag)?"v-part":"v-no";
+    const v=h("td",{"data-label":"Verdict"});v.appendChild(h("span",{class:"verdict "+cls},tag));
+    if(note){const n=note.charAt(0).toUpperCase()+note.slice(1);v.appendChild(h("span",{class:"vnote"},n));}
+    const tr=h("tr");
+    [[r.id,"#"],[r.hypothesis,"Hypothesis"],[r.test,"Test"],[r.evidence,"Evidence"]].forEach(([x,l])=>tr.appendChild(h("td",{"data-label":l},x)));
+    tr.appendChild(v);tr.appendChild(h("td",{"data-label":"So what"},r.so_what));tb.appendChild(tr);});
+  t.appendChild(tb);T.appendChild(t);}
 function renderAssum(){table("tAssum",["Company","Grade","Method","Rationale"],D.ai_assumptions.map(r=>[r.company,r.evidence_grade,r.method,r.rationale]));}
 function renderSources(){const T=document.getElementById("tSources");T.replaceChildren();const ul=h("ul");D.sources.forEach(s=>{const li=h("li");li.appendChild(document.createTextNode(`[${s.source_id}] ${s.publisher} — ${s.title} (${s.release_date}, ${s.source_type}). `));li.appendChild(h("a",{href:s.url,target:"_blank",rel:"noopener"},"Link"));ul.appendChild(li);});T.appendChild(ul);}
 document.getElementById("themeBtn").addEventListener("click",()=>{const r=document.documentElement;const dark=r.dataset.theme?r.dataset.theme==="dark":matchMedia("(prefers-color-scheme: dark)").matches;r.dataset.theme=dark?"light":"dark";});
