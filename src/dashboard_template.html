@@ -359,7 +359,7 @@ function renderPos(){
 function renderMom(){
   const pts=COS.map(c=>({c,x:MOM[c].p1_events,y:MS[c].yoy_cc_pct,s:MS[c].revenue_runrate_usd_bn,r:7,hollow:false,tip:[{k:"Project 1 verified events",v:String(MOM[c].p1_events),c:COL[c]},{k:"Frontier-lab ties",v:MOM[c].frontier_labs},{k:"Partnerships",v:String(MOM[c].partnerships)},{k:"Growth YoY CC",v:pct(MS[c].yoy_cc_pct)}]}));
   scatter("cMom",pts,{min:6,max:13,n:7,fmt:t=>String(t),label:"Verified CI events in Project 1 →"},{min:0,max:12});
-  document.getElementById("tkMom").textContent=`Rank correlation between announcement count and growth is ${ST.spearman_p1_events_vs_growth}: the noisiest announcers (HCLTech and Cognizant 12 events each; TCS and Wipro 11 each) grew only 0.6–4.8%; Capgemini, with no frontier-lab tie, grew fastest. Verdict for H5: no evidence of a link (n=8, not significant) — weight disclosed revenue above press releases.`;
+  document.getElementById("tkMom").textContent=`Rank correlation between announcement count and growth is ${ST.spearman_p1_events_vs_growth}: the noisiest announcers (HCLTech and Cognizant 12 events each; TCS and Wipro 11 each) grew only 0.6–4.8%; Capgemini, with no frontier-lab tie, grew fastest. Result for H5: not supported (n=8, not significant). Weight disclosed revenue above press releases.`;
 }
 function renderProd(){
   const rows=COS.map(c=>PROD[c]).sort((a,b)=>b.decoupling_gap_pp-a.decoupling_gap_pp);
@@ -415,15 +415,15 @@ function renderMix(){
 }
 function renderHyp(){
   const T=document.getElementById("tHyp");T.replaceChildren();T.classList.add("hyp");
-  const heads=["#","Hypothesis","Test","Evidence","Verdict","So what"];
+  const heads=["#","Hypothesis","Test","Evidence","Result","So what"];
   const t=h("table"),cg=h("colgroup");heads.forEach((_,i)=>cg.appendChild(h("col",{class:"c"+(i+1)})));t.appendChild(cg);
   const th=h("thead"),hr=h("tr");heads.forEach(x=>hr.appendChild(h("th",{},x)));th.appendChild(hr);t.appendChild(th);
   const tb=h("tbody");
   D.hypotheses.forEach(r=>{
-    const m=r.verdict.match(/^(Supported|Directionally supported|Weak|No evidence of a link)\s*(?:[:\-\u2013]\s*)?(.*)$/i);
+    const ci=r.verdict.indexOf(":");const m=ci>0?[null,r.verdict.slice(0,ci),r.verdict.slice(ci+1).trim()]:null;
     const tag=m?m[1]:r.verdict, note=m?m[2]:"";
-    const cls=/^supported$/i.test(tag)?"v-yes":/^directionally/i.test(tag)?"v-part":/^weak/i.test(tag)?"v-part":"v-no";
-    const v=h("td",{"data-label":"Verdict"});v.appendChild(h("span",{class:"verdict "+cls},tag));
+    const cls=/^supported/i.test(tag)?"v-yes":"v-no";
+    const v=h("td",{"data-label":"Result"});v.appendChild(h("span",{class:"verdict "+cls},tag));
     if(note){const n=note.charAt(0).toUpperCase()+note.slice(1);v.appendChild(h("span",{class:"vnote"},n));}
     const tr=h("tr");
     [[r.id,"#"],[r.hypothesis,"Hypothesis"],[r.test,"Test"],[r.evidence,"Evidence"]].forEach(([x,l])=>tr.appendChild(h("td",{"data-label":l},x)));

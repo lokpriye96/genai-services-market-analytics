@@ -74,13 +74,13 @@ Project 1 tracked *what* eight IT services leaders announced about GenAI: partne
 
 ## Hypotheses tested
 
-| # | Hypothesis | Verdict |
+| # | Hypothesis | Result |
 |---|---|---|
 | H1 | GenAI is now material revenue, not a pilot-stage side line | **Supported** |
-| H2 | AI growth is arriving alongside a shrinking core business (AI deflation) | **Directionally supported** for TCS and Infosys (an upper bound; TCS rests on two data points); weaker for HCLTech; **not** for Accenture |
-| H3 | The firms with the most AI revenue are not the ones growing fastest | **Weak**: no positive link in this sample (n=8, not significant) |
-| H4 | AI has decoupled revenue from headcount | **Weak**: mostly not yet |
-| H5 | Announcement momentum (Project 1) predicts AI monetisation | **No evidence of a link** (n=8, not significant) |
+| H2 | AI growth is arriving alongside a shrinking core business (AI deflation) | **Supported for TCS and Infosys**: an upper bound, as TCS core rests on two data points; weaker for HCLTech; not seen at Accenture |
+| H3 | The firms with the most AI revenue are not the ones growing fastest | **Supported, directionally**: AI share shows no positive link to growth (n=8, not statistically significant) |
+| H4 | AI has decoupled revenue from headcount | **Not yet visible**: headcount still moves broadly with revenue; Tech Mahindra is the exception |
+| H5 | Announcement momentum (Project 1) predicts AI monetisation | **Not supported**: announcement counts do not predict AI revenue or growth (n=8, not significant) |
 
 The test and evidence for each are in `outputs/analysis/hypotheses.csv` and on the dashboard.
 

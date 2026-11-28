@@ -120,28 +120,28 @@ def hypotheses(con) -> tuple[pd.DataFrame, dict]:
                       f"TCS {core.loc['TCS','core_growth_annualised_pct']:+.1f}%/yr, HCLTech {core.loc['HCLTech','core_growth_annualised_pct']:+.1f}%/yr, "
                       f"while total revenue grew only {core.loc['HCLTech','total_growth_annualised_pct']:.1f}-{core.loc['TCS','total_growth_annualised_pct']:.1f}%. "
                       f"Accenture's core still grew {core.loc['Accenture','core_growth_annualised_pct']:+.1f}% (FY24-FY25)."),
-         "verdict": "Directionally supported for TCS and Infosys (upper bound; TCS core rests on two data points); weaker for HCLTech; not for Accenture",
+         "verdict": "Supported for TCS and Infosys: an upper bound, as TCS core rests on two data points; weaker for HCLTech; not seen at Accenture",
          "so_what": "At TCS and Infosys, AI growth is so far replacing core revenue, not adding to it. That fits the 2-3.5%/yr deflation analysts cite. Part of the shift may be existing work relabelled as AI, which no firm discloses."},
         {"id": "H3", "hypothesis": "The firms with the most AI revenue are not the ones growing fastest.",
          "test": "Spearman rank correlation between AI share of revenue and constant-currency revenue growth (8 firms; and the 4 company-based disclosers).",
          "evidence": (f"Rank correlation {rho_ai_growth:+.2f} across all eight (p={p_ai_growth:.2f}) and {rho_ai_growth_disclosed:+.2f} across the four disclosers (n=4, not testable). "
                       f"Five of the eight AI shares are estimates or peer benchmarks. Infosys (10.5% AI) grew 1.5%; "
                       f"TCS (10.1%) 2.8%; Capgemini (est. 8%) 11.7% incl. WNS; Tech Mahindra (est. 5%) 7.2%."),
-         "verdict": "Weak: no positive link in this sample (n=8, not significant)",
+         "verdict": "Supported, directionally: AI share shows no positive link to growth (n=8, not statistically significant)",
          "so_what": "'AI revenue' is not yet a growth KPI. For CI and investor work, track core growth and book-to-bill next to the AI number."},
         {"id": "H4", "hypothesis": "AI has decoupled revenue from headcount.",
          "test": "Revenue growth minus headcount growth (YoY), and revenue per employee.",
          "evidence": (f"Median gap only {stats['median_decoupling_gap_pp']:+.1f}pp. Six of eight show weak or no decoupling. Revenue per employee rose 0.5-1.7% at most firms; "
                       f"Tech Mahindra is the outlier (+{prod.loc['Tech Mahindra','rev_per_employee_yoy_pct']:.1f}%, headcount down). "
                       f"Capgemini's headcount jumped {prod.loc['Capgemini','headcount_yoy_pct']:.0f}% with the WNS acquisition."),
-         "verdict": "Weak - mostly not yet",
+         "verdict": "Not yet visible: headcount still moves broadly with revenue; Tech Mahindra is the exception",
          "so_what": "Productivity gains are being passed to clients as price, not kept as margin or non-linear growth. That is the deflation mechanism in H2 seen from the people side."},
         {"id": "H5", "hypothesis": "Announcement momentum (Project 1's CI events) predicts AI monetisation.",
          "test": "Spearman rank correlation of verified Project 1 events per firm against AI share of revenue and against growth.",
          "evidence": (f"Rank correlations (n=8): events vs AI share {rho_mom_ai:+.2f} (p={p_mom_ai:.2f}); events vs growth {rho_mom_growth:+.2f} (p={p_mom_growth:.2f}, not significant). "
                       f"HCLTech and Cognizant lead on event count (12 each), with TCS and Wipro on 11. "
                       f"Wipro's revenue is flat and it discloses no AI revenue; Capgemini has no frontier-lab ties and the fastest growth (11.7% incl. WNS)."),
-         "verdict": "No evidence of a link (n=8, not significant)",
+         "verdict": "Not supported: announcement counts do not predict AI revenue or growth (n=8, not significant)",
          "so_what": "Partnership press releases are a weak lead indicator. A CI programme should weight disclosed AI revenue, core growth and bookings above announcement counts - the main design lesson carried back to Project 1."},
     ]
     return pd.DataFrame(rows), stats
